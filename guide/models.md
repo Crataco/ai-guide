@@ -2,13 +2,13 @@
 
 ### What are models?
 
-A model is your AI. Or to be more specific, its brain.
+_A model is your AI. Or to be more specific, its brain._
 
-Models come in all shapes and sizes, and you will see how they differ depending on how big it is, what data was used to train it, and what backend it uses (which most of the time is [Transformers](https://github.com/huggingface/transformers), but that's a can of worms for another time).
+_Models come in all shapes and sizes, and you will see how they differ depending on how big it is, what data was used to train it, and what backend it uses (which most of the time is [Transformers](https://github.com/huggingface/transformers), but that's a can of worms for another time)._
 
 ### How many models are there?
 
-I've counted 8 different freely-downloadable model series since 2019. These models have been trained on a variety of data, making them a jack-of-all-trades, but I've managed to include variants that adapt it for novel writing (i.e. NovelAI) and chatting (i.e. CharacterAI).
+_I've counted 8 different freely-downloadable model series since 2019. These models have been trained on a variety of data, making them a jack-of-all-trades, but I've managed to include variants that adapt it for novel writing (i.e. NovelAI) and chatting (i.e. CharacterAI)._
 
 Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 :--|:--:|:--:|:--:|:--:|:--:
@@ -23,22 +23,22 @@ Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 
 ### Jeez! Which one should I pick?
 
-Depends on what you want to do with your AI, and what your system requirements are.
+_Depends on what you want to do with your AI, and what your system requirements are._
 
-If you wanna pick by series:
+_If you wanna pick by series:_
 
-- A generic Pythia (well-supported) or LLaMA (best quality) model if you want something flexible, like GPT-3
+- _A generic Pythia (well-supported) or LLaMA (best quality) model if you want something flexible, like GPT-3_
 
-- Janeway or Erebus (NSFW) if you want a co-writer, like NovelAI
+- _Janeway or Erebus (NSFW) if you want a co-writer, like NovelAI_
 
-- Nerys if you want a text adventure, like AI Dungeon
+- _Nerys if you want a text adventure, like AI Dungeon_
 
-- Pygmalion (NSFW) and Erebus (NSFW) if you want a chatting partner, like Replika or CharacterAI
+- _Pygmalion (NSFW) and Erebus (NSFW) if you want a chatting partner, like Replika or CharacterAI_
 
-If you wanna pick by size:
+_If you wanna pick by size:_
 
-- If you have a standard computer, I'd recommend to start with a ~350M model and slowly work your way up to bigger models, so you can tell how much quality you're willing to gain, and performance you're willing to compromise. [Here's a memory usage chart](https://github.com/Crataco/ai-guide/blob/main/charts/memory-usage.md) I've made, and [another usage chart](https://github.com/oobabooga/text-generation-webui/wiki/System-requirements) by Oobabooga.
+- _If you have a standard computer, I'd recommend to start with a ~350M model and slowly work your way up to bigger models, so you can tell how much quality you're willing to gain, and performance you're willing to compromise. [Here's a memory usage chart](https://github.com/Crataco/ai-guide/blob/main/charts/memory-usage.md) I've made, and [another usage chart](https://github.com/oobabooga/text-generation-webui/wiki/System-requirements) by Oobabooga._
 
-- Alternatively, if you have a gaming computer (with NVIDIA cards being the best supported), you can fit the model entirely on the GPU itself, which will typically take up half as much video RAM as it does regular RAM, and be lightning fast. If you don't have enough VRAM, you can also split it between regular RAM and VRAM, but it will be much slower.
+- _Alternatively, if you have a gaming computer (with NVIDIA cards being the best supported), you can fit the model entirely on the GPU itself, which will typically take up half as much video RAM as it does regular RAM, and be lightning fast. If you don't have enough VRAM, you can also split it between regular RAM and VRAM, but it will be much slower._
 
-If you're an advanced user, you're likely to reduce system requirements quite a lot by looking into [4-bit quantization](https://github.com/oobabooga/text-generation-webui/wiki/LLaMA-model#4-bit-mode) and [other backends](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models). 
+_If you're an advanced user, you're likely to reduce system requirements quite a lot by looking into [4-bit quantization](https://github.com/oobabooga/text-generation-webui/wiki/LLaMA-model#4-bit-mode) and [other backends](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models). Both of the guides I've linked assume you're using oobabooga's Text Generation Web UI, which at the moment feels like the frontend with the best support for these._
