@@ -27,7 +27,7 @@ _If you want to look further into these projects outside of their GitHub reposit
 - _Oobabooga's Text Generation Web UI has [documentation](https://github.com/oobabooga/text-generation-webui/wiki) and [a subreddit](https://old.reddit.com/r/Oobabooga/)_
 - _TavernAI has [an installation guide](https://github.com/TavernAI/TavernAI/wiki/How-to-install), [includes donations](https://boosty.to/tavernai), and its own channel in the KoboldAI Discord_
 - _Project Akiko has [a Discord community](https://discord.gg/Pdhd7dEqHp)_
-- _miku.gg has [documentation](https://docs.miku.gg/) and [a Discord community](https://discord.gg/3XPdpUdGgV)_
+- _miku.gg has [documentation](https://docs.miku.gg/), [a Discord community](https://discord.gg/3XPdpUdGgV), and its own channel in the KoboldAI Discord_
 - _LiteVN has its own channel in the KoboldAI Discord_
 
 *Continue into [models](models.md)...*
