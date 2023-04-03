@@ -14,3 +14,5 @@ A frontend is the interface you use to run and interact with AI models. To clear
 - [Project Akiko](https://github.com/Project-Akiko/Project-Akiko)
 - [miku.gg](https://github.com/miku-gg/miku)
 - [LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)
+
+Browse through the frontends and find the one you like. I personally prefer Oobabooga's Text Generation Web UI due to its bleeding-edge features, and the Silly TavernAI Mod because of its extensions and compatibility with Oobabooga's. However, you may prefer KoboldAI if you want something with a more professional interface (according to its UI2 redesign), and a more natural interface for storywriting and text adventures.
