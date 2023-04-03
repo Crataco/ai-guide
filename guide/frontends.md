@@ -4,7 +4,7 @@
 
 A frontend is the interface you use to run and interact with AI models. To clear up any confusion, I'll split them into two categories: standalone and proxy.
 
-**Standalone** frontends work on their own and exist to make it easier to interact with the AI backend. Examples of standalone frontends include:
+**Standalone** frontends work on their own and exist to make it easier to interact with the models. Examples of standalone frontends include:
 - [KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)
 - [Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui)
 
