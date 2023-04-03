@@ -1,4 +1,4 @@
-*Version 1 of my AI guide is [still available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md). While that one was more of a crash course, this one is meant to be more of a softer introduction, split up into small parts.*
+*Version 1 of my AI guide is [still available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md). While that one was more of a crash course, this one is a softer introduction to general AI, split up into smaller parts.*
 
 # Crataco's Open-Source AI Guide
 
