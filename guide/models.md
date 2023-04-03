@@ -8,7 +8,7 @@ Models come in all shapes and sizes, and you will see how they differ depending 
 
 ### How many models are there?
 
-I've counted 8 different freely-downloadable model series since 2019. These models have been trained on a variety of data, making them a jack-of-all-trades, but I've managed to include further trainings that adapt it for novel writing (i.e. NovelAI) and chatting (i.e. CharacterAI).
+I've counted 8 different freely-downloadable model series since 2019. These models have been trained on a variety of data, making them a jack-of-all-trades, but I've managed to include variants that adapt it for novel writing (i.e. NovelAI) and chatting (i.e. CharacterAI).
 
 Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 :--|:--:|:--:|:--:|:--:|:--:
