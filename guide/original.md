@@ -1,10 +1,12 @@
 # Crataco's guide to locally runnable, unfiltered open-source AI.
 
+![A picture of a 1960s computer.](https://i.pinimg.com/originals/05/a5/e6/05a5e614406e282009a595d665e4ebc7.jpg)
+
 # PREFACE
 
 **TL;DR for chat users: [Pygmalion](https://rentry.org/pygmalion-ai).**
 
-**If you're looking for an easy-to-use online solution, I** ***think*** **[KoboldAI Lite](https://lite.koboldai.net/) will do the job just nicely. Any solution other than that and you'll have to use Google Colab.**
+**If you're looking for an easy-to-use online solution, **[KoboldAI Lite](https://lite.koboldai.net/) will do the job just nicely. Any solution other than that and you'll have to use Google Colab.**
 
 **If you're here because you want to get it running on your own computer, and want to know more about AI frontends, models and tips, scroll down and start at "INTRODUCTION". The important stuff will be highlighted in bold at the beginning of most paragraphs to make them less overwhelming.**
 
@@ -122,7 +124,7 @@ Generic models:
 [GPT-Neo 2.7B](https://cdn.discordapp.com/attachments/1042160561808482304/1088509745859670036/Screenshot_2023-03-23_10-08-45.png) | "Naive" preset with rep_penalty of 1.5 | Somehow as bad as I remember. It could just be the settings, though.
 [LLaMA 7B](https://cdn.discordapp.com/attachments/1042160561808482304/1087680050121429014/llama-7b-naive.png) | "Naive" preset | Naive preset plays it safe, but the responses are short. I notice LLaMA doesn't require repetition penalty as much as other models do; 1.0 is just fine here.
 [LLaMA 7B](https://cdn.discordapp.com/attachments/1042160561808482304/1087683927080177744/llama-7b-sphinx.png) | "Sphinx Moth" preset | The Sphinx Moth preset is the opposite: the responses are lengthy yet very risk-taking (it hallucinated websites that don't exist, but I just went with it). I might need to find a preset that's kind of in-between.
-[LLaMA 13B](https://cdn.discordapp.com/attachments/1042160561808482304/1091408033969623070/Screenshot_2023-03-31_10-05-27.png) | llama.cpp defaults | Unusual case. I had to use llama.cpp and a quantized version of the model to run it on my hardware. So far, this one does the best job at following the character's introduction prompt (as Alice introduces herself as a fairy). But using llama.cpp for chat feels buggy in "interactive mode", with the bot's responses cutting off unless I press enter. Nonetheless, with the right interface this could be the open-source Replika killer I've been waiting on for *years.* It's good!
+[LLaMA 13B](https://cdn.discordapp.com/attachments/1042160561808482304/1091408033969623070/Screenshot_2023-03-31_10-05-27.png) | " | Unusual case. I had to use llama.cpp and a quantized version of the model to run it on my hardware. So far, this one does the best job at following the character's introduction prompt (as Alice introduces herself as a fairy). But using llama.cpp for chat feels buggy in "interactive mode", with the bot's responses cutting off unless I press enter. Nonetheless, with the right interface this could be the open-source Replika killer I've been waiting on for *years.* It's good!
 [Pythia 70M Deduped](https://cdn.discordapp.com/attachments/1042160561808482304/1068266121679085649/Screenshot_2023-01-26_at_20-27-23_Gradio.png) | In screenshot | Unusable.
 [Pythia 160M Deduped](https://cdn.discordapp.com/attachments/1042160561808482304/1068267846406258849/Screenshot_2023-01-26_12-31-37.png) | In screenshot | I might've just gotten lucky with this one.
 [Pythia 410M Deduped](https://cdn.discordapp.com/attachments/1042160561808482304/1068269127808073830/Screenshot_2023-01-26_12-39-36.png) | In screenshot | I think it's getting better!
