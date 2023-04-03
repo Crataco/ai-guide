@@ -2,7 +2,7 @@
 
 ### What are frontends?
 
-A frontend is the interface you use to run and interact with a backend. I consider these the "clients." To clear up any confusion, I'll split them into two categories: standalone and proxy.
+A frontend is the interface you use to run and interact with AI models. To clear up any confusion, I'll split them into two categories: standalone and proxy.
 
 **Standalone** frontends work on their own and exist to make it easier to interact with the AI backend. Examples of standalone frontends include:
 - [KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)
