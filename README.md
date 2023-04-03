@@ -6,9 +6,9 @@
 
 _Hello! I assume you've come here either via word-of-mouth or through your own research. I hope for this guide to enlighten you on text generation AI that you can run without being tied to an online service. I want to make this version of my guide unbelievably simple compared to version 1, and as such it'll focus only on these two important things:_
 
-- _[Frontends (the interfaces)](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md)_
+- _[Frontends (the interface)](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md)_
 
-- _[Models (the AI brains)](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)_
+- _[Models (the AI)](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)_
 
 * * *
 
