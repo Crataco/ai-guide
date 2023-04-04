@@ -1,16 +1,14 @@
 # Crataco's guide to locally runnable, unfiltered open-source AI.
 
-![A picture of a 1960s computer.](https://i.pinimg.com/originals/05/a5/e6/05a5e614406e282009a595d665e4ebc7.jpg)
+![A screenshot of a then-paranoid Crataco from three years ago, saying that they don't feel comfortable talking to online-based chatbots.](https://user-images.githubusercontent.com/55674863/229701829-ce014683-c9ca-43f4-9e62-f9128d9d7f4d.png)
 
 # PREFACE
 
-**TL;DR for chat users: [Pygmalion](https://rentry.org/pygmalion-ai).**
+**TL;DR for chat users: [Pygmalion](https://rentry.org/pygmalion-ai) and [its community](https://old.reddit.com/r/PygmalionAI/) is a good place to start.**
 
-**If you're looking for an easy-to-use online solution, **[KoboldAI Lite](https://lite.koboldai.net/) will do the job just nicely. Any solution other than that and you'll have to use Google Colab.**
+**If you're here because you want to know more about AI frontends, models and tips, and want to get it running on your own PC, scroll down and start at "INTRODUCTION". The important stuff will be highlighted in bold at the beginning of most paragraphs to make them less overwhelming.**
 
-**If you're here because you want to get it running on your own computer, and want to know more about AI frontends, models and tips, scroll down and start at "INTRODUCTION". The important stuff will be highlighted in bold at the beginning of most paragraphs to make them less overwhelming.**
-
-I began this post before I learned about Pygmalion. This guide is strictly for all the solutions I know of, usually open-source, that you can run and host on your own computer. I'm not here to recommend other online services unless you can, too, run them offline (otherwise history will risk repeating itself).
+I began this post before I learned about Pygmalion. This guide is strictly for all the solutions I know of, usually open-source, that you can run and host on your own computer. I'm not here to recommend other online services unless you can, too, run them offline, like [KoboldAI Lite](https://lite.koboldai.net/).
 
 I highly recommend to take a look at the documentation for each of the frontends I explained in my own guide, and I would love for you to be a part of ***their*** communities to ask and answer questions, or just to check and see what developments are happening:
 
@@ -46,13 +44,13 @@ I want this to be a crash course and not an organized encyclopedia, so pardon if
 
 **If your computer can't run the model you want to use, you can use Google Colab, an online service which allows you to use Google's cloud computers for free for a while, making them perfect for trying out bigger models. You usually still have an option to save conversations on your Google Drive and download them for offline use.**
 
-**STANDALONE FRONTENDS**
+### STANDALONE FRONTENDS
 
 - **[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui) - [[screenshot using OPT 2.7B Erebus with "Sphinx Moth" preset]](https://cdn.discordapp.com/attachments/1042160561808482304/1081314051889578014/oobabooga.png) Standalone frontend with bleeding-edge model support and a brutalist UI. You'll feel right at home if [you're familiar with AUTO1111's Stable Diffusion UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/screenshot.png), but it's not very user-friendly. You can run it locally or on [Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb).**
 
 - **[KoboldAI](https://github.com/koboldai/koboldai-client) - [[screenshot of OPT 6.7B Erebus on KoboldAI dev version]](https://cdn.discordapp.com/attachments/696416030410670124/1047134689133084762/Screenshot_2022-11-29_04-59-11.png) Standalone frontend with a professional exterior and a sweet community. KAI was created as an AI co-writer similar to NovelAI. They later included a chat setting, and more recently a Discord-esque chat UI as pictured. While it's more user-friendly than Oobabooga's, I find the "pretty" chat mode to be pretty buggy, so if you intend on using it for chatting, combine it with a gateway frontend (I recommend TavernAI). You can run it locally or on [Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb).**
 
-**GATEWAY FRONTENDS**
+### GATEWAY FRONTENDS
 
 - **[TavernAI](https://github.com/TavernAI/TavernAI) - Gateway frontend with a pretty, friendly chat-optimized interface. Supports KoboldAI, NovelAI, and OpenAI. I feel its main advantage is its "anchors" that are added to every message, which will help avoid standalone KAI's message-shortening pitfalls on non-Pygmalion models. I tried it again recently and learned that it even includes an [online character database](https://cdn.discordapp.com/attachments/1092245228028706867/1092245308651610222/Screenshot_2023-04-02_at_17-30-30_Tavern.AI.png). You can run it locally or on [Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb).**
 
@@ -94,7 +92,7 @@ For more clarification, there are different "types" of models. What I say is *ve
 
 * * *
 
-**DETAILED INFORMATION**
+### DETAILED INFORMATION
 
 Here are all of the major model series usable on most frontends, and finetunes:
 
@@ -111,7 +109,7 @@ Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 
 * * *
 
-**SCREENSHOTS**
+### SCREENSHOTS
 
 Generic models:
 
