@@ -1,60 +1,38 @@
-# Crataco's guide to locally runnable, unfiltered open-source AI.
+# Crataco's first guide to local, unfiltered text generation AI.
 
-![A screenshot of a then-paranoid Crataco from three years ago, saying that they don't feel comfortable talking to online-based chatbots.](https://user-images.githubusercontent.com/55674863/229701829-ce014683-c9ca-43f4-9e62-f9128d9d7f4d.png)
+### INTRODUCTION
 
-# PREFACE
+_This post will list AI frontends and models that can be downloaded and run on your own PC. It includes information on frontends, models, character creation, model settings, how to contribute, and interesting findings._
 
-**TL;DR for chat users: [Pygmalion](https://rentry.org/pygmalion-ai) and [its community](https://old.reddit.com/r/PygmalionAI/) is a good place to start.**
+_These text generation AI can be open-source alternatives of the following you may be familiar with:_
 
-**If you're here because you want to know more about AI frontends, models and tips, and want to get it running on your own PC, scroll down and start at "INTRODUCTION". The important stuff will be highlighted in bold at the beginning of most paragraphs to make them less overwhelming.**
+- _Replika, Character.AI, Kajiwoto, Anima, Chai, SimSimi, Paradot, or Mitsuku (Kuki), if you're a chat user_
+- _AI Dungeon and NovelAI, if you prefer an adventure mode and/or co-writing_
+- _GPT-3, not by quality alone (unless LLaMA 13B's tests are to be believed), but by the flexibility it offers_
 
-I began this post before I learned about Pygmalion. This guide is strictly for all the solutions I know of, usually open-source, that you can run and host on your own computer. I'm not here to recommend other online services unless you can, too, run them offline, like [KoboldAI Lite](https://lite.koboldai.net/).
+_You may also have an easier time understanding the vocabulary of this guide if you know about Stable Diffusion or NovelAI already._
 
-I highly recommend to take a look at the documentation for each of the frontends I explained in my own guide, and I would love for you to be a part of ***their*** communities to ask and answer questions, or just to check and see what developments are happening:
+_Unlike [my second guide](https://github.com/Crataco/ai-guide/blob/main/README.md), which I claim is a softer introduction, this one is a crash course, a barrage of information all on a single page._
 
-- [Pygmalion Guide and FAQ](https://rentry.org/pygmalion-ai) (profanity warning) - [Discord](https://discord.gg/ZHXEa3yywq) /  r/PygmalionAI
+## FRONTENDS
 
-- [Miku.gg Documentation](https://docs.miku.gg/) - [Discord](https://discord.com/invite/XgXjvP6h)
+[(My second guide has up-to-date information.)](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md)
 
-- [Oobabooga's web UI documentation](https://github.com/oobabooga/text-generation-webui) - r/oobabooga
+A frontend is the interface you use. There are three of them officially supported by this guide: KoboldAI, TavernAI, and Oobabooga, with several others (including Project Akiko and LiteVN) that I've yet to test thoroughly. I refer to them as "standalone" if you can use them on their own, or "gateway" if they depend on another.
 
-- [KoboldAI's documentation](https://github.com/KoboldAI/KoboldAI-Client/wiki) - [Discord](https://koboldai.org/discord) / r/KoboldAI
-
-- [TavernAI's documentation](https://github.com/TavernAI/TavernAI) - *They have a channel in the KoboldAI Discord server*
-
-* * *
-
-# INTRODUCTION
-
-**This post will list AI frontends and models that can be downloaded and run on your PC. I try my best to make this post beginner-friendly, even for those whose computers are not up to snuff. It includes information on frontends, models, character creation, model settings, how to contribute, and interesting findings.**
-
-Chat users may be familiar with Replika, Character.AI, Kajiwoto, Anima, Chai, SimSimi, Paradot, or Mitsuku (Kuki).
-
-Novel/Adventure users may be familiar with NovelAI and AI Dungeon.
-
-You may also have an easier time understanding if you know about Stable Diffusion.
-
-I want this to be a crash course and not an organized encyclopedia, so pardon if it seems lengthy. I hope for this to be a stepping stone for people to learn, try, and contribute with their own guides. My target demographic is the "average" user, but I'm trying to make it useful for everyone.
-
-* * *
-
-# FRONTENDS
-
-**A frontend is the interface. There are three of them officially supported by this post: KoboldAI, TavernAI, and Oobabooga, with several others (including Project Akiko and LiteVN) that I've yet to test thoroughly. I refer to them as "standalone" if you can use them on their own, or "gateway" if they depend on another.**
-
-**If your computer can't run the model you want to use, you can use Google Colab, an online service which allows you to use Google's cloud computers for free for a while, making them perfect for trying out bigger models. You usually still have an option to save conversations on your Google Drive and download them for offline use.**
+If your computer can't run the model you want to use, you can use Google Colab, an online service which allows you to use Google's cloud computers for free for a while, making them perfect for trying out bigger models. You usually still have an option to save conversations on your Google Drive and download them for offline use.
 
 ### STANDALONE FRONTENDS
 
-- **[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui) - [[screenshot using OPT 2.7B Erebus with "Sphinx Moth" preset]](https://cdn.discordapp.com/attachments/1042160561808482304/1081314051889578014/oobabooga.png) Standalone frontend with bleeding-edge model support and a brutalist UI. You'll feel right at home if [you're familiar with AUTO1111's Stable Diffusion UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/screenshot.png), but it's not very user-friendly. You can run it locally or on [Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb).**
+- [Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui) - [[screenshot using OPT 2.7B Erebus with "Sphinx Moth" preset]](https://cdn.discordapp.com/attachments/1042160561808482304/1081314051889578014/oobabooga.png) Standalone frontend with bleeding-edge model support and a brutalist UI. You'll feel right at home if [you're familiar with AUTO1111's Stable Diffusion UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/screenshot.png), but it's not very user-friendly. You can run it locally or on [Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb).
 
-- **[KoboldAI](https://github.com/koboldai/koboldai-client) - [[screenshot of OPT 6.7B Erebus on KoboldAI dev version]](https://cdn.discordapp.com/attachments/696416030410670124/1047134689133084762/Screenshot_2022-11-29_04-59-11.png) Standalone frontend with a professional exterior and a sweet community. KAI was created as an AI co-writer similar to NovelAI. They later included a chat setting, and more recently a Discord-esque chat UI as pictured. While it's more user-friendly than Oobabooga's, I find the "pretty" chat mode to be pretty buggy, so if you intend on using it for chatting, combine it with a gateway frontend (I recommend TavernAI). You can run it locally or on [Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb).**
+- [KoboldAI](https://github.com/koboldai/koboldai-client) - [[screenshot of OPT 6.7B Erebus on KoboldAI dev version]](https://cdn.discordapp.com/attachments/696416030410670124/1047134689133084762/Screenshot_2022-11-29_04-59-11.png) Standalone frontend with a professional exterior and a sweet community. KAI was created as an AI co-writer similar to NovelAI. They later included a chat setting, and more recently a Discord-esque chat UI as pictured. While it's more user-friendly than Oobabooga's, I find the "pretty" chat mode to be pretty buggy, so if you intend on using it for chatting, combine it with a gateway frontend (I recommend TavernAI). You can run it locally or on [Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb).
 
 ### GATEWAY FRONTENDS
 
-- **[TavernAI](https://github.com/TavernAI/TavernAI) - Gateway frontend with a pretty, friendly chat-optimized interface. Supports KoboldAI, NovelAI, and OpenAI. I feel its main advantage is its "anchors" that are added to every message, which will help avoid standalone KAI's message-shortening pitfalls on non-Pygmalion models. I tried it again recently and learned that it even includes an [online character database](https://cdn.discordapp.com/attachments/1092245228028706867/1092245308651610222/Screenshot_2023-04-02_at_17-30-30_Tavern.AI.png). You can run it locally or on [Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb).**
+- [TavernAI](https://github.com/TavernAI/TavernAI) - Gateway frontend with a pretty, friendly chat-optimized interface. Supports KoboldAI, NovelAI, and OpenAI. I feel its main advantage is its "anchors" that are added to every message, which will help avoid standalone KAI's message-shortening pitfalls on non-Pygmalion models. I tried it again recently and learned that it even includes an [online character database](https://cdn.discordapp.com/attachments/1092245228028706867/1092245308651610222/Screenshot_2023-04-02_at_17-30-30_Tavern.AI.png). You can run it locally or on [Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb).
 
-- **[Silly TavernAI Mod](https://github.com/SillyLossy/TavernAI) - [[screenshot of Pygmalion 6B (experiment 7 part 4/10)]](https://cdn.discordapp.com/attachments/1069432262036295681/1092016634585157652/Screenshot_2023-04-02_02-16-26.png) - A fork of TavernAI. It's a huge rewrite with [extensions](https://github.com/SillyLossy/TavernAI-extras), group chats, and even support for Oobabooga's frontend.**
+- [Silly TavernAI Mod](https://github.com/SillyLossy/TavernAI) - [[screenshot of Pygmalion 6B (experiment 7 part 4/10)]](https://cdn.discordapp.com/attachments/1069432262036295681/1092016634585157652/Screenshot_2023-04-02_02-16-26.png) - A fork of TavernAI. It's a huge rewrite with [extensions](https://github.com/SillyLossy/TavernAI-extras), group chats, and even support for Oobabooga's frontend.
 
 - [Project Akiko](https://github.com/Project-Akiko/Project-Akiko) - [[official screenshot]](https://user-images.githubusercontent.com/26259870/229264860-5632fe81-af11-4463-8e46-9707296b4d51.png) Both standalone(?) and gateway frontend, with its interface taking inspiration from visual novels. Just discovered this one via the KoboldAI Discord server. It's a very recent project that seems to go above and beyond for an open-source chatbot frontend, with planned support for Live2D, text-to-speech, multi-chat, and Discord. It reminds me of miku.gg, but with a more open ecosystem. I might bump this up as "supported" once I give it a shot, but it's too early to tell what direction the project's going to go in.
 
@@ -62,25 +40,23 @@ I want this to be a crash course and not an organized encyclopedia, so pardon if
 
 There are other projects (such as [Gravital](https://github.com/johnnymcmike/Gravital), [Eliza](https://github.com/harubaru/eliza), [rwkv_chatbot](https://github.com/harrisonvanderbyl/rwkv_chatbot), [ChatRWKV](https://github.com/BlinkDL/ChatRWKV)), and [miku.gg](https://docs.miku.gg/) (as mentioned earlier)), but they're beyond the scope of this post due to their lack of community, complicated setup, or dependence on closed-source infrastructure.
 
-* * *
+## MODELS
 
-# MODELS
-
-**TL;DR: A model is the AI brain that generates your responses. Each model has different knowledge based on what data they were trained on. Bigger models are usually smarter, but require better hardware.**
+A model is the AI brain that generates your responses. Each model has different knowledge based on what data they were trained on. Bigger models are usually smarter, but require better hardware.
 
 **My recommendations:**
 
-- **Jack-of-All-Trades (GPT-3) - [Pythia Deduped](https://huggingface.co/models?search=eleutherai/pythia%20deduped) and [LLaMA](https://huggingface.co/models?search=llama%20hf)**
+- Jack-of-All-Trades (GPT-3) - [Pythia Deduped](https://huggingface.co/models?search=eleutherai/pythia%20deduped) and [LLaMA](https://huggingface.co/models?search=llama%20hf)
 
-- **Chatbot (Replika/CAI) - [Pygmalion](https://huggingface.co/PygmalionAI) (NSFW) / [Erebus](https://huggingface.co/models?sort=downloads&search=KoboldAI%2FErebus) (NSFW) / [ConvoGPT](https://huggingface.co/hakurei/convogpt-staging/tree/main)**
+- Chatbot (Replika/CAI) - [Pygmalion](https://huggingface.co/PygmalionAI) (NSFW) / [Erebus](https://huggingface.co/models?sort=downloads&search=KoboldAI%2FErebus) (NSFW) / [ConvoGPT](https://huggingface.co/hakurei/convogpt-staging/tree/main)
 
-- **Assistant (ChatGPT) - [Open-Assistant](https://huggingface.co/OpenAssistant/oasst-sft-1-pythia-12b) / [GPT4All](https://github.com/nomic-ai/gpt4all)**
+- Assistant (ChatGPT) - [Open-Assistant](https://huggingface.co/OpenAssistant/oasst-sft-1-pythia-12b) / [GPT4All](https://github.com/nomic-ai/gpt4all) / [Vicuna](https://github.com/lm-sys/FastChat/#vicuna-weights)
 
-- **Co-Writer (NovelAI) -  [Janeway](https://huggingface.co/models?search=janeway) / [Erebus](https://huggingface.co/models?sort=downloads&search=KoboldAI%2FErebus) (NSFW)**
+- Co-Writer (NovelAI) -  [Janeway](https://huggingface.co/models?search=janeway) / [Erebus](https://huggingface.co/models?sort=downloads&search=KoboldAI%2FErebus) (NSFW)
 
-- **Text Adventure (AI Dungeon) - [Nerys](https://huggingface.co/models?search=nerys) / [Skein](https://huggingface.co/KoboldAI/GPT-J-6B-Skein) / Adventure [1.3B](https://huggingface.co/KoboldAI/GPT-Neo-1.3B-Adventure) / [2.7B](https://huggingface.co/KoboldAI/GPT-Neo-2.7B-AID) / [6B](https://huggingface.co/KoboldAI/GPT-J-6B-Adventure)**
+- Text Adventure (AI Dungeon) - [Nerys](https://huggingface.co/models?search=nerys) / [Skein](https://huggingface.co/KoboldAI/GPT-J-6B-Skein) / Adventure [1.3B](https://huggingface.co/KoboldAI/GPT-Neo-1.3B-Adventure) / [2.7B](https://huggingface.co/KoboldAI/GPT-Neo-2.7B-AID) / [6B](https://huggingface.co/KoboldAI/GPT-J-6B-Adventure)
 
-- **Budget Users - [Pythia Deduped](https://huggingface.co/models?search=eleutherai/pythia%20deduped) / [OPT](https://huggingface.co/models?search=facebook/opt) / [llama.cpp (advanced)](https://github.com/ggerganov/llama.cpp)**
+- Budget Users - [Pythia Deduped](https://huggingface.co/models?search=eleutherai/pythia%20deduped) / [OPT](https://huggingface.co/models?search=facebook/opt) / [llama.cpp (advanced)](https://github.com/ggerganov/llama.cpp)
 
 For more clarification, there are different "types" of models. What I say is *very* simplified:
 
@@ -90,11 +66,9 @@ For more clarification, there are different "types" of models. What I say is *ve
 
 - The **llama.cpp** type is currently exclusive to llama.cpp, but it has been included in [Oobabooga](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models) and a [Kobold-like interface](https://github.com/LostRuins/llamacpp-for-kobold). It's developed to work in "4-bit" on CPU, saving model space *and* memory usage. To the point that on my computer with 16GB RAM, I was able to run 7B and 13B without a problem (with 30B being my "upper limit"), which are models that I believe would consume *eight times as much* if it were Transformers-based.
 
-* * *
-
 ### DETAILED INFORMATION
 
-Here are all of the major model series usable on most frontends, and finetunes:
+[(My second guide has up-to-date information.)](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)
 
 Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 :--|:--:|:--:|:--:|:--:|:--:
@@ -107,9 +81,9 @@ Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 **LLaMA** | 7B to 65B | Not yet | Not yet | [Alpaca 7B](https://github.com/tloen/alpaca-lora) / [GPT4All](https://github.com/nomic-ai/gpt4all) / [Vicuna](https://vicuna.lmsys.org/) | *New model by Meta. Officially only available to researchers. AI evaluation says 13B is on par with GPT-3 175B, and 7B overtakes even Pythia 12B and OPT 66B. The Transformers version of the model [is available via reuploads](https://huggingface.co/models?search=llama%20hf), and the llama.cpp version can be used by downloading [one of these](https://huggingface.co/maderix/llama-65b-4bit/tree/main), a tokenizer from [here](https://huggingface.co/decapoda-research/llama-7b-hf/tree/main) or [here](https://huggingface.co/nyanko7/LLaMA-7B/tree/main), and converting them.*
 **Cerebras** | [111M](https://huggingface.co/cerebras/Cerebras-GPT-111M) to [13B](https://huggingface.co/cerebras/Cerebras-GPT-13B) | Not yet | Not yet | Not yet | *New model in general. According to their description their models use The Pile much like GPT-Neo, Pythia and RWKV, but it isn't deduplicated. I'll likely look into it.*
 
-* * *
-
 ### SCREENSHOTS
+
+These are screenshots I've taken while testing chat mode under Oobabooga's Text Generation Web UI. They're inconsistent, so I highly recommend you try them yourself.
 
 Generic models:
 
@@ -122,7 +96,7 @@ Generic models:
 [GPT-Neo 2.7B](https://cdn.discordapp.com/attachments/1042160561808482304/1088509745859670036/Screenshot_2023-03-23_10-08-45.png) | "Naive" preset with rep_penalty of 1.5 | Somehow as bad as I remember. It could just be the settings, though.
 [LLaMA 7B (HF)](https://cdn.discordapp.com/attachments/1042160561808482304/1087680050121429014/llama-7b-naive.png) | "Naive" preset | Naive preset plays it safe, but the responses are short. I notice LLaMA doesn't require repetition penalty as much as other models do; 1.0 is just fine here.
 [LLaMA 7B (HF)](https://cdn.discordapp.com/attachments/1042160561808482304/1087683927080177744/llama-7b-sphinx.png) | "Sphinx Moth" preset | The Sphinx Moth preset is the opposite: the responses are lengthy yet very risk-taking (it hallucinated websites that don't exist, but I just went with it). I might need to find a preset that's kind of in-between.
-[LLaMA 13B (GPTQ)](https://cdn.discordapp.com/attachments/1092245228028706867/1092524304811442176/Screenshot_2023-04-03_12-01-06.png) | "Naive" preset | Unusual case. I had to use GPTQ and a quantized version of the model to run it on my hardware (in my experience, LLaMA 7B GPTQ gave worse results than HF). So far, this one does the best job at following the character's introduction prompt (as Alice introduces herself as a fairy). The results are decent, but I feel like "Naive" keeps it too safe.
+[LLaMA 13B (GPTQ)](https://cdn.discordapp.com/attachments/1092245228028706867/1092524304811442176/Screenshot_2023-04-03_12-01-06.png) | "Naive" preset | Unusual case. I had to use GPTQ and a quantized version of the model to run it on my hardware. I feel like GPTQ gives worse results than HF for LLaMA 7B; maybe it's a settings thing or something? Well, either way, this one does the best job at following the character's introduction prompt (as Alice introduces herself as a fairy). The results are decent, but I feel like "Naive" keeps it too safe.
 [LLaMA 13B (GPTQ)](https://cdn.discordapp.com/attachments/1092245228028706867/1092528952691666955/Screenshot_2023-04-03_12-19-48.png) | [Custom preset](https://cdn.discordapp.com/attachments/1092245228028706867/1092526311114821652/Screenshot_2023-04-03_12-09-21.png) | Results are great, but need further tweaking.
 [LLaMA 13B (GPTQ)](https://cdn.discordapp.com/attachments/1092245228028706867/1092530174760849512/Screenshot_2023-04-03_12-24-42.png) | Custom preset | I've turned up top-p to 1.0. The responses seem longer, but it went off the rails REAL quick.
 [LLaMA 13B (GPTQ)](https://cdn.discordapp.com/attachments/1092245228028706867/1092533241375883375/Screenshot_2023-04-03_12-36-50.png) | Custom preset | To make up for it, I lowered the temperature to 0.6 and raised the repetition penalty to 1.05. Temperature might need to be lowered some more since it keeps making up new things, but that's to be expected with the little information I've given the AI. (I think top-k 1.0 contributes to longer messages at the cost of making more assumptions?)
@@ -144,7 +118,7 @@ Chat-friendly models:
 [ConvoGPT 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1088505891294302299/Screenshot_2023-03-23_09-53-35.png) | GPT-J 6B | "Default" preset | Short responses, but never goes off-topic. I might retest ConvoGPT 6B soon with a better prompt.
 [ConvoGPT 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1088507680093642902/Screenshot_2023-03-23_10-00-38.png) | GPT-J 6B | "Sphinx Moth" preset | Responses are a little longer. High temperature means it also goes off-topic.
 [Pygmalion 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1090065571225272421/image.png) | GPT-J 6B | [Pygmalion preset](https://github.com/oobabooga/text-generation-webui/blob/3ffd7d36fd2a268367b73a5601404319841222e1/presets/Pygmalion.txt) | Experiment 2, the current "main" version. This is the first time I give Pygmalion a proper test, and so far it surprised me.
-[Pygmalion 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1090073097073328228/image.png) | GPT-J 6B | Pygmalion preset | Experiment 7, Part 4/10. Pretty good!
+[Pygmalion 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1090073097073328228/image.png) | GPT-J 6B | Pygmalion preset | Experiment 7, Part 4/10. Pretty good! I personally prefer this model (and convoGPT) the most for AI conversation.
 
 [Prompts used.](https://pastebin.com/1G816dPQ)
 
@@ -155,8 +129,6 @@ For more information on generation quality and memory usage:
 **[[Memory and performance benchmark]](https://pastebin.com/VjJuRjMd)**
 
 **[[Memory usage (Oobabooga's UI)]](https://github.com/oobabooga/text-generation-webui/wiki/System-requirements)**
-
-* * *
 
 **The community's recommendations:**
 
@@ -176,11 +148,9 @@ For more information on generation quality and memory usage:
 
 If you don't speak English or instead prefer to speak in your native tongue, Oobabooga's text generation web UI has an extension supporting on-the-fly Google Translate so you can take advantage of the English-focused models. [This is a screenshot with Pythia 1.4B Deduped](https://cdn.discordapp.com/attachments/1042160561808482304/1079117202445303848/test.png) using the Google Translate extension for Japanese. The alternative would be to search for models in your native language (i.e. [Spanish](https://huggingface.co/models?pipeline_tag=text-generation&language=es&sort=downloads) or [Japanese](https://huggingface.co/models?pipeline_tag=text-generation&language=ja&sort=downloads) for starters).
 
-* * *
+## CHAT MODE: CREATE YOUR CHARACTER / BROWSE FOR OTHERS
 
-# CREATE YOUR CHARACTER / BROWSE FOR OTHERS
-
-**TL;DR: I believe these work best with TavernAI and Oobabooga with the Pygmalion model:**
+**I believe these work best with TavernAI and Oobabooga with the Pygmalion model:**
 
 - [Zoltan's "Character Creator"](https://zoltanai.github.io/character-editor/)
 
@@ -194,7 +164,7 @@ If you don't speak English or instead prefer to speak in your native tongue, Oob
 
 - [BotPrompts.net](https://botprompts.net/) (NSFW) (found on /aicg/)
 
-**The following is my own guide, and applies to KoboldAI and non-Pygmalion models.**
+**The following is my own guide, and applies to KoboldAI and non-Pygmalion models (LLaMA seems to follow them the best).**
 
 There are two primary methods to create characters (let's call her "Alice" for the sake of this example). You type these in the model's "memory" or "context":
 
@@ -224,19 +194,17 @@ Or something a little more IRC-like, but I haven't done any testing:
 >
 > *Alice entered the chat.*
 
-* * *
+## MODEL SETTINGS
 
-# MODEL SETTINGS
-
-**TL;DR: You can influence how the models generate by changing your settings. For well-supported models, try the defaults. If not the defaults, try the presets (I've had talkative -- and at times, unpredictable -- results with Sphinx Moth and Ouroburos while testing Erebus 2.7B, ConvoGPT 6B and Pythia 12B Deduped). But if you're a DIY user, tweak with the settings, which I describe to the best of my knowledge in this section.**
+You can influence how the models generate by changing your settings. For well-supported models, try the defaults. If not the defaults, try the presets.
 
 This guide focuses on the settings present in KoboldAI/TavernAI (via KAI). They're also available in the Text Generation UI, but instead go by their [Huggingface codenames](https://huggingface.co/docs/transformers/main_classes/text_generation#transformers.GenerationConfig).
 
-- **"Temperature"** (`temperature`), which affects how creative the AI's responses are. If the AI plays it too safe for you, turn it up. If the AI is too chaotic, turn it down. On KoboldAI, I find 0.5-0.7 a good balance for GPT-Neo and OPT. On oobabooga's text UI, I was able to get good results as high as 2.0 using larger Pythia models just as long as `top-k` is enabled (without it I get word salad).
+- **"Temperature"** (`temperature`), which affects how creative the AI's responses are. If the AI plays it too safe for you, turn it up. If the AI is too chaotic, turn it down. On KoboldAI, I find 0.5-0.7 a good balance for GPT-Neo and OPT. On Oobabooga's, I was able to get good results as high as 2.0 using larger Pythia models just as long as `top-k` is enabled (without it I get word salad).
 
-- **"Repetition penalty"** (`repetition_penalty`). If you find the AI repeating you or itself, turn it up and regenerate. If the AI starts spouting random garbage like a run-on sentence, turn it down and regenerate. Sometimes, you may want to tweak it just to give the AI a bit more diversity even if it isn't repeating a sentence. Back when I used KoboldAI I found 1.75-2.0 to be good for GPT-Neo 2.7B, 1.2 to be good for GPT-J, 1.1 to be good for OPT, and smaller values (between 1.0 to 1.1) to be good for Pythia Deduped.
+- **"Repetition penalty"** (`repetition_penalty`). If you find the AI repeating you or itself, turn it up and regenerate. If the AI starts spouting random garbage like a run-on sentence, turn it down and regenerate. Sometimes, you may want to tweak it just to give the AI a bit more diversity even if it isn't repeating a sentence. I found 1.5-2.0 to be good for GPT-Neo 2.7B, 1.2 to be good for GPT-J, 1.1 to be good for OPT, and smaller values (between 1.0 to 1.1) to be good for Pythia Deduped and LLaMA.
 
-- **"Context Tokens"** (KoboldAI) refers to how much of the conversation ("tokens") the AI will remember. [A token is about ~4 characters.](https://old.reddit.com/r/NovelAi/comments/nohvse/can_someone_explain_what_exactly_is_an_ai_token/) The max is 2,048 (about ~8,000-9,000 characters) for all models (excluding GPT-2), and while you can increase the maximum tokens beyond that, it is unsupported and will likely break.
+- **"Context Tokens"** (KoboldAI) refers to how much of the conversation ("tokens") the AI will remember. [A token is about ~4 characters.](https://old.reddit.com/r/NovelAi/comments/nohvse/can_someone_explain_what_exactly_is_an_ai_token/) The max is 2,048 (about ~8,000-9,000 characters) for all models (excluding GPT-2 and the latest RWKV models), and while you can increase the maximum tokens beyond that, it is unsupported and will likely break.
 
 - **"Output Length"** (`max_new_tokens`) is the upper limit of how long the AI's response can be, in tokens.
 
@@ -246,9 +214,8 @@ This guide focuses on the settings present in KoboldAI/TavernAI (via KAI). They'
 
 - Others (such as top-p, top-k, top-a, and tail-free sampling) can also influence your output, but are difficult to explain. These settings all change which words the AI would predict next, I should think.
 
-* * *
-
-# [CONTRIBUTING](https://i.kym-cdn.com/photos/images/original/002/182/171/eb0.jpg)
+## CONTRIBUTING
+![I'm doing my part!](https://i.kym-cdn.com/photos/images/original/002/182/171/eb0.jpg)
 
 After doing quite a bit of research, [PygmalionAI actually has some documentation](https://rentry.org/pygmalion-ai) and [tells you how you can contribute your CharacterAI chatlogs](https://rentry.org/chatlog-dumping). You have the option whether or not you want to include your data as part of their private dataset, or a public dataset. You can help advance the effort this way and make their Pygmalion models functionally close to CharacterAI as it is now (minus the "Chat Errors"), even if the quality isn't perfectly on par.
 
@@ -256,9 +223,7 @@ If you have some Python knowledge, you could always contribute to the projects I
 
 And lastly, if you know how to finetune, have a dataset and the right hardware, you can contribute your own finetunes to [Hugging Face](https://huggingface.co/).
 
-* * *
-
-# SPECIAL THANKS!
+## SPECIAL THANKS!
 
 *I've created this section to give a shout-out to those who I feel my post wouldn't have been the same without:*
 
