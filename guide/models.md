@@ -22,21 +22,23 @@ Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 **LLaMA** | 7B to 65B | Not yet | Not yet | [Alpaca 7B](https://github.com/tloen/alpaca-lora) / [GPT4All](https://github.com/nomic-ai/gpt4all) / [Vicuna](https://vicuna.lmsys.org/) | *New model by Meta AI. Officially only available to researchers. AI evaluation says 13B is on par with GPT-3 175B, and 7B overtakes even Pythia 12B and OPT 66B. The Transformers version of the model [is available via reuploads](https://huggingface.co/models?search=llama%20hf), and the llama.cpp version can be used by downloading [one of these](https://huggingface.co/maderix/llama-65b-4bit/tree/main), a tokenizer from [here](https://huggingface.co/decapoda-research/llama-7b-hf/tree/main) or [here](https://huggingface.co/nyanko7/LLaMA-7B/tree/main), and converting them.*
 **Cerebras-GPT** | [111M](https://huggingface.co/cerebras/Cerebras-GPT-111M) to [13B](https://huggingface.co/cerebras/Cerebras-GPT-13B) | Not yet | Not yet | Not yet | *New model in general. According to their description their models use The Pile much like GPT-Neo, Pythia and RWKV, but it isn't deduplicated. It seems to underperform according to evaluations, but I haven't tried it myself.*
 
-[I've also compiled a list of model scoring (evaluation).](https://pastebin.com/M3uESsyZ)
+[I've also compiled a model scoring list (evaluation).](https://pastebin.com/M3uESsyZ)
 
-### Jeez! Which one should I pick?
+### That's a lot! Which one should I pick?
 
 _Depends on what you want to do with your AI, and what your system requirements are._
 
 _If you wanna pick by series:_
 
-- _A generic Pythia (well-supported) or LLaMA (best quality) model if you want something flexible, like GPT-3_
+- _For generic, flexible models, I recommend LLaMA (best quality) or Pythia Deduped (best compatibility and publicly available)_
 
-- _Janeway or Erebus (NSFW) if you want a co-writer, like NovelAI_
+- _For novel/co-writer finetunes, I recommend Janeway or Erebus (NSFW)_
 
-- _Nerys if you want a text adventure, like AI Dungeon_
+- _For AI Dungeon-style text adventures, I recommend Nerys_
 
-- _Pygmalion (NSFW) and Erebus (NSFW) if you want a chatting partner, like Replika or CharacterAI_
+- _For a CharacterAI/Replika-style chatting partner, I recommend Pygmalion (NSFW) and Erebus (NSFW)_
+
+- _For a ChatGPT-style chatting partner, I currently recommend Vicuna_
 
 _If you wanna pick by size:_
 
