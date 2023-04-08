@@ -1,8 +1,10 @@
+![image](https://user-images.githubusercontent.com/55674863/230695241-04ebc080-8fff-4d7e-9e8c-8d5168390150.png)
+
 # Frontends
 
 ### What are frontends?
 
-_A frontend is the interface you use to run and interact with AI models. To clear up any confusion, I'll split them into two categories: standalone and proxy._
+_A frontend is the interface you use to run and interact with your AI models. To save any confusion, I'll split them into two categories: standalone and proxy._
 
 _**Standalone** frontends work on their own and exist to make it easier to interact with the models. Examples of standalone frontends include:_
 
