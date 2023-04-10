@@ -16,7 +16,7 @@ _**Standalone** frontends work on their own and exist to make it easier to inter
 _**Proxy** frontends depend on a standalone frontend running in the background so it can connect to it. Usually they connect to KoboldAI's API, but sometimes it also includes online services such as OpenAI or NovelAI. These are usually developed so you could use the standalone frontends in the style of a chat interface. Examples of proxy frontends include:_
 
 - *[TavernAI](https://github.com/TavernAI/TavernAI)* - [Google Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb)
-- *[Silly TavernAI Mod](https://github.com/SillyLossy/TavernAI)* - [Google Colab](https://colab.research.google.com/github/SillyLossy/TavernAI-extras/blob/main/colab/GPU.ipynb)
+- *[SillyTavern](https://github.com/Cohee1207/SillyTavern)* - [Google Colab](https://colab.research.google.com/github/SillyLossy/TavernAI-extras/blob/main/colab/GPU.ipynb)
 - *[Project Akiko](https://github.com/Project-Akiko/Project-Akiko)*
 - *[miku.gg](https://github.com/miku-gg/miku)*
 - *[LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)*
