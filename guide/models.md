@@ -12,7 +12,7 @@ _Models come in all shapes and sizes, and you will see how they differ depending
 
 _I note 10 different freely-downloadable model series, starting at 2019. These are sorted in chronological order._
 
-_My older version (which includes model finetunes) is still available [at this link](https://github.com/Crataco/ai-guide/blob/main/guide/original.md#detailed-information)._
+_Looking for model finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/bonus.md)._
 
 Series | Sizes | Dataset | License | My thoughts
 :--|:--:|:--:|:--:|:--:
