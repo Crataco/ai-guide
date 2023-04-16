@@ -34,15 +34,15 @@ Series | Sizes | Dataset | License | My thoughts
 _Depends on what you want to do with your AI, and what your system requirements are._
 
 - _For generic, flexible models that can be used for many purposes, I recommend base LLaMA for its quality alone, or base [Pythia Deduped](https://huggingface.co/models?search=pythia%20deduped) for its compatibility and ease to find._
-
 - _For novel/co-writer finetunes, I recommend [Janeway](https://huggingface.co/models?sort=downloads&search=janeway) or [Erebus](https://huggingface.co/models?search=erebus) (NSFW)._
-
 - _For AI Dungeon-style text adventure finetunes, I recommend [Nerys](https://huggingface.co/models?search=nerys)._
-
 - _For CharacterAI/Replika-style chatting partner finetunes, I recommend [Pygmalion](https://huggingface.co/models?search=pygmalion) (NSFW)._
-
 - _For ChatGPT-esque assistant finetunes, I currently recommend [Vicuna](https://huggingface.co/models?search=vicuna)._
 
 _For system requirements, [here's a memory usage chart I've made](https://github.com/Crataco/ai-guide/blob/main/charts/memory-usage.md), and [another usage chart by Oobabooga](https://github.com/oobabooga/text-generation-webui/wiki/System-requirements). If you have a gaming computer (with NVIDIA cards being the best supported), you can fit the model entirely on the GPU itself, which will typically take up half as much video RAM as it does regular RAM, and be lightning fast. If you don't have enough VRAM, you can also split it between regular RAM and VRAM, but it will be much slower._
 
-_If you're an advanced user, you're likely to reduce system requirements quite a lot by looking into [4-bit quantization](https://github.com/oobabooga/text-generation-webui/wiki/LLaMA-model#4-bit-mode) and other backends such as [llama.cpp](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models), [RWKV](https://github.com/oobabooga/text-generation-webui/wiki/RWKV-model), and the wonderfully-coded yet closed-source [TextSynth Server](https://bellard.org/ts_server/). The first three guides I've linked just now assume you're using oobabooga's Text Generation Web UI, which at the moment feels like the frontend with the best support for these._
+_You can reduce system requirements significantly by looking into the following:_
+- _CPU users: llama.cpp, with 4-bit precision, which reduces the RAM usage by a ton - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models)_
+- _CPU and GPU users: RWKV model series, with 8-bit precision - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/wiki/RWKV-model)_
+- _GPU users: 4-bit precision via GPTQ - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/wiki/GPTQ-models-(4-bit-mode))_
+- _GPU users: 8-bit precision on Transformers - (`--load-in-8bit` in Oobabooga's UI)_
