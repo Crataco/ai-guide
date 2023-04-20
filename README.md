@@ -1,14 +1,16 @@
-*Version 1 of the AI guide is [still available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md).*
+*This is version 2 of the AI guide. Version 1 is [available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md).*
 
-![border](https://user-images.githubusercontent.com/55674863/230694971-ec6903fd-afea-4db9-957a-b382d39138ca.png)
+![clouds](https://user-images.githubusercontent.com/55674863/233225413-72efd34a-1cfa-4f49-b100-01d6c40287ec.jpg)
 
 # Crataco's Open-Source Text Generation AI Guide
 
-_Hello! This is a guide for Large Language Models (LLMs) that you can run on your own hardware. This includes open-source alternatives to Replika and CharacterAI, ChatGPT, GPT-3, and others._
+_This is a guide for Large Language Models (LLMs) that you can run on your own hardware. This includes alternatives to Replika and CharacterAI, ChatGPT, GPT-3, and others._
 
-- _[Frontends / the interface](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md)_
+- _[Click here for **frontends**](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md)_
 
-- _[Models / the AI](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)_
+- _[Click here for **model series** and **recommendations**](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)_
+
+- _[Click here for **model finetunes**](https://github.com/Crataco/ai-guide/blob/main/guide/bonus.md)_
 
 * * *
 
