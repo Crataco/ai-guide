@@ -10,6 +10,8 @@ _Models come in all shapes and sizes, and you will see how they differ depending
 
 ### How many models are there?
 
+_**(If you want a broader list including model evaluation results, [see here](https://docs.google.com/spreadsheets/d/1kT4or6b0Fedd-W_jMwYpb63e1ZR3aePczz3zlbJW-Y4/edit#gid=741531996) (credit goes to [u/randomfoo2 on Reddit](https://old.reddit.com/r/LocalAI/comments/12smsy9/list_of_public_foundational_models_fine_tunes/))**_
+
 _I note 12 downloadable, usable model series, starting at 2019. These are sorted in chronological order. There may be more (like Facebook/Meta's XGLM)._
 
 _Looking for model finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/bonus.md)._
@@ -29,11 +31,9 @@ Series | Sizes | Dataset | License | My thoughts
 **RedPajama** | [???](https://www.together.xyz/blog/redpajama) | [Training data](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T) | ??? | *2023 - By Together. Intends to be a reproduction of Meta's LLaMA with an open license. It isn't out yet, so no one can say for sure how it will perform.*
 **StableLM** | [Alphas of 3B, 7B currently available; 15B, 30B, 65B, 175B to come later](https://github.com/stability-AI/stableLM/) | "a new experimental dataset built atop The Pile [...] three times larger" | [CC BY-SA 4.0](https://huggingface.co/stabilityai/stablelm-base-alpha-3b) (base models) | *2023 - By StabilityAI. Like RedPajama, I added it to this list for completion, but being a very recent model it's still training and there are no official evaluation results comparing it to the previous in this list.*
 
-[[Model evaluations]](https://pastebin.com/M3uESsyZ)
-
 ### Okay, that's a lot! Which one should I pick?
 
-_Depends on what you want to do with your AI, and what your system requirements are._
+_Depends on what you want to do with your AI, and what your system requirements are. These are my recommendations:_
 
 - _For generic, flexible models that can be used for many purposes, I recommend base LLaMA for its quality alone, or base [Pythia Deduped](https://huggingface.co/models?search=pythia%20deduped) for its compatibility and ease to find._
 - _For novel/co-writer finetunes, I recommend [Janeway](https://huggingface.co/models?sort=downloads&search=janeway) or [Erebus](https://huggingface.co/models?search=erebus) (NSFW)._
