@@ -4,11 +4,11 @@ _Here's a little extra section. It's not my primary focus, but I wanted to add i
 
 ### What are finetunes?
 
-_Finetunes are AI models trained using another model as a base. This gives it specific knowledge and a leaning towards a specific subject or format._
+_Finetunes are AI models trained using another model as a base. This gives it specific knowledge and a leaning towards a specific subject or format while taking significantly less time to train than a model from scratch._
 
-_Here is my list of finetunes based on the model's target subject. Finetunes aren't exclusive to one use case, though. You can still use, say, a novel-friendly model for chatting purposes, with varying degrees of success._
+_Here is my list of finetunes based on the model's expertise. Finetunes aren't exclusive to one use case, though. You can still use, say, a novel-friendly model for chatting purposes, with varying degrees of success._
 
-_Expect this to be messier than my other lists, and I only include notable finetunes. The links may either link to the homepage or the direct download, so be warned._
+_Expect this to be messier and more opinionated than my model list, and I only include notable finetunes. The links may either link to the homepage or the direct download, so be warned._
 
 ***
 
@@ -30,12 +30,12 @@ Open Assistant | Pythia Deduped | [All](https://huggingface.co/OpenAssistant) | 
 Alpaca-LoRA | LLaMA | [7B](https://huggingface.co/chansung/gpt4-alpaca-lora-7b), [13B](https://huggingface.co/chansung/gpt4-alpaca-lora-13b), [30B](https://huggingface.co/chansung/gpt4-alpaca-lora-30b), [65B](https://huggingface.co/chansung/alpaca-lora-65b) | _I can't comment too much on this one, but from what I understand, Alpaca was originally a project by Stanford researchers that wasn't released to the public, and this is an open-source replication. As far as I know it's trained on data from ChatGPT conversations._
 GPT4All | LLaMA | [7B](https://github.com/nomic-ai/gpt4all#original-gpt4all-model-based-on-gpl-licensed-llama) | _Filtered/unfiltered. No comment. [They have their own website, though](https://gpt4all.io/index.html)._
 GPT4All-J | GPT-J | [6B](https://github.com/nomic-ai/gpt4all#gpt4all-j-an-apache-2-licensed-gpt4all-model) | _Wait, there's a GPT-J one?_
-GPT-4 x Alpaca | LLaMA | [13B](https://huggingface.co/chavinlo/gpt4-x-alpaca) | _Unfiltered. This is my favorite model right now. This one follows instructions **very** well, and I've had great success using it for chatbots and text adventures. [Henk717 of KoboldAI also expressed its support for writing fiction](https://old.reddit.com/r/LocalLLaMA/comments/12lksqo/ai_showdown_gpt4xalpaca_vs_vicuna_gpt4_as_the/jg7imd3/) and [NSFW/chat content](https://cdn.discordapp.com/attachments/1092245228028706867/1097350145546387456/Screenshot_2023-04-16_19-37-32.png). In my experience, though, while it's great at chat content, NSFW is hit-and-miss. Try it yourself!_
-Vicuna | LLaMA | [7B](https://huggingface.co/lmsys/vicuna-7b-delta-v1.1), [13B](https://huggingface.co/lmsys/vicuna-13b-delta-v1.1) | _Filtered. One of the few LLaMA finetunes I've tested, and it feels like a very ChatGPT-like model. [They have their own website](https://vicuna.lmsys.org/)._
-Koala | LLaMA | [All (7B & 13B)](https://huggingface.co/young-geng/koala/tree/main) | _Filtered. No comment. [They have their own website](https://bair.berkeley.edu/blog/2023/04/03/koala/)._
+GPT-4 x Alpaca | LLaMA | [13B](https://huggingface.co/chavinlo/gpt4-x-alpaca) | _Unfiltered. In my opinion this is a great model for conversation and/or roleplay as it follows instructions and character descriptions **very** well. [Henk717 of KoboldAI also expressed its support for writing fiction](https://old.reddit.com/r/LocalLLaMA/comments/12lksqo/ai_showdown_gpt4xalpaca_vs_vicuna_gpt4_as_the/jg7imd3/) and [NSFW/chat content](https://cdn.discordapp.com/attachments/1092245228028706867/1097350145546387456/Screenshot_2023-04-16_19-37-32.png). In my experience, NSFW is hit-and-miss and it doesn't really use erotic "language" unless specifically pushed to. Try it yourself!_
+Vicuna | LLaMA | [7B](https://huggingface.co/lmsys/vicuna-7b-delta-v1.1), [13B](https://huggingface.co/lmsys/vicuna-13b-delta-v1.1) | _Filtered [(but there's an "uncensored" one?](https://huggingface.co/eachadea/ggml-vicuna-7b-1.1/tree/main). One of the few LLaMA finetunes I've tested. It's my favorite when it comes to looking for a genuine ChatGPT alternative. [They have their own website](https://vicuna.lmsys.org/)._
+Koala | LLaMA | [All (7B & 13B)](https://huggingface.co/young-geng/koala/tree/main) | _Filtered (in my experience). No comment. [They have their own website](https://bair.berkeley.edu/blog/2023/04/03/koala/)._
 Dolly V1 | GPT-J | [6B](https://huggingface.co/databricks/dolly-v1-6b) | _No comment._
-Dolly V2 | Pythia Deduped | [3B](https://huggingface.co/databricks/dolly-v2-3b), [7B](https://huggingface.co/databricks/dolly-v2-7b), [14B](https://huggingface.co/databricks/dolly-v2-12b) | _No comment._
-Instruct 12B | Pythia Deduped | [12B](https://huggingface.co/hakurei/instruct-12b) | _An instruct model trained by Hakurei._
+Dolly V2 | Pythia Deduped | [3B](https://huggingface.co/databricks/dolly-v2-3b), [7B](https://huggingface.co/databricks/dolly-v2-7b), [14B](https://huggingface.co/databricks/dolly-v2-12b) | _Heard a lot about this one. For now, no comment._
+Instruct 12B | Pythia Deduped | [12B](https://huggingface.co/hakurei/instruct-12b) | _An instruct model trained by Hakurei. No comment._
 
 ### Chat-friendly (Replika / CharacterAI)
 Finetune | Base model | Link | Thoughts
@@ -64,3 +64,4 @@ Remix | Originals | Link
 :--:|:--:|:--:
 Nerybus | Erebus, Nerys | [2.7B](https://huggingface.co/KoboldAI/OPT-2.7B-Nerybus-Mix), [6.7B](https://huggingface.co/KoboldAI/OPT-6.7B-Nerybus-Mix), [13B](https://huggingface.co/KoboldAI/OPT-13B-Nerybus-Mix)
 Pygway | Pygmalion, Janeway, ppo_hh_gpt-j | [6B](https://huggingface.co/KoboldAI/PPO_Pygway-6b-Mix)
+Alpacino | Alpaca, CoT, Storytelling | [13B](https://huggingface.co/digitous/Alpacino13b), [30B](https://huggingface.co/digitous/Alpacino30b)
