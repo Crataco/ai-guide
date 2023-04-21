@@ -20,6 +20,7 @@ _**Proxy** frontends depend on a standalone frontend running in the background s
 - *[Project Akiko](https://github.com/Project-Akiko/Project-Akiko)*
 - *[miku.gg](https://github.com/miku-gg/miku)*
 - *[LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)*
+- *[Magi LLM GUI](https://github.com/shinomakoi/magi_llm_gui)*
 
 _Browse through the frontends and find the one you like. I personally prefer Oobabooga's Text Generation Web UI due to its bleeding-edge features, and the Silly TavernAI Mod because of its extensions and settings._
 
