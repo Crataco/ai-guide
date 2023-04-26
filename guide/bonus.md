@@ -23,7 +23,7 @@ Nerys V1 | Fairseq | [2.7B](https://huggingface.co/KoboldAI/fairseq-dense-2.7B-N
 Nerys V2 | OPT | [350M](https://huggingface.co/KoboldAI/OPT-350M-Nerys-v2), [2.7B](https://huggingface.co/KoboldAI/OPT-2.7B-Nerys-v2), [6.7B](https://huggingface.co/KoboldAI/OPT-6B-nerys-v2), [13B](https://huggingface.co/KoboldAI/OPT-13B-Nerys-v2) | _Trained by Mr. Seeker on CYOA stories, ebooks, and light novels. Same as before, but cleaned._
 
 ### Assistant-friendly (ChatGPT / Bard)
-*It should be easy to find reuploads and mirror links of these on [Huggingface](https://huggingface.co/). I don't know too much about the LLaMA community, so my commentary on these won't be thorough.*
+*It should be easy to find reuploads and mirror links of these on Huggingface. There's another list of models available at r/LocalLLaMA [(click here)](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_current_best_choices)*
 Finetune | Base model | Link | Thoughts
 :--:|:--:|:--:|:--:
 Open Assistant | Pythia Deduped / LLaMA | [All](https://huggingface.co/OpenAssistant) | _[The one I used was unfiltered](https://huggingface.co/Black-Engineer/llama-13b-pretrained-sft-do2-ggml-q4). This is a project by Open Assistant, which seems to be some sort of community or foundation dedicated to revolutionizing open-source text generation AI the same way Stable Diffusion revolutionzed open-source image generation. [Here's the link to their page](https://open-assistant.io/)._
