@@ -8,7 +8,7 @@ _Finetunes are AI models trained using another model as a base. This gives it sp
 
 _Here is my list of finetunes based on the model's expertise. Finetunes aren't exclusive to one use case, though. You can still use, say, a novel-friendly model for chatting purposes, with varying degrees of success._
 
-_Expect this to be messier and more opinionated than my model list, and I only include finetunes I find notable. The links may either link to the homepage or the direct download, so be warned._
+_Expect this to be messier and more opinionated than my main model list, and I only include finetunes I find notable. The links may either link to the homepage or the direct download, so be warned._
 
 ***
 
@@ -36,13 +36,14 @@ Koala | LLaMA | [All (7B & 13B)](https://huggingface.co/young-geng/koala/tree/ma
 Dolly V1 | GPT-J | [6B](https://huggingface.co/databricks/dolly-v1-6b) | _No comment._
 Dolly V2 | Pythia Deduped | [3B](https://huggingface.co/databricks/dolly-v2-3b), [7B](https://huggingface.co/databricks/dolly-v2-7b), [14B](https://huggingface.co/databricks/dolly-v2-12b) | _Heard a lot about this one. For now, no comment._
 Instruct 12B | Pythia Deduped | [12B](https://huggingface.co/hakurei/instruct-12b) | _An instruct model trained by Hakurei. No comment._
+WizardLM | LLaMA | 7B [(HF)](https://huggingface.co/TheBloke/wizardLM-7B-HF) [(GGML)](https://huggingface.co/TheBloke/wizardLM-7B-GGML) | _An instruct model. "Although on our complexity-balanced test set, WizardLM-7B outperforms ChatGPT in the high-complexity instructions, it still lag behind ChatGPT on the entire test set, and we also consider WizardLM to still be in a baby state. This repository will continue to improve WizardLM, train on larger scales, add more training data, and innovate more advanced large-model training methods."_
 
 ### Chat-friendly (Replika / CharacterAI)
 Finetune | Base model | Link | Thoughts
 :--:|:--:|:--:|:--:
 c1-6B | GPT-Neo, GPT-J | Down | _Early chatbot model trained by Hakurei on dialogue and Discord chatlogs. There were both a 1.3B and 6B available. It was later removed [due to privacy concerns](https://cdn.discordapp.com/attachments/1092245228028706867/1096634323718914068/Screenshot_2023-04-14_20-12-52.png). The repository used to reproduce the dataset is [still available here](https://github.com/peng-kevin/convo-dataset)._
 convo-6B | GPT-J | Down | _Successor of c1. There was a 6B available, but was taken down._
-convoGPT | GPT-Neo, GPT-J | [125M](https://huggingface.co/hakurei/convogpt-staging/tree/main/125m-uft), [1.3B](https://huggingface.co/hakurei/convogpt-staging/tree/main/1.3b-uft), [2.7B](https://huggingface.co/hakurei/convogpt-staging/tree/main/2.7b-uft), [6B](https://huggingface.co/hakurei/convogpt-staging/tree/main/6b-uft) | _New project by Hakurei. It's good for chatting performance, but public documentation is scarce._
+convoGPT | GPT-Neo, GPT-J | [125M](https://huggingface.co/hakurei/convogpt-staging/tree/main/125m-uft), [1.3B](https://huggingface.co/hakurei/convogpt-staging/tree/main/1.3b-uft), [2.7B](https://huggingface.co/hakurei/convogpt-staging/tree/main/2.7b-uft), [6B](https://huggingface.co/hakurei/convogpt-staging/tree/main/6b-uft) | _New project by Hakurei. It has good chatting performance, but public documentation is scarce._
 Pygmalion | OPT, Pythia Deduped, GPT-Neo, GPT-J | [350M](https://huggingface.co/PygmalionAI/pygmalion-350m), [1.3B](https://huggingface.co/PygmalionAI/pygmalion-1.3b), [2.7B](https://huggingface.co/PygmalionAI/pygmalion-2.7b), [6B](https://huggingface.co/PygmalionAI/pygmalion-6b) | _The most popular chatbot model on this list. Its training data consists of a mix between user-contributed CharacterAI chatlogs and other dialogue, whether real or machine-generated._
 
 ### Novel-friendly (NovelAI)
