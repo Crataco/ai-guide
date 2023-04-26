@@ -26,7 +26,7 @@ Nerys V2 | OPT | [350M](https://huggingface.co/KoboldAI/OPT-350M-Nerys-v2), [2.7
 *It should be easy to find reuploads and mirror links of these on [Huggingface](https://huggingface.co/). I don't know too much about the LLaMA community, so my commentary on these won't be thorough.*
 Finetune | Base model | Link | Thoughts
 :--:|:--:|:--:|:--:
-Open Assistant | Pythia Deduped | [All](https://huggingface.co/OpenAssistant) | _This is a project by Open Assistant, which seems to be some sort of community or foundation dedicated to revolutionizing open-source text generation AI the same way Stable Diffusion revolutionzed open-source image generation. [Here's the link to their page](https://open-assistant.io/)._
+Open Assistant | Pythia Deduped / LLaMA | [All](https://huggingface.co/OpenAssistant) | _This is a project by Open Assistant, which seems to be some sort of community or foundation dedicated to revolutionizing open-source text generation AI the same way Stable Diffusion revolutionzed open-source image generation. [Here's the link to their page](https://open-assistant.io/)._
 Alpaca-LoRA | LLaMA | [7B](https://huggingface.co/chansung/gpt4-alpaca-lora-7b), [13B](https://huggingface.co/chansung/gpt4-alpaca-lora-13b), [30B](https://huggingface.co/chansung/gpt4-alpaca-lora-30b), [65B](https://huggingface.co/chansung/alpaca-lora-65b) | _I can't comment too much on this one, but from what I understand, Alpaca was originally a project by Stanford researchers that wasn't released to the public, and this is an open-source replication. As far as I know it's trained on data from ChatGPT conversations._
 GPT4All | LLaMA | [7B](https://github.com/nomic-ai/gpt4all#original-gpt4all-model-based-on-gpl-licensed-llama) | _Filtered/unfiltered. No comment. [They have their own website, though](https://gpt4all.io/index.html)._
 GPT4All-J | GPT-J | [6B](https://github.com/nomic-ai/gpt4all#gpt4all-j-an-apache-2-licensed-gpt4all-model) | _Wait, there's a GPT-J one?_
@@ -36,7 +36,7 @@ Koala | LLaMA | [All (7B & 13B)](https://huggingface.co/young-geng/koala/tree/ma
 Dolly V1 | GPT-J | [6B](https://huggingface.co/databricks/dolly-v1-6b) | _No comment._
 Dolly V2 | Pythia Deduped | [3B](https://huggingface.co/databricks/dolly-v2-3b), [7B](https://huggingface.co/databricks/dolly-v2-7b), [14B](https://huggingface.co/databricks/dolly-v2-12b) | _Heard a lot about this one. For now, no comment._
 Instruct 12B | Pythia Deduped | [12B](https://huggingface.co/hakurei/instruct-12b) | _An instruct model trained by Hakurei. No comment._
-WizardLM | LLaMA | 7B [(HF)](https://huggingface.co/TheBloke/wizardLM-7B-HF) [(GGML)](https://huggingface.co/TheBloke/wizardLM-7B-GGML) | _An instruct model. "Although on our complexity-balanced test set, WizardLM-7B outperforms ChatGPT in the high-complexity instructions, it still lag behind ChatGPT on the entire test set, and we also consider WizardLM to still be in a baby state. This repository will continue to improve WizardLM, train on larger scales, add more training data, and innovate more advanced large-model training methods."_
+WizardLM | LLaMA | 7B [(HF)](https://huggingface.co/TheBloke/wizardLM-7B-HF) [(GGML)](https://huggingface.co/TheBloke/wizardLM-7B-GGML) | _An instruct model with [promising results](https://old.reddit.com/r/LocalLLaMA/comments/12z9znh/new_7b_llama_model_wizardlm_now_available/), but unfortunately filtered during my testing._
 
 ### Chat-friendly (Replika / CharacterAI)
 Finetune | Base model | Link | Thoughts
