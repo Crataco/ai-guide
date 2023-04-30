@@ -14,7 +14,7 @@ _**(If you want a broader list including model evaluation results, [see here](ht
 
 _I note 12 model series (including upcoming ones) starting at 2019. These are sorted in chronological order. There may be more (like Facebook/Meta's XGLM), but they aren't notable enough to mention if it's not popular nor are there many finetunes for them._
 
-_Looking for model finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/bonus.md)._
+_Looking for model finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)._
 
 Series | Sizes | Dataset | License | My thoughts
 :--|:--:|:--:|:--:|:--:
