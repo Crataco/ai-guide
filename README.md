@@ -2,7 +2,8 @@
 
 ![clouds](https://user-images.githubusercontent.com/55674863/233225413-72efd34a-1cfa-4f49-b100-01d6c40287ec.jpg)
 
-# Crataco's Open-Source Text Generation AI Guide
+# Open-Source Text Generation AI Guide
+_<sup>Written by Crataco (at the moment).</sup>_
 
 _This is a guide for Large Language Models (LLMs) that you can run on your own hardware. This includes alternatives to Replika and CharacterAI, ChatGPT, GPT-3, and others._
 
