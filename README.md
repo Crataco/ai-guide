@@ -11,7 +11,7 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 
 - _[Click here for **model series** and **recommendations**](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)_
 
-- _[Click here for **model finetunes**](https://github.com/Crataco/ai-guide/blob/main/guide/bonus.md)_
+- _[Click here for **model finetunes**](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)_
 
 * * *
 
