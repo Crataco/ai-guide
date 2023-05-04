@@ -1,5 +1,7 @@
 # Crataco's first guide to local, unfiltered text generation AI.
 
+I consider this guide outdated as, outside of occasional updates, I officially stopped updating it on the 2nd of April, 2023. It's not completely obsolete, but you're unlikely to get any up-to-date information from here, as the AI world is developing rapidly. Blink once and ten models have came out.
+
 ### INTRODUCTION
 
 _This post will list AI frontends and models that can be downloaded and run on your own PC. It includes information on frontends, models, character creation, model settings, how to contribute, and interesting findings._
@@ -8,7 +10,7 @@ _These text generation AI can be open-source alternatives of the following you m
 
 - _Replika, Character.AI, Kajiwoto, Anima, Chai, SimSimi, Paradot, or Mitsuku (Kuki), if you're a chat user_
 - _AI Dungeon and NovelAI, if you prefer an adventure mode and/or co-writing_
-- _GPT-3, not by quality alone (unless LLaMA 13B's tests are to be believed), but by the flexibility it offers_
+- _GPT-3, not by quality alone (unless LLaMA 13B's initial evaluation tests are to be believed), but by the flexibility it offers_
 
 _You may also have an easier time understanding the vocabulary of this guide if you know about Stable Diffusion or NovelAI already._
 
@@ -42,11 +44,13 @@ There are other projects (such as [Gravital](https://github.com/johnnymcmike/Gra
 
 ## MODELS
 
+[(My second guide has up-to-date information.)](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)
+
 A model is the AI brain that generates your responses. Each model has different knowledge based on what data they were trained on. Bigger models are usually smarter, but require better hardware.
 
 **My recommendations:**
 
-- Jack-of-All-Trades (GPT-3) - [Pythia Deduped](https://huggingface.co/models?search=eleutherai/pythia%20deduped) and [LLaMA](https://huggingface.co/models?search=llama%20hf)
+- Jack-of-All-Trades (GPT-3) - [LLaMA](https://huggingface.co/models?search=llama%20hf) by quality, [Pythia Deduped](https://huggingface.co/models?search=eleutherai/pythia%20deduped) as the best one under a free license
 
 - Chatbot (Replika/CAI) - [Pygmalion](https://huggingface.co/PygmalionAI) (NSFW) / [Erebus](https://huggingface.co/models?sort=downloads&search=KoboldAI%2FErebus) (NSFW) / [ConvoGPT](https://huggingface.co/hakurei/convogpt-staging/tree/main)
 
@@ -67,8 +71,6 @@ For more clarification, there are different "types" of models. What I say is *ve
 - The **llama.cpp** type is currently exclusive to llama.cpp, but it has been included in [Oobabooga](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models) and a [Kobold-like interface](https://github.com/LostRuins/llamacpp-for-kobold). It's developed to work in "4-bit" on CPU, saving model space *and* memory usage. To the point that on my computer with 16GB RAM, I was able to run 7B and 13B without a problem (with 30B being my "upper limit"), which are models that I believe would consume *eight times as much* if it were Transformers-based.
 
 ### DETAILED INFORMATION
-
-[(My second guide has up-to-date information.)](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)
 
 Series | Generic model | Novel model | NSFW model | Chat model | My thoughts
 :--|:--:|:--:|:--:|:--:|:--:
