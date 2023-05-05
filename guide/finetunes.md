@@ -4,11 +4,11 @@ _Here's a little extra section. It's not my primary focus, but I wanted to add i
 
 ### What are finetunes?
 
-_Finetunes are AI models trained using another model as a base. This gives it specific knowledge and a leaning towards a specific subject or format while taking significantly less time to train than a model from scratch._
+Finetunes are AI models trained using another model as its base. This gives it specific knowledge and a leaning towards a specific subject or format while taking significantly less time to train than a model from scratch.
 
-_Here is my list of finetunes based on the model's expertise. Finetunes aren't exclusive to one use case, though. You can still use, say, a novel-friendly model for chatting purposes, with varying degrees of success._
+Here is my list of finetunes based on the model's expertise. Finetunes aren't exclusive to one use case, though. You can still use, say, a novel-friendly model for chatting purposes, with varying degrees of success.
 
-_Expect this to be messier and more opinionated than my main model list, and I only include finetunes I find notable. The links may either link to the homepage or the direct download, so be warned._
+Expect this to be messier and more opinionated than my main model list, and I only include finetunes I find notable. The links may either link to the homepage or the direct download, so be warned.
 
 ***
 
