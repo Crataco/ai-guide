@@ -37,6 +37,8 @@ Dolly V1 | GPT-J | [6B](https://huggingface.co/databricks/dolly-v1-6b) | _No com
 Dolly V2 | Pythia Deduped | [3B](https://huggingface.co/databricks/dolly-v2-3b), [7B](https://huggingface.co/databricks/dolly-v2-7b), [14B](https://huggingface.co/databricks/dolly-v2-12b) | _Heard a lot about this one. For now, no comment._
 Instruct 12B | Pythia Deduped | [12B](https://huggingface.co/hakurei/instruct-12b) | _An instruct model trained by Hakurei. No comment._
 WizardLM | LLaMA | 7B [(HF)](https://huggingface.co/TheBloke/wizardLM-7B-HF) [(GGML)](https://huggingface.co/TheBloke/wizardLM-7B-GGML) | _An instruct model with [promising results](https://old.reddit.com/r/LocalLLaMA/comments/12z9znh/new_7b_llama_model_wizardlm_now_available/), but unfortunately filtered during my testing._
+WizardVicunaLM | LLaMA | 13B [(HF)](https://huggingface.co/junelee/wizard-vicuna-13b) | _Intends to take the best practices of WizardLM and Vicuna and is said to achieve 97% of ChatGPT-3.5's performance according to its testing._
+LaMini-LM | Various | [61M to 1.5B](https://github.com/mbzuai-nlp/LaMini-LM#models) | _I'm amazed to see an instruct model series trained on top of the archaic GPT-2, among its many available architectures. This is one of the few options you have if you hope to run a ChatGPT-style model on a potato. [Its claims to achieving ChatGPT-level performance](https://old.reddit.com/r/MachineLearning/comments/1320hyh/p_lamini_rapidly_achieves_chatgpt_performance/) is kind of strange, though._
 
 ### Chat-friendly (Replika / CharacterAI)
 Finetune | Base model | Link | Thoughts
