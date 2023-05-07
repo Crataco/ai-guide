@@ -35,7 +35,11 @@ Series | Sizes | Dataset | License | My thoughts
 
 ### Which one should I choose?
 
-Depends on what you want to do with your AI, and what your system requirements are. These are my recommendations:
+Depends on what you want to do with your AI, and what your system requirements are. It seems the general place to check for LLaMA model recommendations are:
+- [r/LocalLLaMA wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_current_best_choices)
+- [/lmg/ rentry](https://rentry.org/lmg_models)
+
+These are my own recommendations (outdated):
 
 - For generic, flexible models that can be used for many purposes, I recommend base LLaMA and OpenLLaMA. Alternatively, [Pythia Deduped](https://huggingface.co/models?search=pythia%20deduped) has a wide range of model sizes, but is undertrained by today's standards.
 - For novel/co-writer finetunes, I recommend [Janeway](https://huggingface.co/models?sort=downloads&search=janeway) or [Erebus](https://huggingface.co/models?search=erebus) (NSFW), though I assume they're not the best-in-class today as they predate LLaMA.
@@ -46,7 +50,7 @@ Depends on what you want to do with your AI, and what your system requirements a
 For system requirements, [here's a memory usage chart I've made](https://github.com/Crataco/ai-guide/blob/main/charts/memory-usage.md), and [another usage chart by Oobabooga](https://github.com/oobabooga/text-generation-webui/wiki/System-requirements). [TheBloke's model reuploads also explain how much RAM you expect to require with them](https://huggingface.co/TheBloke/GPT4All-13B-snoozy-GGML). If you have a gaming computer (with NVIDIA cards having the best support), you can fit the model entirely on the GPU itself, which will typically take up half as much video RAM as it does regular RAM, and be lightning fast. If you don't have enough VRAM, you can also split it between regular RAM and VRAM, but it will be much slower.
 
 You can reduce system requirements significantly by looking into the following options:
-- **CPU users:** ggml-based projects, like [koboldcpp](https://github.com/LostRuins/koboldcpp) (backwards compatible with all llama.cpp models). It supports 4-bit, 5-bit, and 8-bit precision, which will drastically reduce RAM usage with negligible quality loss and make such models easier to run on the average PC. - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/llama.cpp-models.md)
+- **CPU users:** ggml-based projects, like [koboldcpp](https://github.com/LostRuins/koboldcpp) (backwards compatible with all llama.cpp models). It supports models "compressed" to 4-bit, 5-bit and 8-bit, which will drastically reduce RAM usage with negligible quality loss and make such models easier to run on the average PC. - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/llama.cpp-models.md)
 - **CPU and GPU users:** RWKV model series, with 8-bit precision - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/RWKV-model.md)
 - **GPU users:** 4-bit precision via GPTQ - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/GPTQ-models-(4-bit-mode).md)
 - **GPU users:** 8-bit precision on Transformers - (`--load-in-8bit` in Oobabooga's UI)
