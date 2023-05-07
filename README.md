@@ -17,7 +17,11 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 
 **NEWS:**
 
+- **2023-05-07:** [BluemoonRP](https://huggingface.co/reeducator/bluemoonrp-13b) and [Vicuna 13B Cocktail](https://huggingface.co/reeducator/vicuna-13b-cocktail) were released.
+
 - **2023-05-05:** [The RWKV project started training models on top of the RedPajama dataset](https://huggingface.co/BlinkDL/rwkv-4-pileplus).
+
+- **2023-05-05:** [GPT4All-13B-Snoozy](https://old.reddit.com/r/LocalLLaMA/comments/138szrl/new_llama_13b_model_from_nomicai_gpt4all13bsnoozy/) was released.
 
 - **2023-05-05:** [gpt4-x-vicuna 13B (based on LLaMA) was released by Nous Research](https://twitter.com/NousResearch/status/1654470228967817219) and [is available in both Transformers and GGML thanks to TheBloke](https://huggingface.co/TheBloke).
 
