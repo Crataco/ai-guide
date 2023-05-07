@@ -17,7 +17,7 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 
 **NEWS:**
 
-- **2023-05-07:** [BluemoonRP](https://huggingface.co/reeducator/bluemoonrp-13b) and [Vicuna 13B Cocktail](https://huggingface.co/reeducator/vicuna-13b-cocktail) were released.
+- **2023-05-07:** I just learned about [BluemoonRP](https://huggingface.co/reeducator/bluemoonrp-13b) and [Vicuna 13B Cocktail](https://huggingface.co/reeducator/vicuna-13b-cocktail).
 
 - **2023-05-05:** [The RWKV project started training models on top of the RedPajama dataset](https://huggingface.co/BlinkDL/rwkv-4-pileplus).
 
