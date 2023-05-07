@@ -1,4 +1,4 @@
-*This is version 2 of the AI guide. Version 1 is [available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md).*
+*This is version 2 of the AI guide. Version 1 is [available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md), which takes a crash course approach and has (outdated) advice on model parameters, settings, and [character creation](https://github.com/Crataco/ai-guide/blob/main/guide/original.md#chat-mode-create-your-character--browse-for-others).*
 
 ![clouds](https://user-images.githubusercontent.com/55674863/233225413-72efd34a-1cfa-4f49-b100-01d6c40287ec.jpg)
 
