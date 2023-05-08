@@ -154,13 +154,17 @@ If you don't speak English or instead prefer to speak in your native tongue, Oob
 
 ## CHAT MODE: CREATE YOUR CHARACTER / BROWSE FOR OTHERS
 
-**I believe these work best with TavernAI and Oobabooga with the Pygmalion model:**
+To create your own characters:
 
 - [Zoltan's "Character Creator"](https://zoltanai.github.io/character-editor/)
 
 - [oobabooga's Pygmalion Character Creator](https://oobabooga.github.io/character-creator.html)
 
 - [YuriFag's Pygmalion Character Creation Tips](https://rentry.org/PygTips) (NSFW)
+
+To download other people's characters:
+
+- [Character Hub](https://www.characterhub.org/) (NSFW)
 
 - [Pygmalion Character Card Gallery](https://booru.plus/+pygmalion) (NSFW)
 
