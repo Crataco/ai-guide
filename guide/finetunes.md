@@ -1,4 +1,4 @@
-_Here's a little extra section. It's not my primary focus, but I wanted to add it here for good measure._
+_Here's a little extra section I added for good measure. It's not my primary focus, so I can't promise it'll be clean or up-to-date; instead, I recommend the [r/LocalLLaMA wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_all_downloads) and [/lmg/ rentry](https://rentry.org/lmg_models) if you want to see what are the latest._
 
 # Finetunes
 
@@ -24,7 +24,7 @@ Nerys V2 | OPT | [350M](https://huggingface.co/KoboldAI/OPT-350M-Nerys-v2), [2.7
 
 ### Assistant-friendly (ChatGPT / Bard)
 *It should be easy to find reuploads and mirror links of these on Huggingface. There's another list of models available at r/LocalLLaMA [(click here)](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_current_best_choices)*
-*(I notice that in my testing with KoboldCpp and SillyTavern, sometimes the chat format breaks in these models when using them for chatting, missing the ":" symbol specifically. If this happens, I edit the response and cut off the part where the AI derails and talks as me.)*
+*(I notice that in my testing with KoboldCpp and SillyTavern, the chat format breaks every few messages, missing the ":" symbol specifically. If this happens, I edit the response and cut off the part where the AI derails and talks as me.)*
 Finetune | Base model | Link | Thoughts
 :--:|:--:|:--:|:--:
 Open Assistant | Pythia Deduped / LLaMA | [All](https://huggingface.co/OpenAssistant) | _[The one I used felt unfiltered](https://huggingface.co/Black-Engineer/llama-13b-pretrained-sft-do2-ggml-q4), but I heard it isn't. This is a project by Open Assistant, which seems to be some sort of community or foundation dedicated to revolutionizing open-source text generation AI the same way Stable Diffusion revolutionzed open-source image generation. [Here's the link to their page](https://open-assistant.io/)._
