@@ -17,7 +17,7 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 
 **NEWS:**
 
-- **2023-05-11:** [llama.cpp is dropping support for q4_2 and implementing changes that are said to possibly break compatibility with older models.](https://github.com/ggerganov/llama.cpp/pull/1405)
+- **2023-05-11:** [llama.cpp is dropping support for q4_2 and implementing changes](https://github.com/ggerganov/llama.cpp/pull/1405) that [break compatibility with models converted beforehand](https://github.com/ggerganov/llama.cpp/issues/1408).
 
 - **2023-05-10:** [WizardLM-13B-Uncensored was released by ehartford](https://old.reddit.com/r/LocalLLaMA/comments/13dem7j/wizardlm13buncensored/)
  
