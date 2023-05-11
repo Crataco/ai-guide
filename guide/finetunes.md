@@ -24,7 +24,8 @@ Nerys V2 | OPT | [350M](https://huggingface.co/KoboldAI/OPT-350M-Nerys-v2), [2.7
 
 ### Assistant-friendly (ChatGPT / Bard)
 *It should be easy to find reuploads and mirror links of these on Huggingface. There's another list of models available at r/LocalLLaMA [(click here)](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_current_best_choices)*
-*(I notice that in my testing with KoboldCpp and SillyTavern, the chat format breaks every few messages, missing the ":" symbol specifically. If this happens, I edit the response and cut off the part where the AI derails and talks as me.)*
+
+*(I notice that in my testing with KoboldCpp and SillyTavern that the chat format breaks every few messages, missing the ":" symbol specifically. I have not noticed this with Oobabooga's UI and SillyTavern.)*
 Finetune | Base model | Link | Thoughts
 :--:|:--:|:--:|:--:
 Open Assistant | Pythia Deduped / LLaMA | [All](https://huggingface.co/OpenAssistant) | _[The one I used felt unfiltered](https://huggingface.co/Black-Engineer/llama-13b-pretrained-sft-do2-ggml-q4), but I heard it isn't. This is a project by Open Assistant, which seems to be some sort of community or foundation dedicated to revolutionizing open-source text generation AI the same way Stable Diffusion revolutionzed open-source image generation. [Here's the link to their page](https://open-assistant.io/)._
