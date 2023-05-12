@@ -13,6 +13,10 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 
 - _[Click here for **model finetunes**](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)_
 
+_Alternative guides:_
+
+- _[Click here for **underlines' Awesome AI guide** which includes more in-depth information on model series, finetunes, and frontends](https://github.com/underlines/awesome-marketing-datascience/blob/master/awesome-ai.md)_
+
 * * *
 
 **NEWS:**
@@ -37,4 +41,4 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 
 * * *
 
-_<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, encouraging forks and pull requests just as long as proper credit is given._
+_<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, encouraging forks and pull requests (contributions) just as long as proper credit is given._
