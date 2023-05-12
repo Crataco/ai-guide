@@ -1,5 +1,7 @@
 ![image](https://user-images.githubusercontent.com/55674863/230696024-98ce9e16-f558-4402-ac43-0e7f960c118c.png)
 
+*([Here's another overview of the available base models, courtesy of u/randomfoo2 on Reddit](https://docs.google.com/spreadsheets/d/1kT4or6b0Fedd-W_jMwYpb63e1ZR3aePczz3zlbJW-Y4/edit#gid=741531996))*
+
 # Models
 
 ### What are models?
@@ -10,9 +12,9 @@ Models come in all shapes and sizes, and you will see how they differ depending 
 
 ### How many models are there?
 
-***(If you want a broader list including model evaluation results, [see here](https://docs.google.com/spreadsheets/d/1kT4or6b0Fedd-W_jMwYpb63e1ZR3aePczz3zlbJW-Y4/edit#gid=741531996) (credit goes to [u/randomfoo2 on Reddit](https://old.reddit.com/r/LocalAI/comments/12smsy9/list_of_public_foundational_models_fine_tunes/))***
-
 I note many different model series (including upcoming ones) starting at 2019. These are sorted in chronological order. There may be more (like Facebook/Meta's XGLM), but they aren't notable enough to mention if it's not popular nor are there many finetunes for them.
+
+My chart is very basic, but if you're looking for an extensive benchmark on the AI's reasoning and knowledge, [check out HuggingFaceH4's Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard).
 
 _Looking for model finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)._
 
