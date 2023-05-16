@@ -19,7 +19,7 @@ _Alternative guides:_
 
 * * *
 
-**NEWS:**
+**ARCHIVE:**
 
 - **2023-05-11:** [llama.cpp is dropping support for q4_2 and implementing changes](https://github.com/ggerganov/llama.cpp/pull/1405) that [break compatibility with models converted beforehand](https://github.com/ggerganov/llama.cpp/issues/1408).
 
