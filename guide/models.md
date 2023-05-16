@@ -1,22 +1,48 @@
 ![image](https://user-images.githubusercontent.com/55674863/230696024-98ce9e16-f558-4402-ac43-0e7f960c118c.png)
 
-*([Here's another overview of the available base models, courtesy of u/randomfoo2 on Reddit](https://docs.google.com/spreadsheets/d/1kT4or6b0Fedd-W_jMwYpb63e1ZR3aePczz3zlbJW-Y4/edit#gid=741531996))*
-
 # Models
 
 ### What are models?
 
-A model is your AI. Or to be more specific, its brain.
+A model is your AI's brain.
 
-Models come in all shapes and sizes, and you will see how they differ depending on how big it is, what data was used to train it, and what backend it uses (which most of the time is [Transformers](https://github.com/huggingface/transformers), but recently has been [ggml](https://github.com/ggerganov/ggml)-based backends like [llama.cpp](https://github.com/ggerganov/llama.cpp)).
+Models come in all shapes and sizes. Not all models are alike, as they're influenced by how big they are (in parameters), the data they were trained on, and the backend they use (which most of the time is [Transformers](https://github.com/huggingface/transformers), but recently has been [GGML](https://github.com/ggerganov/ggml) paired with frontends like [llama.cpp](https://github.com/ggerganov/llama.cpp)).
+
+* * *
+
+Now, to get the more important questions out of the way:
+
+### What are the best models available?
+
+For the best models available, check out the [r/LocalLLaMA wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_models) and the [/lmg/ rentry](https://rentry.org/lmg_models).
+
+### What should I choose?
+
+If you have an average computer, I recommend the [KoboldCpp](https://github.com/LostRuins/koboldcpp) frontend with a GGML-based model.
+
+- **Alternative to ChatGPT:** I recommend [WizardLM (7B)](https://huggingface.co/TheBloke/wizardLM-7B-GGML) and [Wizard-Vicuna (13B)](https://huggingface.co/TheBloke/wizard-vicuna-13B-GGML) or similar assistant ("instruct") models. There also exists unrestricted versions that are scrubbed of "As an AI Language Model..." and similar refusal questions, such as [this one for 7B](https://huggingface.co/TheBloke/WizardLM-7B-uncensored-GGML) and [this one for 13B](https://huggingface.co/TheBloke/Wizard-Vicuna-13B-Uncensored-GGML).
+
+- **Alternative to Replika/CharacterAI:** I prefer to use WizardLM Uncensored (7B) and [gpt4-x-vicuna (13B)](https://huggingface.co/TheBloke/gpt4-x-vicuna-13B-GGML). Other options include the older [OPT Erebus](https://huggingface.co/KoboldAI/OPT-6.7B-Erebus) (non-GGML) and [Pygmalion 6B](https://huggingface.co/concedo/pygmalion-6bv3-ggml-ggjt) models, while newer options are the [Pygmalion 7B](https://huggingface.co/waifu-workshop/pygmalion-7b-ggml-q5_1) and [BluemoonRP](https://huggingface.co/reeducator/bluemoonrp-13b). All have been trained at least partially on NSFW data, with Erebus and BluemoonRP likely being the most NSFW.
+
+The AI doesn't have long-term memory, so if you want them to remember earlier conversations, you're best using extensions for the Oobabooga frontend like [Superbooga](https://github.com/oobabooga/text-generation-webui/tree/main/extensions/superbooga) or [wawawario's Long-Term-Memory](https://github.com/wawawario2/long_term_memory) solution.
+
+- **Alternative to NovelAI:** The latest models I know of are [Metharme 7B](https://huggingface.co/waifu-workshop/metharme-7b-ggml-q5_1) and [Lotus 12B](https://huggingface.co/hakurei/lotus-12B) (non-GGML, so 4x RAM usage). There are a plethora of older, non-GGML models trained on the same base models as NovelAI, including [Janeway](https://huggingface.co/KoboldAI/fairseq-dense-13B-Janeway) and the aforementioned Erebus.
+
+- **Alternative to AI Dungeon:** There are older, non-GGML models such as [Nerys](https://huggingface.co/KoboldAI/fairseq-dense-13B-Nerys-v2) and even [the original GPT-2 AI Dungeon model from 2019](http://storage.henk.tech/KoboldAI/), but most recent models should do. I've had the most success with gpt4-x-vicuna and a prompt that starts with *"This is a detailed text adventure. User input will be preceded by the ">" symbol."*
+
+Using GGML, 7B models [require about 6-7 GB of RAM](https://huggingface.co/TheBloke/WizardLM-7B-uncensored-GGML#provided-files) and 13B models [about 10-12 GB](https://huggingface.co/TheBloke/GPT4All-13B-snoozy-GGML#provided-files). Without GGML (Transformers), the memory usage approximately quadruples.
+
+If you don't have enough RAM, use swap space or look into smaller models (the best are probably RedPajama and RWKV-PilePlus, with Pythia Deduped coming in third and GPT-2 being archaic).
+
+* * *
 
 ### How many models are there?
 
-I note many different model series (including upcoming ones) starting at 2019. These are sorted in chronological order. There may be more (like Facebook/Meta's XGLM), but they aren't notable enough to mention if it's not popular nor are there many finetunes for them.
+This guide will note many different model series (including upcoming ones) starting at 2019. These are sorted in chronological order. There may be more (like Facebook/Meta's XGLM), but they aren't notable enough to mention if it's not popular nor are there many finetunes for them.
 
-My chart is very basic, but if you're looking for an extensive benchmark on the AI's reasoning and knowledge, [check out HuggingFaceH4's Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard).
+The intention for this chart is to be straightforward. If you're looking for an extensive benchmark on the AI's reasoning and knowledge, [check out HuggingFaceH4's Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) and [u/randomfoo2's chart](https://docs.google.com/spreadsheets/d/1kT4or6b0Fedd-W_jMwYpb63e1ZR3aePczz3zlbJW-Y4/edit#gid=741531996).
 
-_Looking for model finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)._
+_Looking for an explanation on finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)._
 
 Series | Sizes | Dataset | License | My thoughts
 :--|:--:|:--:|:--:|:--:
@@ -34,25 +60,3 @@ Series | Sizes | Dataset | License | My thoughts
 **OpenLLaMa** | 3B, [7B (preview)](https://huggingface.co/openlm-research) | [RedPajama](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T) | Apache 2.0 | *2023 - By OpenLM Research, using the RedPajama dataset by Together. Based on the LLaMA architecture. A reproduction of LLaMA intended to be released under a truly-open license. Compatible with llama.cpp as a result.*
 **StableLM** | [Alphas of 3B, 7B currently available; 15B, 30B, 65B, 175B to come later](https://github.com/stability-AI/stableLM/) | "a new experimental dataset built atop The Pile [...] three times larger" | [CC BY-SA 4.0](https://huggingface.co/stabilityai/stablelm-base-alpha-3b) (base model) | *2023 - By StabilityAI. Based on the GPT-NeoX architecture. Like RedPajama, I added it to this list for completion, but being a very recent model it's still training and there are no official evaluation results comparing it to the previous in this list. Current evaluation results are underwhelming, with 7B apparently performing around the level of Pythia Deduped 410M. Granted, it **should** be early in training.*
 **RedPajama-INCITE** | Early releases of [3B](https://huggingface.co/togethercomputer/RedPajama-INCITE-Base-3B-v1) and [7B](https://huggingface.co/togethercomputer/RedPajama-INCITE-Base-7B-v0.1) | [RedPajama](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T) | Apache-2.0 | *2023 - By Together, following the namesake of their released dataset. Their models are based on the GPT-NeoX architecture and are said to outperform Pythia [according to their blog post](https://www.together.xyz/blog/redpajama-models-v1).*
-
-### Which one should I choose?
-
-Depends on what you want to do with your AI, and what your system requirements are. It seems the general place to check for LLaMA model recommendations are:
-- [r/LocalLLaMA wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_current_best_choices)
-- [/lmg/ rentry](https://rentry.org/lmg_models)
-
-These are my own recommendations (outdated):
-
-- For generic, flexible models that can be used for many purposes, I recommend base LLaMA and OpenLLaMA. Alternatively, [Pythia Deduped](https://huggingface.co/models?search=pythia%20deduped) has a wide range of model sizes, but is undertrained by today's standards.
-- For novel/co-writer finetunes, I recommend [Janeway](https://huggingface.co/models?sort=downloads&search=janeway) or [Erebus](https://huggingface.co/models?search=erebus) (NSFW), though I assume they're not the best-in-class today as they predate LLaMA.
-- For AI Dungeon-style text adventure finetunes, I recommend [Nerys](https://huggingface.co/models?search=nerys), but [gpt4-x-alpaca](https://huggingface.co/eachadea/ggml-gpt4-x-alpaca-13b-native-4bit) (with a "This is a text adventure. User input will be preceded by the > symbol." prompt) worked very well for me, maybe even better than Nerys.
-- For CharacterAI/Replika-style chatting partner finetunes, I recommend [Pygmalion](https://huggingface.co/models?search=pygmalion) (NSFW), but base LLaMA has also been said to work well. Once again, [gpt4-x-alpaca](https://huggingface.co/eachadea/ggml-gpt4-x-alpaca-13b-native-4bit) is great, but it takes a bit of effort to pick up on NSFW language.
-- For ChatGPT-esque assistant finetunes, I currently recommend [Vicuna](https://huggingface.co/models?search=vicuna). There have been similar/derivative projects such as [WizardLM 7B](https://github.com/nlpxucan/WizardLM) and [WizardVicuna 13B](https://github.com/melodysdreamj/WizardVicunaLM) said to outperform Vicuna, but I've yet to test them extensively.
-
-For system requirements, [here's a memory usage chart I've made](https://github.com/Crataco/ai-guide/blob/main/charts/memory-usage.md), and [another usage chart by Oobabooga](https://github.com/oobabooga/text-generation-webui/wiki/System-requirements). [TheBloke's model reuploads also explain how much RAM you expect to require with them](https://huggingface.co/TheBloke/GPT4All-13B-snoozy-GGML). If you have a gaming computer (with NVIDIA cards having the best support), you can fit the model entirely on the GPU itself, which will typically take up half as much video RAM as it does regular RAM, and be lightning fast. If you don't have enough VRAM, you can also split it between regular RAM and VRAM, but it will be much slower.
-
-You can reduce system requirements significantly by looking into the following options:
-- **CPU users:** ggml-based projects, like [koboldcpp](https://github.com/LostRuins/koboldcpp) (backwards compatible with all llama.cpp models). It supports models "compressed" to 4-bit, 5-bit and 8-bit, which will drastically reduce RAM usage with negligible quality loss and make such models easier to run on the average PC. - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/llama.cpp-models.md)
-- **CPU and GPU users:** RWKV model series, with 8-bit precision - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/RWKV-model.md)
-- **GPU users:** 4-bit precision via GPTQ - [(Oobabooga Text Gen UI guide)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/GPTQ-models-(4-bit-mode).md)
-- **GPU users:** 8-bit precision on Transformers - (`--load-in-8bit` in Oobabooga's UI)
