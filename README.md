@@ -1,9 +1,16 @@
-*This is version 2 of the AI guide. Version 1 is [available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md), which takes a crash course approach and has (outdated) advice on model parameters and settings. I try to keep [character creation](https://github.com/Crataco/ai-guide/blob/main/guide/original.md#chat-mode-create-your-character--browse-for-others) up-to-date.*
+*This guide is on hiatus once again. While the frontend and crash course (version 1) are still relevant, you have to look elsewhere for up-to-date models.*
+
+*A great alternative is [the AI guide by Underlines](https://github.com/underlines/awesome-marketing-datascience/blob/master/README.md).*
+
+*If you're looking for the latest model information as soon as they come out, check [r/LocalLLaMA](https://old.reddit.com/r/LocalLLaMA/) and [TheBloke](https://huggingface.co/TheBloke).*
+
+* * *
+
+*This is version 2 of Crataco's AI guide. Version 1 is [available here](https://github.com/Crataco/ai-guide/blob/main/guide/original.md), which takes a crash course approach and has (outdated) advice on model parameters and settings. I try to keep [character creation](https://github.com/Crataco/ai-guide/blob/main/guide/original.md#chat-mode-create-your-character--browse-for-others) up-to-date.*
 
 ![clouds](https://user-images.githubusercontent.com/55674863/233225413-72efd34a-1cfa-4f49-b100-01d6c40287ec.jpg)
 
 # Open-Source Text Generation AI Guide
-_<sup>Written by Crataco (at the moment).</sup>_
 
 _This is a guide for Large Language Models (LLMs) that you can run on your own hardware. This includes alternatives to Replika and CharacterAI, ChatGPT, GPT-3, and others._
 
@@ -12,10 +19,6 @@ _This is a guide for Large Language Models (LLMs) that you can run on your own h
 - _[Click here for **model series** and **recommendations**](https://github.com/Crataco/ai-guide/blob/main/guide/models.md)_
 
 - _[Click here for **model finetunes**](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)_
-
-_Alternative guides:_
-
-- _[Click here for **underlines' Awesome AI guide** which includes more in-depth information on model series, finetunes, and frontends](https://github.com/underlines/awesome-marketing-datascience/blob/master/awesome-ai.md)_
 
 * * *
 
