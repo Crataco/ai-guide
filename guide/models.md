@@ -32,7 +32,7 @@ For example, LLaMA 7B is available for the [Transformers](https://huggingface.co
 
 - Transformers has the advantage of being widely available, but its models take up more space and power.
 
-- GGML versions are efficient, using less RAM and hard drive space thanks to quantization, which I will explain in a bit. For example, a 13B model that'd take 64GB of RAM through Transformers could take 16GB of RAM through GGML. This is a better idea if you don't have a gaming desktop.
+- GGML versions are efficient, using less RAM and hard drive space thanks to quantization, which this guide will explain in a bit. For example, a 13B model that'd take 64GB of RAM through Transformers could take 16GB of RAM through GGML. This is a better idea if you don't have a gaming desktop.
 
 - GPTQ/Exllama, too, supports quantization, but is useful if you have a gaming desktop with an NVIDIA graphics card. For AMD, your mileage may vary.
 
