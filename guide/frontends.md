@@ -14,7 +14,7 @@ A frontend is the interface you use to run and interact with your AI. To avoid c
 - *[llama.cpp](https://github.com/ggerganov/llama.cpp)* *(supports GGML (LLaMA-only))*
 - *[OpenPlayground](https://github.com/nat/openplayground)* *(supports Transformers, GGML (LLaMA-only), and others)*
 
-*(The importance of Transformers, RWKV, GGML and GPTQ are explained in the [next page](models.md#what-is-a-backend) of this guide.)*
+*(The importance of Transformers, RWKV, GGML and GPTQ will be explained in the [next page](models.md#what-is-a-backend) of this guide.)*
 
 **Proxy** frontends require a standalone frontend running in the background to connect to. What they can connect to includes Kobold, Oobabooga, and online services like OpenAI and NovelAI. Examples of proxy frontends include:
 
