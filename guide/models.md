@@ -4,59 +4,78 @@
 
 ### What are models?
 
-A model is your AI's brain.
+A model is your AI's brain. They come in all shapes and sizes.
 
-Models come in all shapes and sizes. Not all models are alike, as they're influenced by how big they are (in parameters), the data they were trained on, and the backend they use (which most of the time is [Transformers](https://github.com/huggingface/transformers), but recently has been [GGML](https://github.com/ggerganov/ggml) paired with frontends like [llama.cpp](https://github.com/ggerganov/llama.cpp)).
+**Feel free to skip the upcoming bullet-points!**
 
-* * *
+A lengthier explanation would be:
 
-Now, to get the more important questions out of the way:
+- **Model series**. At the time of writing, LLaMA is currently the most popular. Other examples include RedPajama-INCITE, RWKV-4, and Pythia Deduped.
+  
+- **Size**. These are called "parameters" and are commonly found in the range of 125 million (125M) to 13 billion (13B). A general rule of thumb is that bigger models take up more resources and are smarter, but this isn't always the case, as...
 
-### What are the best models available?
+- **The data the model is trained on** influences where the model "leans" (for example, a model trained on novels would be great at writing novels), and with a clean, great-quality dataset, you'll get a great-quality model.
 
-For the best models available, check out the [r/LocalLLaMA wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_models) and the [/lmg/ rentry](https://rentry.org/lmg_models).
+- Lastly, **base models** are the original models, which can be described as a jack-of-all-trades, master-of-none due to their diverse training data. **Finetunes** train the model on more data to get it to act a certain way, or know more things.
 
-### What should I choose?
-
-If you have an average computer, I recommend the [KoboldCpp](https://github.com/LostRuins/koboldcpp) frontend with a GGML-based model.
-
-- **Alternative to ChatGPT:** I recommend [WizardLM (7B)](https://huggingface.co/TheBloke/wizardLM-7B-GGML) and [Wizard-Vicuna (13B)](https://huggingface.co/TheBloke/wizard-vicuna-13B-GGML) or similar assistant ("instruct") models. There also exists unrestricted versions that are scrubbed of "As an AI Language Model..." and similar refusal questions, such as [this one for 7B](https://huggingface.co/TheBloke/WizardLM-7B-uncensored-GGML) and [this one for 13B](https://huggingface.co/TheBloke/Wizard-Vicuna-13B-Uncensored-GGML).
-
-- **Alternative to Replika/CharacterAI:** I prefer to use WizardLM Uncensored (7B) and [gpt4-x-vicuna (13B)](https://huggingface.co/TheBloke/gpt4-x-vicuna-13B-GGML). Other options include the older [OPT Erebus](https://huggingface.co/KoboldAI/OPT-6.7B-Erebus) (non-GGML) and [Pygmalion 6B](https://huggingface.co/concedo/pygmalion-6bv3-ggml-ggjt) models, while newer options are the [Pygmalion 7B](https://huggingface.co/waifu-workshop/pygmalion-7b-ggml-q5_1) and [BluemoonRP](https://huggingface.co/reeducator/bluemoonrp-13b). All have been trained at least partially on NSFW data, with Erebus and BluemoonRP likely being the most NSFW.
-
-The AI doesn't have long-term memory, so if you want them to remember earlier conversations, you're best using extensions for the Oobabooga frontend like [Superbooga](https://github.com/oobabooga/text-generation-webui/tree/main/extensions/superbooga) or [wawawario's Long-Term-Memory](https://github.com/wawawario2/long_term_memory) solution.
-
-- **Alternative to NovelAI:** The latest models I know of are [Metharme 7B](https://huggingface.co/waifu-workshop/metharme-7b-ggml-q5_1) and [Lotus 12B](https://huggingface.co/hakurei/lotus-12B) (non-GGML, so 4x RAM usage). There are a plethora of older, non-GGML models trained on the same base models as NovelAI, including [Janeway](https://huggingface.co/KoboldAI/fairseq-dense-13B-Janeway) and the aforementioned Erebus.
-
-- **Alternative to AI Dungeon:** There are older, non-GGML models such as [Nerys](https://huggingface.co/KoboldAI/fairseq-dense-13B-Nerys-v2) and even [the original GPT-2 AI Dungeon model from 2019](http://storage.henk.tech/KoboldAI/), but most recent models should do. I've had the most success with gpt4-x-vicuna and a prompt that starts with *"This is a detailed text adventure. User input will be preceded by the ">" symbol."*
-
-Using GGML, 7B models [require about 6-7 GB of RAM](https://huggingface.co/TheBloke/WizardLM-7B-uncensored-GGML#provided-files) and 13B models [about 10-12 GB](https://huggingface.co/TheBloke/GPT4All-13B-snoozy-GGML#provided-files). Without GGML (Transformers), the memory usage approximately quadruples.
-
-If you don't have enough RAM, use swap space or look into smaller models (the best are probably RedPajama and RWKV-PilePlus, with Pythia Deduped coming in third and GPT-2 being archaic).
+The average user would be using a 13B LLaMA model finetuned on top of ChatGPT data (to get it to act just like ChatGPT). Backends are also important information to know.
 
 * * *
 
-### How many models are there?
+### What is a backend?
 
-This guide will note many different model series (including upcoming ones) starting at 2019. These are sorted in chronological order. There may be more (like Facebook/Meta's XGLM), but they aren't notable enough to mention if it's not popular nor are there many finetunes for them.
+Backends are just different ways to run AI, each having their own way of storing and using the models.
 
-The intention for this chart is to be straightforward. If you're looking for an extensive benchmark on the AI's reasoning and knowledge, [check out HuggingFaceH4's Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) and [u/randomfoo2's chart](https://docs.google.com/spreadsheets/d/1kT4or6b0Fedd-W_jMwYpb63e1ZR3aePczz3zlbJW-Y4/edit#gid=741531996).
+For example, LLaMA 7B is available for the [Transformers](https://huggingface.co/decapoda-research/llama-7b-hf), [GGML](https://huggingface.co/TheBloke/LLaMa-7B-GGML), and [GPTQ/Exllama](https://huggingface.co/camelids/llama-7b-int4-gptq-groupsize128-safetensors/tree/main) backends.
 
-_Looking for an explanation on finetunes? [Check here](https://github.com/Crataco/ai-guide/blob/main/guide/finetunes.md)._
+### What does this mean?
 
-Series | Sizes | Dataset | License | My thoughts
-:--|:--:|:--:|:--:|:--:
-**GPT-2** | [124M](https://huggingface.co/gpt2), [355M](https://huggingface.co/gpt2-medium), [774M](https://huggingface.co/gpt2-large), [1.5B](https://huggingface.co/gpt2-xl) | [WebText](https://github.com/openai/gpt-2/blob/master/model_card.md#datasets) | [Modified MIT License](https://github.com/openai/gpt-2/blob/master/LICENSE) | *2019 - By OpenAI. Original architecture. GPT-2 kickstarted modern AI text generation, and was most notably used for [the original AI Dungeon 2](https://www.reddit.com/r/rpg/comments/e7ladj/someone_made_an_ai_dungeon_master_that_you_can/). I don't recommend it today due to its small size and small context length (1024 tokens).*
-**GPT-Neo** | [125M](https://huggingface.co/EleutherAI/gpt-neo-125M), [350M](https://huggingface.co/xhyi/PT_GPTNEO350_ATG), [1.3B](https://huggingface.co/EleutherAI/gpt-neo-1.3B), [2.7B](https://huggingface.co/EleutherAI/gpt-neo-2.7B), [6B](https://huggingface.co/EleutherAI/gpt-j-6b), [20B](https://huggingface.co/EleutherAI/gpt-neox-20b) | [The Pile](https://pile.eleuther.ai/) | [MIT](https://huggingface.co/EleutherAI/gpt-neo-2.7B) (125M to 2.7B), [Apache-2.0](https://huggingface.co/EleutherAI/gpt-j-6b) (6B to 20B) | *2021 - By EleutherAI. Original architecture (GPT-Neo for 125M to 2.7B, GPT-J for 6B, GPT-NeoX for 20B). By this time, EleutherAI was a [then-new grassroots collective that responded to GPT-3 with their debut model series, GPT-Neo](https://web.archive.org/web/20210928192557/https://www.eleuther.ai/faq/#general). Outside of LLaMA, NeoX may be the most-supported model architecture.*
-**Fairseq** | [125M](https://huggingface.co/KoboldAI/fairseq-dense-125M), [355M](https://huggingface.co/KoboldAI/fairseq-dense-355M), [1.3B](https://huggingface.co/KoboldAI/fairseq-dense-1.3B), [2.7B](https://huggingface.co/KoboldAI/fairseq-dense-2.7B), [6.7B](https://huggingface.co/KoboldAI/fairseq-dense-6.7B), [13B](https://huggingface.co/KoboldAI/fairseq-dense-13B) | [Training Data](https://github.com/facebookresearch/fairseq/blob/main/examples/moe_lm/model_card.md#training-data) | Likely [MIT](https://github.com/facebookresearch/fairseq/blob/main/LICENSE) | *2022 - By Meta AI. Based on the XGLM architecture. Released in a Transformers-compatible format by the KoboldAI community (correct me if I'm wrong). This picked up steam as an alternative to GPT-Neo, and was included alongside Neo with the NovelAI service. Being used in a commercial service makes me believe it uses a commercial license.*
-**OPT** | [125M](https://huggingface.co/facebook/opt-125m), [350M](https://huggingface.co/facebook/opt-350m), [1.3B](https://huggingface.co/facebook/opt-1.3b), [2.7B](https://huggingface.co/facebook/opt-2.7b), [6.7B](https://huggingface.co/facebook/opt-6.7b), [13B](https://huggingface.co/facebook/opt-13b), [30B](https://huggingface.co/facebook/opt-30b), [66B](https://huggingface.co/facebook/opt-66b), 175B | [Training Data](https://huggingface.co/facebook/opt-1.3b#training-data) | [Non-commercial OPT-175B license](https://huggingface.co/facebook/opt-1.3b/blob/main/LICENSE.md) | *2022 - By Meta AI. Original architecture. Succeeds Fairseq, their previous series. It slightly outperforms Neo. It comes second to Neo in terms of the sheer quantity of finetunes and community experience. There's a 175B, but it's only available via request.*
-**RWKV** | [169M](https://huggingface.co/BlinkDL/rwkv-4-pile-169m), [430M](https://huggingface.co/BlinkDL/rwkv-4-pile-430m), [1.5B](https://huggingface.co/BlinkDL/rwkv-4-pile-1b5), [3B](https://huggingface.co/BlinkDL/rwkv-4-pile-3b), [7B](https://huggingface.co/BlinkDL/rwkv-4-pile-7b), [14B](https://huggingface.co/BlinkDL/rwkv-4-pile-14b) | The Pile, RedPajama [(PilePlus)](https://huggingface.co/BlinkDL/rwkv-4-pileplus) | [Apache-2.0](https://huggingface.co/BlinkDL/rwkv-4-pile-14b) | *2022 - By BlinkDL. Original architecture. A promising series trained on Neo's dataset that intends to be faster and lighter without compromising on quality. Quality-wise I believe it's on par with GPT-Neo, but has more potential with the new RedPajama finetuning project. It's one of the earliest of open-source models to introduce a context length of 4096 or higher.*
-**BLOOM** | [560M](https://huggingface.co/bigscience/bloom-560m), [1.1B](https://huggingface.co/bigscience/bloom-1b1), [1.7B](https://huggingface.co/bigscience/bloom-1b7), [3B](https://huggingface.co/bigscience/bloom-3b), [7.1B](https://huggingface.co/bigscience/bloom-7b1),  [176B](https://huggingface.co/bigscience/bloom) | [BigScienceCorpus](https://huggingface.co/bigscience/bloom#training-data) | [BigScience BLOOM RAIL 1.0](https://bigscience.huggingface.co/blog/the-bigscience-rail-license) | *2022 - By BigScience. Original architecture. According to evalutation, this model underperforms compared to the rest. I personally don't recommend it, but I've heard some users get good results with it.*
-**GALACTICA** | [125M](https://huggingface.co/facebook/galactica-125m), [1.3B](https://huggingface.co/facebook/galactica-1.3b), [6.7B](https://huggingface.co/facebook/galactica-6.7b), [30B](https://huggingface.co/facebook/galactica-30b), [120B](https://huggingface.co/facebook/galactica-120b) | [Training data](https://huggingface.co/facebook/galactica-120b#training-data) | [CC BY-NC 4.0](https://huggingface.co/facebook/galactica-120b) | *2022 - By Meta AI. Based on the OPT architecture. I know very little of these models, but I do know they are trained on scientific texts.*
-**Pythia Deduped** | [70M](https://huggingface.co/EleutherAI/pythia-70m-deduped), [160M](https://huggingface.co/EleutherAI/pythia-160m-deduped), [410M](https://huggingface.co/EleutherAI/pythia-410m-deduped), [1B](https://huggingface.co/EleutherAI/pythia-1b-deduped), [1.4B](https://huggingface.co/EleutherAI/pythia-1.4b-deduped), [2.8B](https://huggingface.co/EleutherAI/pythia-2.8b-deduped), [6.9B](https://huggingface.co/EleutherAI/pythia-6.9b-deduped), [12B](https://huggingface.co/EleutherAI/pythia-12b-deduped) | [The Pile (deduplicated)](https://huggingface.co/models?dataset=dataset:EleutherAI/the_pile_deduplicated) | [Apache 2.0](https://huggingface.co/EleutherAI/pythia-12b-deduped) | *2022 - By EleutherAI. Based on the GPT-NeoX architecture. Trained on Neo's dataset, but deduplicated, which means that [according to official evaluations it outperforms GPT-Neo and OPT](https://huggingface.co/EleutherAI/pythia-2.8b-deduped#evaluations).*
-**LLaMA** | [7B](https://huggingface.co/Neko-Institute-of-Science/LLaMA-7B-HF), [13B](https://huggingface.co/Neko-Institute-of-Science/LLaMA-13B-HF), [30B](https://huggingface.co/Neko-Institute-of-Science/LLaMA-30B-HF), [65B](https://huggingface.co/Neko-Institute-of-Science/LLaMA-65B-HF) | [Training data](https://github.com/facebookresearch/llama/blob/main/MODEL_CARD.md#training-dataset) | Unknown (repo says [GPL 3.0](https://twitter.com/ylecun/status/1629189925089296386), but others say non-commercial) | *2023 - By Meta AI. Original architecture. Only officially available to researchers, but has been converted and reuploaded everywhere. AI evaluation says 13B is on par with GPT-3 175B, and 7B overtakes even Pythia 12B and OPT 66B.*
-**Cerebras-GPT** | [111M](https://huggingface.co/cerebras/Cerebras-GPT-111M), [256M](https://huggingface.co/cerebras/Cerebras-GPT-256M), [590M](https://huggingface.co/cerebras/Cerebras-GPT-590M), [1.3B](https://huggingface.co/cerebras/Cerebras-GPT-1.3B), [2.7B](https://huggingface.co/cerebras/Cerebras-GPT-2.7B), [6.7B](https://huggingface.co/cerebras/Cerebras-GPT-6.7B), [13B](https://huggingface.co/cerebras/Cerebras-GPT-13B) | The Pile | [Apache 2.0](https://huggingface.co/cerebras/Cerebras-GPT-13B#model-details) | *2023 - By Cerebras. [Architecture may be based on "gpt2"](https://huggingface.co/cerebras/Cerebras-GPT-256M/blob/main/config.json). According to their description their models use The Pile, but unlike Pythia Deduped it isn't deduplicated. Its smaller models seem to underperform according to evaluations, but I haven't tried it myself.*
-**MPT** | [1B](https://huggingface.co/mosaicml/mpt-1b-redpajama-200b), [7B](https://huggingface.co/mosaicml/mpt-7b) | [RedPajama (1B)](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T), [Training data (7B)](https://huggingface.co/mosaicml/mpt-7b#training-data) | Apache 2.0 (base model) | *By MosiacML. Its own architecture. Impressively, according to official benchmarks, ["MPT-7B matches the quality of LLaMA-7B and outperforms other open source 7B - 20B models on standard academic tasks"](https://www.mosaicml.com/blog/mpt-7b), and apparently has a context length up to **checks notes** 84k tokens?! It has yet to come to GGML at the time of writing.*
-**OpenLLaMa** | 3B, [7B (preview)](https://huggingface.co/openlm-research) | [RedPajama](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T) | Apache 2.0 | *2023 - By OpenLM Research, using the RedPajama dataset by Together. Based on the LLaMA architecture. A reproduction of LLaMA intended to be released under a truly-open license. Compatible with llama.cpp as a result.*
-**StableLM** | [Alphas of 3B, 7B currently available; 15B, 30B, 65B, 175B to come later](https://github.com/stability-AI/stableLM/) | "a new experimental dataset built atop The Pile [...] three times larger" | [CC BY-SA 4.0](https://huggingface.co/stabilityai/stablelm-base-alpha-3b) (base model) | *2023 - By StabilityAI. Based on the GPT-NeoX architecture. Like RedPajama, I added it to this list for completion, but being a very recent model it's still training and there are no official evaluation results comparing it to the previous in this list. Current evaluation results are underwhelming, with 7B apparently performing around the level of Pythia Deduped 410M. Granted, it **should** be early in training.*
-**RedPajama-INCITE** | Early releases of [3B](https://huggingface.co/togethercomputer/RedPajama-INCITE-Base-3B-v1) and [7B](https://huggingface.co/togethercomputer/RedPajama-INCITE-Base-7B-v0.1) | [RedPajama](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T) | Apache-2.0 | *2023 - By Together, following the namesake of their released dataset. Their models are based on the GPT-NeoX architecture and are said to outperform Pythia [according to their blog post](https://www.together.xyz/blog/redpajama-models-v1).*
+- Transformers has the advantage of being widely available, but its models take up more space and power.
+
+- GGML versions are efficient, using less RAM and hard drive space thanks to quantization, which I will explain in a bit. For example, a 13B model that'd take 64GB of RAM through Transformers could take 16GB of RAM through GGML. This is a better idea if you don't have a gaming desktop.
+
+- GPTQ/Exllama, too, supports quantization, but is useful if you have a gaming desktop with an NVIDIA graphics card. For AMD, your mileage may vary.
+
+One way to describe quantization is like lossy compression. Compare it to converting a video from one codec to another, or from 1080p to 720p. You will lose a bit of detail, but you save a ton of space and playing it back will require less processing power.
+
+* * *
+
+### What model should I use?
+
+This guide recommends that you explore the [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) and the [r/LocalLLaMA wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models#wiki_models).
+
+Here are some of the guide author's favorite finetunes.
+
+#### Instruct (ChatGPT, Bard)
+- [WizardLM 7B](https://huggingface.co/TheBloke/wizardLM-7B-GGML) / [WizardLM 13B](https://huggingface.co/TheBloke/wizardLM-13B-1.0-GGML) - Considered well-known and reliable by the guide author.
+- [WizardLM 7B Uncensored](https://huggingface.co/TheBloke/WizardLM-7B-V1.0-Uncensored-GGML) / [WizardLM 13B Uncensored](https://huggingface.co/TheBloke/WizardLM-13B-Uncensored-GGML) - "Uncensored" means that it doesn't refuse to answer questions.
+- [Nous-Hermes 13B](https://huggingface.co/TheBloke/Nous-Hermes-13B-GGML) - Another uncensored model, stating to rival GPT-3.5 in terms of performance.
+- [Airoboros-GPT4 7B](https://huggingface.co/TheBloke/airoboros-7B-gpt4-1.2-GGML) / [Airoboros-GPT4 13B](https://huggingface.co/TheBloke/airoboros-13B-gpt4-1.2-GGML) - Amazingly coherent, but the guide author had trouble avoiding "as a" in roleplay responses. It's not refusal, just a ChatGPT nuance.
+- [LaMini 61M to 1.5B](https://github.com/mbzuai-nlp/lamini-lm#models) - A great option for resource-constrained hardware, but there are no GGML versions at the time of writing.
+- [RWKV-4 Raven 1.5B to 14B](https://huggingface.co/latestissue/rwkv-4-raven-ggml-quantized/tree/main) - Another great option for resource-constrained hardware.
+
+#### Roleplay (CharacterAI, Replika, etc)
+- [Chronos Hermes 13B](https://huggingface.co/TheBloke/chronos-hermes-13B-GGML) - Guide author's current choice.
+- [Manticore-Chat-Pyg 13B](https://huggingface.co/TheBloke/manticore-13b-chat-pyg-GGML) - Guide author's old favorite/fallback.
+
+#### Writing (NovelAI / AI Dungeon)
+
+*These will be Transformers models, since they're relatively old.*
+
+- [Janeway 2.7B](https://huggingface.co/KoboldAI/fairseq-dense-2.7B-Janeway) to [13B](https://huggingface.co/KoboldAI/fairseq-dense-13B-Janeway) - For novel-writing.
+- [Nerys 350M](https://huggingface.co/KoboldAI/OPT-350M-Nerys-v2) to [13B](https://huggingface.co/KoboldAI/OPT-13B-Nerys-v2) - For novel-writing and text adventures.
+- [Erebus 350M](https://huggingface.co/KoboldAI/OPT-350M-Erebus) to [30B](https://huggingface.co/KoboldAI/OPT-30B-Erebus) - For NSFW erotica. In the past it was also known for having great chatting performance.
+
+An important thing to note is that current AI doesn't have long-term memory. Most models can remember the last 2,048 tokens (~8,000-9,000 characters), so if you want them to remember details from older conversations, there exist a few band-aid solutions.
+
+For the Oobabooga frontend, you have two options: Superbooga (which comes with the program), and [Long-Term Memory](https://github.com/wawawario2/long_term_memory).
+
+For SillyTavern, you have ChromaDB, which is [a part of SillyTavern-extras](https://github.com/SillyTavern/SillyTavern-extras#modules).
+
+For KoboldAI/KoboldCpp and SillyTavern, you have ["World Info"](https://github.com/KoboldAI/KoboldAI-Client/wiki/Memory,-Author%27s-Note-and-World-Info#world-info), a manual solution.
+
+* * *
+
+### How many model series are there?
+
+[See the Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md#detailed-information).
