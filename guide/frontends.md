@@ -4,27 +4,27 @@
 
 ### What are frontends?
 
-A frontend is the interface you use to run and interact with your AI models. To save any confusion, I'll split them into two categories: standalone and proxy.
+A frontend is the interface you use to run and interact with your AI. To avoid confusion, this guide separates them into two categories: standalone and proxy.
 
-**Standalone** frontends work on their own and exist to make it easier to interact with the models. Examples of standalone frontends include:
+**Standalone** frontends work on their own and make it easier to interact with the models. Examples of standalone frontends include:
 
-- *[KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)* *(supports the [Transformers](https://github.com/huggingface/transformers) backend)* - [Google Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb)
 - *[KoboldCpp](https://github.com/LostRuins/koboldcpp)* *(supports [llama.cpp](https://github.com/ggerganov/llama.cpp) and similar backends)*
-- *[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui)* *(supports Transformers, [RWKV](https://github.com/oobabooga/text-generation-webui/wiki/RWKV-model), [GPTQ](https://github.com/oobabooga/text-generation-webui/wiki/LLaMA-model), and [llama.cpp](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models))* - [Google Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb)
-- *[OpenPlayground](https://github.com/nat/openplayground)* *(supports Transformers, llama.cpp, and others)*
+- *[KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)* *(supports the [Transformers](https://github.com/huggingface/transformers) backend)* - [Google Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb)
+- *[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui)* *(supports Transformers, [RWKV](https://github.com/oobabooga/text-generation-webui/wiki/RWKV-model), [GPTQ](https://github.com/oobabooga/text-generation-webui/wiki/LLaMA-model), and [GGML (LLaMA-only)](https://github.com/oobabooga/text-generation-webui/wiki/llama.cpp-models))* - [Google Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb)
+- *[OpenPlayground](https://github.com/nat/openplayground)* *(supports Transformers, GGML (LLaMA-only), and others)*
 
-**Proxy** frontends depend on a standalone frontend running in the background so it can connect to it. Usually they connect to KoboldAI's API, but sometimes it also includes online services such as OpenAI or NovelAI. These are usually developed so you could use the standalone frontends in the style of a chat interface. Examples of proxy frontends include:
+*(The importance of Transformers, RWKV, GGML and GPTQ are explained in the [next page](models.md#what-is-a-backend) of this guide.)*
+
+**Proxy** frontends depend on a standalone frontend running in the background so it can connect to it. They connect to the APIs provided by Kobold, Oobabooga, OpenAI, and more. Examples of proxy frontends include:
 
 - *[TavernAI](https://github.com/TavernAI/TavernAI)* - [Google Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb)
-- *[SillyTavern](https://github.com/Cohee1207/SillyTavern)* - [Google Colab](https://colab.research.google.com/github/SillyLossy/TavernAI-extras/blob/main/colab/GPU.ipynb)
+- *[SillyTavern](https://github.com/Cohee1207/SillyTavern)* - [Google Colab](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/main/colab/GPU.ipynb)
 - *[Project Akiko](https://github.com/Project-Akiko/Project-Akiko)*
 - *[miku.gg](https://github.com/miku-gg/miku)*
 - *[LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)*
 - *[Magi LLM GUI](https://github.com/shinomakoi/magi_llm_gui)*
 
-Browse through the frontends and find the one you like. I personally prefer Oobabooga's Text Generation Web UI due to its bleeding-edge features, and the Silly TavernAI Mod because of its extensions and settings.
-
-However, you may prefer KoboldAI if you expect [a more professional interface](https://cdn.discordapp.com/attachments/1092245228028706867/1093288888728047706/Screenshot_2023-04-05_at_14-39-30_sample_story_-_KoboldAI_Client.png) (currently only in [the United branch](https://github.com/henk717/KoboldAI)), and a more natural interface for storywriting and text adventures.
+Browse through the frontends and find the one you like. The guide author's preference is Oobabooga's Text Generation Web UI + SillyTavern, but they have a preference for KoboldCpp when running more exotic models.
 
 If you want to look further into these projects outside of their GitHub repositories:
 
