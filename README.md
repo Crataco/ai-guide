@@ -1,6 +1,8 @@
 ![clouds](https://user-images.githubusercontent.com/55674863/233225413-72efd34a-1cfa-4f49-b100-01d6c40287ec.jpg)
 
-*As of June 19th, 2023, this guide is now archived. However, this handbook still stands as strong as ever if you're looking for a helping hand understanding AI jargon.*
+*As of July 29th, 2023, this guide is now under sporadic maintenance.*
+
+*This handbook still stands as strong as ever if you're looking for a helping hand understanding AI jargon.*
 
 *If you're here just for up-to-date information on frontends and models, see [this guide](https://github.com/underlines/awesome-marketing-datascience/blob/master/README.md) and [this community](https://old.reddit.com/r/LocalLLaMA/).*
 
@@ -10,9 +12,9 @@ This is a guide for Large Language Models (LLMs) that you can run on your own co
 
 You have two options from here:
 
-- [The Current Guide](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md) is as clean as can be and does a better job at introducing you to things in layman's terms.
+- [The Current Guide](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md) focuses on quality and cleanliness, and does a better job at introducing you to things in layman's terms.
  
-- [The Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md) is a crash course that shoves in more information all in one page, and focuses on the LLMs that existed before LLaMA.
+- [The Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md) is more of a crash course that shoves in more information all in one page, and includes the LLMs that existed before LLaMA.
 
 * * *
 
