@@ -50,7 +50,7 @@ This guide recommends that you:
 
 There are so many, it's hard to know where to begin without seeing what the community is up to.
 
-Here are some of the guide author's favorite finetunes, listed in order of preference and their experience using them.
+Here are some of the guide author's favorite finetunes, listed in order of preference and their experience using them. But don't just take this guide's word for it: if you have the bandwidth and space to spare, try them yourself.
 
 #### Instruct (like ChatGPT)
 - [Guanaco 7B](https://huggingface.co/TheBloke/guanaco-7B-GGML) / [Guanaco 13B](https://huggingface.co/TheBloke/guanaco-13B-GGML) / [Guanaco 33B](https://huggingface.co/TheBloke/guanaco-33B-GGML) / [Guanaco 65B](https://huggingface.co/TheBloke/guanaco-65B-GGML) - The guide author's favorite assistant model. It may be usable for roleplaying, but the guide author hasn't tested it out nor heard many recommendations to use it for such.
@@ -63,21 +63,23 @@ Here are some of the guide author's favorite finetunes, listed in order of prefe
 
 #### Roleplay (like CharacterAI, Replika, etc)
 - [MythoLogic Mini 7B (Llama 2)](https://huggingface.co/TheBloke/MythoLogic-Mini-7B-GGML) / [MythoLogic 13B (LLaMA 1)](https://huggingface.co/TheBloke/MythoLogic-13B-GGML) - Guide author's current choice. While it's an instruct model, they've tested 13B and it's great at roleplaying and storywriting. The guide author believes this to have the best blend of personality, reasoning and erotic language from all of the models they've tested. 7B is a merge of Nous-Hermes (Llama 2), Stable Beluga, and Kimiko. 13B is a merge of Chronos, Nous-Hermes (LLaMA 1), and Wizard-Vicuna-Uncensored models. The creator also made [MythoBoros](https://huggingface.co/Gryphe/MythoBoros-13b).
-- [Nous-Hermes 13B (Llama 2)](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML) - Guide author's secondary choice. Also an instruct model with good performance at roleplaying, storywriting, and erotic roleplay. The guide author feels like this is "smarter" than most LLaMA 1 finetunes, but isn't impressed by its vocabulary.
-- [Chronos 13B](https://huggingface.co/TheBloke/chronos-13B-GGML) / [Chronos 33B](https://huggingface.co/TheBloke/chronos-33b-GGML) - A model trained mostly on chatting and storywriting. It may not be as good as other models when it comes to reasoning and logic, but in the guide author's testing of 13B, it lacks many ChatGPT speaking quirks.
-- [Chronos-Hermes 13B](https://huggingface.co/TheBloke/chronos-hermes-13B-GGML) - A model that's a merge of Chronos and Nous-Hermes (LLaMA 1). It tries to keep the great prose of Chronos but with the reasoning/logic and instruction-following capability of Nous-Hermes.
+- [Nous-Hermes 13B (Llama 2)](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML) - Guide author's secondary choice. Also an instruct model with good performance at roleplaying, storywriting, and erotic roleplay. The guide author feels like this is "smarter" than most LLaMA 1 finetunes, but its vocabulary doesn't feel as creative.
+- [Chronos 13B](https://huggingface.co/TheBloke/chronos-13B-GGML) / [Chronos 33B](https://huggingface.co/TheBloke/chronos-33b-GGML) - A model trained mostly on chatting and storywriting. It may not be as good as other models when it comes to reasoning and logic, but in the guide author's testing of 13B, it (fortunately) lacks many ChatGPT speaking quirks.
+- [Chronos-Hermes 13B](https://huggingface.co/TheBloke/chronos-hermes-13B-GGML) - A model that's a merge of Chronos and Nous-Hermes (LLaMA 1). It tries to keep the great prose of Chronos but with the reasoning/logic and instruction-following capability of Nous-Hermes. Still used by some users.
 - [Manticore-13B-Chat-Pyg](https://huggingface.co/TheBloke/manticore-13b-chat-pyg-GGML) - Trained on top of many datasets, including a deduplicated version of Pygmalion's. An old favorite of the guide author.
-- [Manticore-13B-Chat-Pyg-Guanaco](https://huggingface.co/mindrage/Manticore-13B-Chat-Pyg-Guanaco-GGML) - Similar in spirit to MythoLogic and Chronos-Hermes, it's a merge with Guanaco to boost its reasoning capability.
-- [Pygmalion 350M](https://huggingface.co/PygmalionAI/pygmalion-350m) / [Pygmalion 1.3B](https://huggingface.co/PygmalionAI/pygmalion-1.3b) / [Pygmalion 2.7B](https://huggingface.co/PygmalionAI/pygmalion-2.7b) / [Pygmalion 6B](https://huggingface.co/PygmalionAI/pygmalion-6b) / [Pygmalion 7B](https://huggingface.co/models?search=pygmalion%207b%20ggml) / [Pygmalion 13B](https://huggingface.co/Neko-Institute-of-Science/Pygmalion-13B-GGML) - A classic chatbot model that sparked a wave of open-source AI friends and a community, including a Discord server of ~52,000 users. The guide author hasn't seen anyone use these models in a while, so they've likely fallen out of favor. Included for historical reasons.
-- [convoGPT 125M](https://huggingface.co/hakurei/convogpt-staging/tree/main/125m-uft) / [convoGPT 1.3B](https://huggingface.co/hakurei/convogpt-staging/tree/main/1.3b-uft) / [convoGPT 2.7B](https://huggingface.co/hakurei/convogpt-staging/tree/main/2.7b-uft) / [convoGPT 6B](https://huggingface.co/hakurei/convogpt-staging/tree/main/6b-uft) - An obscure chatbot model that could serve as a successor to the very early [c1-6B](https://old.reddit.com/r/learnmachinelearning/comments/qadx1i/discord_chatbot_created_using_a_fine_tuned_gptj/) and convo-6B models. However, it lacks documentation on how it works, and is saved as a Safetensors file (which KoboldAI was slow to adopt at the time of its release). It's the only 125M chatbot the guide author can list. Included for historical reasons.
+- [Manticore-13B-Chat-Pyg-Guanaco](https://huggingface.co/mindrage/Manticore-13B-Chat-Pyg-Guanaco-GGML) - Similar in spirit to MythoLogic and Chronos-Hermes, it's a merge with Guanaco to boost its reasoning capability. Still used by some users.
+- [Pygmalion 7B](https://huggingface.co/models?search=pygmalion%207b%20ggml) / [Pygmalion 13B](https://huggingface.co/Neko-Institute-of-Science/Pygmalion-13B-GGML) - The guide author hasn't seen anyone use these models in a while, so they've likely fallen out of favor. Included here for historical reasons.
 
 #### Writing (like NovelAI)
+*Models like MythoLogic seem to do a good job with writing. These are writing models with no instruct
 - [LLAMA2 13B Holodeck](https://huggingface.co/KoboldAI/LLAMA2-13B-Holodeck-1-GGML) - A recent model created for novel-writing, based on Llama 2.
-- [GPT-Neo Janeway 2.7B](https://huggingface.co/KoboldAI/GPT-Neo-2.7B-Janeway) to [6B](https://huggingface.co/KoboldAI/GPT-J-6B-Janeway) - For novel-writing.
-- [Fairseq Janeway 2.7B](https://huggingface.co/KoboldAI/fairseq-dense-2.7B-Janeway) to [13B](https://huggingface.co/KoboldAI/fairseq-dense-13B-Janeway) - For novel-writing.
-- [Nerys 350M](https://huggingface.co/KoboldAI/OPT-350M-Nerys-v2) to [13B](https://huggingface.co/KoboldAI/OPT-13B-Nerys-v2) - For novel-writing and text adventures.
-- [Erebus 350M](https://huggingface.co/KoboldAI/OPT-350M-Erebus) to [30B](https://huggingface.co/KoboldAI/OPT-30B-Erebus) - For NSFW erotica. For its time, it had unexpectedly great performance with chatting.
 - [TinyStories 1M](https://huggingface.co/roneneldan/TinyStories-1M) to [33M](https://huggingface.co/roneneldan/TinyStories-33M) - Included here as an option for resource-constrained hardware. [[Paper]](https://arxiv.org/abs/2305.07759)
+
+#### General-purpose (base models)
+- [Llama 2 7B](https://huggingface.co/TheBloke/Llama-2-7B-GGML) / [Llama 2 13B](https://huggingface.co/TheBloke/Llama-2-13B-GGML) / [Llama 2 70B](https://huggingface.co/TheBloke/Llama-2-70B-GGML)
+- [LLaMA 1 7B](https://huggingface.co/TheBloke/LLaMa-7B-GGML) / [LLaMA 1 13B](https://huggingface.co/TheBloke/LLaMa-13B-GGML) / [LLaMA 1 30B](https://huggingface.co/TheBloke/LLaMa-30B-GGML) / [LLaMA 1 65B](https://huggingface.co/TheBloke/LLaMa-65B-GGML)
+- [RedPajama-INCITE Base 3B](https://huggingface.co/rustformers/redpajama-3b-ggml) / [RedPajama-INCITE Base 7B](https://huggingface.co/rustformers/redpajama-7b-ggml)
+- [OpenLLaMA 3B](https://huggingface.co/SlyEcho/open_llama_3b_v2_ggml) / [OpenLLaMA 7B](https://huggingface.co/SlyEcho/open_llama_7b_v2_ggml) / [OpenLLaMA 13B](https://huggingface.co/SlyEcho/open_llama_13b_ggml)
 
 An important thing to note is that current AI doesn't have infinite memory. LLaMA 1 and most other models can remember the last 2,048 tokens (~8,000-9,000 characters), and Llama 2 models can remember up to 4,096 tokens. If you want them to remember details from older conversations, there are a few band-aid solutions.
 
@@ -86,9 +88,3 @@ For the Oobabooga frontend, you have two options: Superbooga (which comes with t
 For SillyTavern, you have ChromaDB, which is [a part of SillyTavern-extras](https://github.com/SillyTavern/SillyTavern-extras#modules).
 
 For KoboldAI/KoboldCpp and SillyTavern, you have ["World Info"](https://github.com/KoboldAI/KoboldAI-Client/wiki/Memory,-Author%27s-Note-and-World-Info#world-info), a manual solution.
-
-* * *
-
-### How many model series are there?
-
-That is beyond the scope for this guide. [See the Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md#detailed-information).
