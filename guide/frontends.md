@@ -6,7 +6,7 @@
 
 A frontend is the interface you use to run and interact with your AI. To avoid confusion, this guide separates them into two categories: standalone and proxy.
 
-**Standalone** frontends work on their own and make it easier to interact with the models. Examples of standalone frontends include:
+**Standalone** frontends work on their own, and are used to interact with the models. Examples of standalone frontends include:
 
 - *[KoboldCpp](https://github.com/LostRuins/koboldcpp)* *(supports the GGML backend)*
 - *[KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)* *(supports the [Transformers](https://github.com/huggingface/transformers) backend)* - [Google Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb)
@@ -16,16 +16,16 @@ A frontend is the interface you use to run and interact with your AI. To avoid c
 
 *(The importance of Transformers, RWKV, GGML and GPTQ will be explained in the [next page](models.md#what-is-a-backend) of this guide.)*
 
-**Proxy** frontends require a standalone frontend running in the background to connect to. What they can connect to includes Kobold, Oobabooga, and online services like OpenAI and NovelAI. Examples of proxy frontends include:
+**Proxy** frontends require a standalone frontend running in the background to connect to. They can connect to Kobold, Oobabooga, and online services like OpenAI and NovelAI. Examples of proxy frontends include:
 
 - *[TavernAI](https://github.com/TavernAI/TavernAI)* - [Google Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb)
 - *[SillyTavern](https://github.com/Cohee1207/SillyTavern)* - [Google Colab](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/main/colab/GPU.ipynb)
-- *[Project Akiko](https://github.com/Project-Akiko/Project-Akiko)*
+- *[simple-proxy-for-tavern](https://github.com/anon998/simple-proxy-for-tavern)* *(often paired with SillyTavern to improve AI responses)*
 - *[miku.gg](https://github.com/miku-gg/miku)*
 - *[LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)*
 - *[Magi LLM GUI](https://github.com/shinomakoi/magi_llm_gui)*
 
-Browse through the frontends and find the one you like. The guide author's preference is Oobabooga's Text Generation Web UI + SillyTavern, but they have a preference for KoboldCpp when running more exotic models.
+Browse through the frontends and find the one you like. The guide author prefers Oobabooga for assistant AI, and Oobabooga + SillyTavern for roleplay AI, but they have a preference for KoboldCpp when running more exotic models.
 
 If you want to look further into these projects outside of their GitHub repositories:
 
