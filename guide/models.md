@@ -71,7 +71,7 @@ Here are some of the guide author's favorite finetunes, listed in order of prefe
 - [Pygmalion 7B](https://huggingface.co/models?search=pygmalion%207b%20ggml) / [Pygmalion 13B](https://huggingface.co/Neko-Institute-of-Science/Pygmalion-13B-GGML) - The guide author hasn't seen anyone use these models in a while, so they've likely fallen out of favor. Included here for historical reasons.
 
 #### Writing (like NovelAI)
-*Models like MythoLogic seem to do a good job with writing. These are writing models with no instruct
+*Models like MythoLogic seem to do a good job with writing. These are writing models with no instruct functionality.*
 - [LLAMA2 13B Holodeck](https://huggingface.co/KoboldAI/LLAMA2-13B-Holodeck-1-GGML) - A recent model created for novel-writing, based on Llama 2.
 - [TinyStories 1M](https://huggingface.co/roneneldan/TinyStories-1M) to [33M](https://huggingface.co/roneneldan/TinyStories-33M) - Included here as an option for resource-constrained hardware. [[Paper]](https://arxiv.org/abs/2305.07759)
 
