@@ -5,7 +5,7 @@ This guide was created because the author feels there's not enough coverage on s
 
 ### What are settings?
 
-Settings (also known as "parameters", not to be confused with the same term used for model sizes) are the values you can tweak that can change the way your AI will generate. Presets come with their own values, are the easiest way to get your feet wet, and are available in the major frontends (Oobabooga, SillyTavern, etc).
+Settings (also known as "parameters", not to be confused with the same term used for model sizes) are the values you can tweak that can change the way your AI will generate. Presets come with their own values, are the easiest way to get your feet wet, and are available in the major frontends (KoboldAI, Oobabooga, SillyTavern, etc).
 
 If you want to tweak them yourself and make your own preset, some common values include:
 
