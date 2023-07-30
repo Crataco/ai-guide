@@ -88,3 +88,5 @@ For the Oobabooga frontend, you have two options: Superbooga (which comes with t
 For SillyTavern, you have ChromaDB, which is [a part of SillyTavern-extras](https://github.com/SillyTavern/SillyTavern-extras#modules).
 
 For KoboldAI/KoboldCpp and SillyTavern, you have ["World Info"](https://github.com/KoboldAI/KoboldAI-Client/wiki/Memory,-Author%27s-Note-and-World-Info#world-info), a manual solution.
+
+*Continue into [settings](settings.md)...*
