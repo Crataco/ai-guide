@@ -8,13 +8,13 @@
 
 # Open-Source Text Generation AI Guide
 
-This is a guide for Large Language Models (LLMs) that you can run on your own computer. These can be viable alternatives to Replika and CharacterAI, ChatGPT, GPT-3, and various others.
+This is a guide for Large Language Models (LLMs) that you can run on your own computer. These can be viable alternatives to Replika, CharacterAI, ChatGPT, GPT-3, NovelAI, and various others.
 
 You have two options from here:
 
-- [The Current Guide](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md) focuses on quality and cleanliness, and does a better job at introducing you to things in layman's terms.
+- [The Current Guide](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md) focuses on teaching all of the basics in a thorough, multi-page manner. The author highly recommends you read this one if you're new.
  
-- [The Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md) is more of a crash course that shoves in more information all in one page, and includes the LLMs that existed before LLaMA.
+- [The Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md) is where it all started: a crash course that shoves all of the information in one page. This is relatively out-of-date compared to the current guide, but gives a glimpse into the optimism of AI pre-LLaMA.
 
 * * *
 
