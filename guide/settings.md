@@ -20,18 +20,24 @@ There are advanced values that also influence which words the AI will generate n
 - `top-p` (1 = disabled)
 - `top-k` (0 = disabled)
 - `top-a` (0 = disabled)
-- Typical Sampling (1 = disabled)
-- Mirostat (0 = disabled)
+- `typical_p` (1 = disabled)
+- `mirostat_mode` (0 = disabled)
 
 This guide suggests that you leave these alone and keep `top-p` to 0.85 or 0.9. Alternatively, you can use Mirostat, which will ignore the rest of the samplers and attempt to keep the model on its feet ([explained here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling)).
 * * *
 ### The guide's recommended settings
 These are settings the author has tested out extensively and mostly stuck with.
-#### Assistant ("LLaMA-Precise")
+#### Assistant ("LLaMA-Precise" via Oobabooga) - The guide author uses this for precise answers.
 - **Temperature:** 0.7
 - **Repetition penalty:** 1.176 (rounded to 1.18)
 - **top-p:** 0.1
 - **top-k:** 40
+#### Assistant #2 ("Mirostat" via Oobabooga) - The guide author uses this for creative answers.
+- **Temperature:** 1.0
+- **Repetition penalty:** 1.0
+- **mirostat_mode:** 2
+- **mirostat_tau:** 8
+- **mirostat_eta:** 0.1
 #### Chat / Roleplay #1
 - **Temperature:** 0.7 - 1.0, depending on the results you get from the model
 - **Repetition penalty:** 1.1 - 1.2, depending on the results you get from the model
