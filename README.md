@@ -1,8 +1,8 @@
 ![clouds](https://user-images.githubusercontent.com/55674863/233225413-72efd34a-1cfa-4f49-b100-01d6c40287ec.jpg)
 
-*As of July 29th, 2023, this guide is now under sporadic maintenance.*
+*As of July 29th, 2023, this guide has been updated sporadically.*
 
-*This handbook still stands as strong as ever if you're looking for a helping hand understanding AI jargon.*
+*While the author can't promise this will always be up-to-date, this handbook still stands as strong as ever if you're looking for a helping hand understanding AI jargon.*
 
 *If you're here just for up-to-date information on frontends and models, see [this guide](https://github.com/underlines/awesome-marketing-datascience/blob/master/README.md) and [this community](https://old.reddit.com/r/LocalLLaMA/).*
 
