@@ -1,5 +1,7 @@
 ![image](https://user-images.githubusercontent.com/55674863/230695241-04ebc080-8fff-4d7e-9e8c-8d5168390150.png)
 
+*"Buckle your seat belt, Dorothy, 'cause Kansas is going bye-bye."*
+
 # Frontends
 
 ### What are frontends?
@@ -8,18 +10,22 @@ A frontend is the interface you use to run and interact with your AI. To avoid c
 
 **Standalone** frontends work on their own, and are used to interact with the models. Examples of standalone frontends include:
 
-- *[KoboldCpp](https://github.com/LostRuins/koboldcpp)* *(supports the GGML backend)*
-- *[KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)* *(supports the [Transformers](https://github.com/huggingface/transformers) backend)* - [Google Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb)
-- *[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui)* *(supports Transformers, [RWKV](https://github.com/oobabooga/text-generation-webui/blob/main/docs/RWKV-model.md), [GPTQ](https://github.com/oobabooga/text-generation-webui/blob/main/docs/GPTQ-models-(4-bit-mode).md), and [GGML (LLaMA-only)](https://github.com/oobabooga/text-generation-webui/blob/main/docs/llama.cpp-models.md))* - [Google Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb)
-- *[llama.cpp](https://github.com/ggerganov/llama.cpp)* *(supports GGML (LLaMA-only))*
-- *[OpenPlayground](https://github.com/nat/openplayground)* *(supports Transformers, GGML (LLaMA-only), and others)*
+- *[GPT4All](https://gpt4all.io/index.html)* *(supports the GGML backend\*)*
+- *[KoboldCpp](https://github.com/LostRuins/koboldcpp)* *(supports the GGML backend, including non-LLaMA models)*
+- *[KoboldAI](https://github.com/KoboldAI/KoboldAI-Client)* *(supports the [Transformers](https://github.com/huggingface/transformers) backend)*
+- *[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui)* *(supports Transformers, [RWKV](https://github.com/oobabooga/text-generation-webui/blob/main/docs/RWKV-model.md), [GPTQ](https://github.com/oobabooga/text-generation-webui/blob/main/docs/GPTQ-models-(4-bit-mode).md), and [GGML](https://github.com/oobabooga/text-generation-webui/blob/main/docs/llama.cpp-models.md))*
+- *[MLC-LLM](https://mlc.ai/mlc-llm/)* *(works on mobile devices; unsure what backends it supports)*
+- *[llama.cpp](https://github.com/ggerganov/llama.cpp)* *(supports the GGML backend)* 
+- *[OpenPlayground](https://github.com/nat/openplayground)* *(supports Transformers, GGML, and others)*
 
-*(The importance of Transformers, RWKV, GGML and GPTQ will be explained in the [next page](models.md#what-is-a-backend) of this guide.)*
+\* *(The importance of Transformers, RWKV, GGML and GPTQ are explained in the [next page](models.md#what-is-a-backend) of this guide.)*
+
+*(This guide believes GPT4All, KoboldCpp/KoboldAI, Oobabooga, and MLC-LLM (mobile-only) to be the easiest standalone frontends to install.)*
 
 **Proxy** frontends require a standalone frontend running in the background to connect to. They can connect to Kobold, Oobabooga, and online services like OpenAI and NovelAI. Examples of proxy frontends include:
 
-- *[TavernAI](https://github.com/TavernAI/TavernAI)* - [Google Colab](https://colab.research.google.com/github/TavernAI/TavernAI/blob/main/colab/GPU.ipynb)
-- *[SillyTavern](https://github.com/Cohee1207/SillyTavern)* - [Google Colab](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/main/colab/GPU.ipynb)
+- *[TavernAI](https://github.com/TavernAI/TavernAI)*
+- *[SillyTavern](https://github.com/Cohee1207/SillyTavern)*
 - *[simple-proxy-for-tavern](https://github.com/anon998/simple-proxy-for-tavern)* *(often paired with SillyTavern to improve AI responses)*
 - *[miku.gg](https://github.com/miku-gg/miku)*
 - *[LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)*
