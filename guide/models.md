@@ -5,9 +5,9 @@
 ### What are models?
 
 A model is your AI's brain.
-- They're usually released as a base model of a specific series. An example would be LLaMA.
-- Communities and companies finetune the base models; training them on more data to make them better with specific tasks. An example would be Vicuna 
-- Theconverted to different formats that can be used by different backends.
+- They're usually released as a base model of a series, and have a specific size. An example would be LLaMA 7B. LLaMA is the series, and 7B is the size. The size influences how much storage and resources the model uses, and usually, how smart it is.
+- Communities and companies finetune the base models. This is training them on more data to make them better with specific tasks. An example would be Vicuna 7B, based on the LLaMA 7B model, but trained to be an assistant.
+- They are converted to different formats that can be used by different backends.
 
 * * *
 
