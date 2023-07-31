@@ -4,21 +4,10 @@
 
 ### What are models?
 
-A model is your AI's brain. They come in all shapes and sizes.
-
-**Feel free to skip the upcoming bullet-points.**
-
-Explaining it in more detail:
-
-- **Model series**. At the time of writing, LLaMA is currently the most popular. Other examples include Llama 2, RedPajama-INCITE, RWKV-4, Pythia Deduped, and GPT-Neo/GPT-J.
-  
-- **Size**. These are called "parameters" and are commonly found in the range of 7 billion (7B) to 65 billion (65B). Sometimes smaller (125M), sometimes bigger (175B). A general rule of thumb is that bigger models take up more resources and act smarter, but this isn't always the case, as...
-
-- **The data the model is trained on** influences where the model "leans". For example, a model trained on novels would be great at writing novels. With a great-quality dataset, you'll likely get a great-quality model.
-
-- Lastly, **base models** are the original models, which can be described as a jack-of-all-trades, master-of-none due to their diverse training data. **Finetunes** train the model on more data to get it to act a certain way, or know more things.
-
-As an example, a user could be using a 13B LLaMA model finetuned on top of ChatGPT data (to get it to act just like ChatGPT). Backends are also important information to know.
+A model is your AI's brain.
+- They're usually released as a base model of a specific series. An example would be LLaMA.
+- Communities and companies finetune the base models; training them on more data to make them better with specific tasks. An example would be Vicuna 
+- Theconverted to different formats that can be used by different backends.
 
 * * *
 
@@ -53,7 +42,10 @@ Here are some of the guide's recommended finetunes, listed in order of the autho
 *Keep in mind that every instruct model has its own "prompt template." You will need to set them in your frontend to get the best responses out of your models. In Oobabooga they're referred to as "instruction templates" and in SillyTavern they go by "Presets" in the formatting tab. [TheBloke usually covers them](https://huggingface.co/TheBloke/guanaco-7B-GGML#prompt-template-guanaco).*
 
 *Models are "unrestricted" if they don't refuse most requests. They're "restricted" if they're largely trained on the same refusals as ChatGPT.*
-- [Nous-Hermes 13B (Llama 2)](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML) - Guide author's primary choice as an assistant, and secondary choice for storywriting. [Trained on high-quality GPT-4 datasets (and some others)](https://huggingface.co/NousResearch/Nous-Hermes-Llama2-13b#model-training), the guide author feels like this is smarter than most LLaMA 1 finetunes, following the prompt better at the cost of feeling less "natural." The model is an assistant by default and refuses to answer in some _extreme_ edge-cases, but it can still be used for erotic roleplay and storywriting due to its training data. The guide considers this model unrestricted.
+- [Nous-Hermes 13B (Llama 2)](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML) - Guide author's primary choice as an assistant. [Trained on high-quality GPT-4 datasets (and some others)](https://huggingface.co/NousResearch/Nous-Hermes-Llama2-13b#model-training), the guide author feels like this is smarter than most LLaMA 1 finetunes, following the prompt better at the cost of feeling less "natural." The model is an assistant by default and refuses to answer in some _extreme_ edge-cases, but it can still be used for erotic roleplay and storywriting due to its training data. The guide considers this model unrestricted.
+
+\* *An employee of Nous [recommends Redmond-Puffin 13B over Nous-Hermes 13B (Llama 2) for roleplay tasks](https://old.reddit.com/r/LocalLLaMA/comments/155wwrj/noushermesllama2_13b_released_beats_previous/jt20234/). A discussion of the two can be found [here](https://old.reddit.com/r/LocalLLaMA/comments/158j9r9/nous_hermes_llama2_vs_redmond_puffin_13b/).*
+
 - [Guanaco 7B](https://huggingface.co/TheBloke/guanaco-7B-GGML) / [Guanaco 13B](https://huggingface.co/TheBloke/guanaco-13B-GGML) / [Guanaco 33B](https://huggingface.co/TheBloke/guanaco-33B-GGML) / [Guanaco 65B](https://huggingface.co/TheBloke/guanaco-65B-GGML) - Finetuned on top of [the OpenAssistant dataset](https://huggingface.co/timdettmers/guanaco-13b#model-card). The guide author's secondary favorite assistant model. It may also be usable for roleplaying, but the guide author hasn't tested it out nor heard many recommendations to use it for such. In testing with 13B, this model is similarly unrestricted.
 - [Wizard-Vicuna 7B Uncensored](https://huggingface.co/TheBloke/Wizard-Vicuna-7B-Uncensored-GGML) / [Wizard-Vicuna 13B Uncensored](https://huggingface.co/TheBloke/Wizard-Vicuna-13B-Uncensored-GGML) / [Wizard-Vicuna 30B Uncensored](https://huggingface.co/TheBloke/Wizard-Vicuna-30B-Uncensored-GGML) - This model was included in [this guide](https://rentry.org/local_LLM_guide_models). In the guide author's testing, roleplaying performance is good, but may need some tweaking. It's also one of the few model series available for 7B and, again, is similarly unrestricted.
 - [Airoboros-GPT4 7B](https://huggingface.co/TheBloke/airoboros-7B-gpt4-1.4-GGML) / [Airoboros-GPT4 13B](https://huggingface.co/TheBloke/airoboros-13B-gpt4-1.4-GGML) / [Airoboros-GPT4 33B](https://huggingface.co/TheBloke/airoboros-33B-gpt4-1.4-GGML) / [Airoboros-GPT4 65B](https://huggingface.co/TheBloke/airoboros-65B-gpt4-1.4-GGML) - Airoboros, while being an assistant model, also doubles as a decent model for roleplaying and chatting, and probably one of the best options 7B users have. However, some users report the model being ["too nice"](https://old.reddit.com/r/LocalLLaMA/comments/14l1d48/the_best_13b_model_for_rolepay/) and the guide author recalls hearing that Airoboros isn't worth it until 33B/65B. The mode is about as unrestricted as the previous three.
