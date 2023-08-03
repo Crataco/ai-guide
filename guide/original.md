@@ -1,5 +1,9 @@
 ![Original image from Wikimedia Commons, licensed under the Creative Commons Attribution-Share Alike 3.0 Unported, 2.5 Generic, 2.0 Generic and 1.0 Generic license.](https://github.com/Crataco/ai-guide/assets/55674863/485115bc-7892-490e-892a-d57df208e10d)
 
+**Former titles:**
+- *"Open-source chatbot companions"*
+- *"Crataco's guide to locally runnable, unfiltered open-source AI."*
+
 # Crataco's Spaghetti Guide (for Legacy Open-Source Chatbots)
 
 [As seen on Reddit](https://web.archive.org/web/20230327022300/https://old.reddit.com/user/Crataco/comments/zuowi9/opensource_chatbot_companions/).
@@ -28,9 +32,9 @@ If your computer can't run the model you want to use, you can use Google Colab, 
 
 ### STANDALONE FRONTENDS
 
-- [Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui) - [[screenshot]](https://web.archive.org/web/20230327022300/https://cdn.discordapp.com/attachments/1042160561808482304/1081314051889578014/oobabooga.png) Standalone frontend with bleeding-edge model support and a brutalist UI. You'll feel right at home if [you're familiar with AUTO1111's Stable Diffusion UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/screenshot.png), but it's not very user-friendly. You can run it locally or on [Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb).
+- [Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui) - Standalone frontend with bleeding-edge model support and a brutalist UI. You'll feel right at home if [you're familiar with AUTO1111's Stable Diffusion UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/screenshot.png), but it's not very user-friendly. You can run it locally or on [Colab](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb).
 
-- [KoboldAI](https://github.com/koboldai/koboldai-client) - [[screenshot]](https://web.archive.org/web/20230327022300/https://cdn.discordapp.com/attachments/1042160561808482304/1081314051889578014/oobabooga.png) Standalone frontend with a professional exterior and a sweet community. KAI was created as an AI co-writer similar to NovelAI. They later included a chat setting, and more recently a Discord-esque chat UI as pictured. While it's more user-friendly than Oobabooga's, I find the "pretty" chat mode to be pretty buggy, so if you intend on using it for chatting, combine it with a gateway frontend (I recommend TavernAI). You can run it locally or on [Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb).
+- [KoboldAI](https://github.com/koboldai/koboldai-client) - Standalone frontend with a professional exterior and a sweet community. KAI was created as an AI co-writer similar to NovelAI. They later included a chat setting, and more recently a Discord-esque chat UI as pictured. While it's more user-friendly than Oobabooga's, I find the "pretty" chat mode to be pretty buggy, so if you intend on using it for chatting, combine it with a gateway frontend (I recommend TavernAI). You can run it locally or on [Colab](https://colab.research.google.com/github/KoboldAI/KoboldAI-Client/blob/main/colab/TPU.ipynb).
 
 - [KoboldCpp](https://github.com/LostRuins/koboldcpp) - A sister project of KoboldAI that uses a different backend compatible with llama.cpp (and related) models, which are friendlier towards those who don't have the hardware to run Oobabooga/KoboldAI's "main" models, with similar-quality results.
 
