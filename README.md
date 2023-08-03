@@ -12,7 +12,7 @@ This is a guide for Large Language Models (LLMs) that you can run on your own co
 
 You have two options from here:
 
-- [The Current Guide](https://github.com/Crataco/ai-guide/blob/main/guide/frontends.md) focuses on teaching all of the basics in a thorough, multi-page manner. The author highly recommends you read this one if you're new.
+- [The Current Guide](https://github.com/Crataco/ai-guide/blob/main/guide/table-of-contents.md) focuses on teaching all of the basics in a thorough, multi-page manner. The author highly recommends you read this one if you're new.
  
 - [The Spaghetti Guide](https://github.com/Crataco/ai-guide/blob/main/guide/original.md) is where it all started: a crash course that shoves all of the information in one page. This is relatively out-of-date compared to the current guide, but gives a glimpse into the optimism of AI pre-LLaMA.
 
