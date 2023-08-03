@@ -9,6 +9,6 @@ You can give your AI "internal thoughts". I find that it adds more depth and a s
 {{char}} will ponder internally before responding. Present {{char}}'s response in this format:
 <{{char}}'s thoughts: "thoughts leading up to {{char}}'s response"> {{char}}'s response
 ```
-and adding `<{{char}}'s thoughts: "` to "Start Reply With" to give it an extra nudge.
+and adding `<{{char}}'s thoughts: "` to "Start Reply With" to give it an extra nudge. It understands this best with few-shot examples, i.e. by incorporating it into the AI's opening message or example messages.
 
 On SillyTavern, as mentioned by the guide above, you could also take advantage of the "Regex" option in the Extensions tab and add `/<([^>]*)>/g` to regex. Make sure it affects "AI Output" and the Replacement Strategy is set to "Overlay", like in [this screenshot](https://cdn.discordapp.com/attachments/1092245228028706867/1136566365797498890/image.png). This will hide the AI's thoughts from you, unless you have text streaming enabled or go to edit their message.
