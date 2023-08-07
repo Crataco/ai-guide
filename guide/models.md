@@ -4,26 +4,29 @@
 
 ### What are models?
 
-A model is your AI's brain.
-- They're usually released as a base model of a series, and have a specific size. An example would be LLaMA 7B. LLaMA is the series, and 7B is the size. The size influences how much storage and resources the model uses, and usually, how smart it is.
-- Communities and companies finetune the base models. This is training them on more data to make them better with specific tasks. An example would be Vicuna 7B, based on the LLaMA 7B model, but trained to be an assistant.
-- They are converted to different formats that can be used by different backends.
+**TL;DR:** A model is your AI's brain.
+
+To be more specific: a model is an AI that learned how to generate text because it was given a ton of text to learn from, usually from websites and books. They are then released as base models (think LLaMA 7B), a jack-of-all-trades model that can generate almost anything, but requires a bit of work to steer it into the right direction.
+
+This is where finetunes come in, where people train the models on further data. This gives it specalized knowledge and makes it easier to use it a specific way. An example would be Vicuna 7B, trained on ChatGPT logs to learn from (and mimic) ChatGPT.
+
+But you can't run a model without a backend.
 
 * * *
 
 ### What is a backend?
 
-Backends are just different ways to run AI, each having their own way of storing and using the models.
+Backends are different ways to store and use the AI. 
 
 For example, LLaMA 7B is available for the [Transformers](https://huggingface.co/decapoda-research/llama-7b-hf), [GGML](https://huggingface.co/TheBloke/LLaMa-7B-GGML), and [GPTQ/Exllama](https://huggingface.co/camelids/llama-7b-int4-gptq-groupsize128-safetensors/tree/main) backends.
 
 ### What does this mean?
 
-- Transformer models take up more space and power, but is the primary choice for legacy models and some users who run AI on their GPUs.
+- Transformer models are very well-known, but are unoptimized for the average Joe's computers. Models take a lot of storage and memory. For example, LLaMA 7B is about ~13 GB and (I estimate) would take about 32GB of RAM.
 
-- GGML versions use quantization, akin to compression, making it surprisingly viable to run bigger models on average hardware. For example, a 13B model that'd take 64GB of RAM through Transformers would take 16GB of RAM through GGML.
+- GGML versions, on the other hand, are quantized. Think of it like file compression: unlike Transformers, they take little storage and memory, at the cost of a small decrease in quality. There are different levels of quantization, and the most compatible -- q4_0 -- is available as a ~4 GB model which would take about 4-6 GB of RAM. They're useful if you just have an average computer.
 
-- GPTQ & Exllama also support quantization, but are only useful if you have a GPU to take advantage of it. 
+- GPTQ & Exllama are others that also support quantization, but they're only useful if you have a GPU that can take advantage of them. You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary.
 
 This guide will link to the GGML versions of models whenever possible. The easiest way to get them running is to download [KoboldCpp](https://github.com/LostRuins/koboldcpp/releases) and your model of choice, then run the executable you've downloaded and select the model from your menu.
 
@@ -31,10 +34,10 @@ This guide will link to the GGML versions of models whenever possible. The easie
 
 ### What model should I use?
 
-This guide recommends that you:
+First of all, this guide recommends that you:
 1. See what people are up to on [r/LocalLLaMA](https://old.reddit.com/r/LocalLLaMA) and what new models are added to [its wiki](https://old.reddit.com/r/LocalLLaMA/wiki/models).
 2. Read TheBloke's RAM usage graphs to see what level of quantization (q2, q3, q4, q5, q6) you should get for a [7B model](https://huggingface.co/TheBloke/guanaco-7B-GGML#provided-files), [13B model](https://huggingface.co/TheBloke/guanaco-13B-GGML#provided-files), and others, depending on how much system memory you have. The higher the number, the better the model, but also the more demanding it'll be.
-3. (Roleplay) Check out model benchmarks such as [ALLMRR](https://rentry.co/ALLMRR) and [Ayumi ERP](https://rentry.co/ayumi_erp_rating). While you're at it, feel free to grab a character from [Chub.ai](https://www.chub.ai/) (NSFW warning) to use for Oobabooga, Tavern, or SillyTavern.
+3. (Roleplay / CAI refugees) Check out model benchmarks such as [ALLMRR](https://rentry.co/ALLMRR) and [Ayumi ERP](https://rentry.co/ayumi_erp_rating). While you're at it, feel free to grab a character from [Chub.ai](https://www.chub.ai/) (NSFW warning) to use for Oobabooga, Tavern, or SillyTavern.
 
 Here are some of the guide's recommended finetunes, listed in order of the author's preference and experience using them. Being low on the list doesn't make the models bad, they might even be better for your use case than the higher models. In that case, it's not bad to give them a test if you have the resources, space, and bandwidth to spare.
 
