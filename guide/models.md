@@ -38,7 +38,7 @@ This guide recommends that you:
 
 Here are some of the guide's recommended finetunes, listed in order of the author's preference and experience using them. Being low on the list doesn't make the models bad, they might even be better for your use case than the higher models. In that case, it's not bad to give them a test if you have the resources, space, and bandwidth to spare.
 
-***ATTENTION:** As of August 3rd, 2023, Llama 2 models are very new and experimental. Some may be sensitive to different settings or have repetition problems, as discussed [here](https://old.reddit.com/r/LocalLLaMA/comments/155vy0k/llama_2_too_repetitive/) and [here](https://old.reddit.com/r/LocalLLaMA/comments/15gp9fq/chronos13bv2_llama_2_roleplay_storywriting_and/junbr4x/).*
+***ATTENTION:** As of August 3rd, 2023, Llama 2 models are very new and experimental. Some may be sensitive to different settings or have repetition problems, as discussed [here](https://old.reddit.com/r/LocalLLaMA/comments/155vy0k/llama_2_too_repetitive/), [here](https://old.reddit.com/r/LocalLLaMA/comments/15gp9fq/chronos13bv2_llama_2_roleplay_storywriting_and/junbr4x/), and [here](https://old.reddit.com/r/LocalLLaMA/comments/15k07ba/anyone_else_is_getting_problems_with_repetition/).*
 
 #### Instruct / Assistant (like ChatGPT)
 *Keep in mind that every instruct model has its own "prompt template." You will need to set them in your frontend to get the best responses out of your models. In Oobabooga they're referred to as "instruction templates" and in SillyTavern they go by "Presets" in the formatting tab. [TheBloke usually covers them](https://huggingface.co/TheBloke/guanaco-7B-GGML#prompt-template-guanaco).*
