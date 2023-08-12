@@ -23,22 +23,22 @@ There are advanced values that also influence which words the AI will generate n
 - `typical_p` (1 = disabled)
 - `mirostat_mode` (0 = disabled) (and other related settings, like `mirostat_tau` and `mirostat_eta`)
 
-This guide suggests that you leave these alone and keep `top-p` to 0.85 or 0.9. Alternatively, you can use Mirostat, which will ignore the rest of the samplers and try to keep the model's generations fresh ([explained here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling)).
+This guide suggests that you leave these alone and keep `top-p` to 0.85 or 0.9. Alternatively, you can use Mirostat, which will ignore the rest of the samplers and try to keep the model's generations fresh ([explained here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling)), but the guide author heard that it may slow down generation speed.
 * * *
 ### The guide's recommended settings
 These are settings the author has tested out extensively and mostly stuck with.
-#### Assistant ("LLaMA-Precise" via Oobabooga) - The guide author uses this for precise answers.
+#### Assistant ("LLaMA-Precise" via Oobabooga) - The guide author uses this for precise answers from assistants.
 - **Temperature:** 0.7
 - **Repetition penalty:** 1.176 (rounded to 1.18)
 - **top-p:** 0.1
 - **top-k:** 40
-#### Chat / Roleplay / Storywriting #1 (based off of Oobabooga's "Naive" preset)
+#### Chat / Roleplay / Storywriting #1 (based off of Oobabooga's "Naive" preset; works well for most models)
 - **Temperature:** 0.7 - 1.0, depending on the results you get from the model
 - **Repetition penalty:** 1.1 - 1.2, depending on the results you get from the model
 - **top-p:** 0.85
-#### Chat / Roleplay / Storywriting #2 (using Mirostat) - Tested with Nous-Hermes Llama 2 13B
+#### Chat / Roleplay / Storywriting #2 (Mirostat; tries to keep things fresh)
 - **Temperature:** 1.0. Temperature doesn't seem to have an effect with Mirostat enabled.
-- **Repetition penalty:** 1.2
+- **Repetition penalty:** 1.1-1.2 (1.2 with Nous-Hermes, 1.1 with MythoMax)
 - **mirostat_mode:** 2
-- **mirostat_tau:** 3.0 - 5.0. The guide recommends 3.5.
-- **mirostat_eta:** 0.15 - 3.0. The guide recommends 0.2. It feels like a nice balance between 0.1 being too predictable and 0.3+ going off-topic/derailing stories, but 0.15 was used in [another guide](https://rentry.org/freellamas).
+- **mirostat_tau:** 3.0 - 5.0. The guide recommends 3.5, but the author is testing 5.0. Lower is more coherent and higher is more diverse.
+- **mirostat_eta:** 0.1 - 3.0. The guide recommends 0.2. It feels like a nice balance between 0.1 being too predictable and 0.3+ going off-topic/derailing stories, but 0.15 was used in [another guide](https://rentry.org/freellamas).
