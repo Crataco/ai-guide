@@ -41,4 +41,4 @@ These are settings the author has tested out extensively and mostly stuck with.
 - **Repetition penalty:** 1.1-1.2 (1.2 with Nous-Hermes, 1.1 with MythoMax)
 - **mirostat_mode:** 2
 - **mirostat_tau:** 3.0 - 5.0. The guide recommends 3.5, but the author is testing 5.0. Lower is more coherent and higher is more diverse.
-- **mirostat_eta:** 0.1 - 3.0. The guide recommends 0.2. It feels like a nice balance between 0.1 being too predictable and 0.3+ going off-topic/derailing stories, but 0.15 was used in [another guide](https://rentry.org/freellamas).
+- **mirostat_eta:** 0.1 - 0.4. The guide recommends 0.2. It feels like a nice balance between 0.1 being too predictable and 0.3+ going off-topic/derailing stories, but 0.15 was used in [another guide](https://rentry.org/freellamas) and there are users okay with a higher eta value. Guide author is currently testing 0.4.
