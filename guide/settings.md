@@ -37,7 +37,7 @@ These are settings the author has tested out extensively and mostly stuck with.
 - **Repetition penalty:** 1.1 - 1.2, depending on the results you get from the model
 - **top-p:** 0.85
 #### Chat / Roleplay / Storywriting #2 (Mirostat; tries to keep things fresh)
-- **Temperature:** 1.0. Temperature doesn't seem to have an effect with Mirostat enabled.
+- **Temperature:** 0.7-0.9. Temperature doesn't seem to make too much of an impact with Mirostat enabled, though.
 - **Repetition penalty:** 1.1-1.2 (1.2 with Nous-Hermes, 1.1 with MythoMax)
 - **mirostat_mode:** 2
 - **mirostat_tau:** 3.0 - 5.0. The guide recommends 3.5, but the author is testing 5.0. Lower is more coherent and higher is more diverse.
