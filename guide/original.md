@@ -132,6 +132,7 @@ Chat-friendly models:
 [gpt4-x-alpaca](https://cdn.discordapp.com/attachments/1092245228028706867/1097620620956676197/Screenshot_2023-04-17_13-31-47.png) | LLaMA 13B | Default preset with temp 0.5 and rep 1.1 | Screenshot taken with KoboldCpp (llama.cpp). This may without a doubt be my favorite model for chat mode right now due to _just how well_ it follows characters.
 [Pygmalion 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1090065571225272421/image.png) | GPT-J 6B | [Pygmalion preset](https://github.com/oobabooga/text-generation-webui/blob/3ffd7d36fd2a268367b73a5601404319841222e1/presets/Pygmalion.txt) | Experiment 2, the current "main" version. This is the first time I give Pygmalion a proper test, and so far it surprised me.
 [Pygmalion 6B](https://cdn.discordapp.com/attachments/1042160561808482304/1090073097073328228/image.png) | GPT-J 6B | Pygmalion preset | Experiment 7, Part 4/10. Pretty good!
+[MythoMax 13B (q6_K)](https://cdn.discordapp.com/attachments/1092245228028706867/1142125154261016668/MythoMax_13B.png) | Llama 2 13B | Mirostat mode 2, tau 5, eta 0.1 (temp 0.7, rep pen 1.2) | For fun, I've decided to add a model that came out 7 months after Pygmalion 6B (5 months after gpt4-x-alpaca). Frontend was changed to SillyTavern, and currently using the "Roleplay" instruct preset with include names enabled.
 
 [Prompts used.](https://pastebin.com/1G816dPQ)
 
