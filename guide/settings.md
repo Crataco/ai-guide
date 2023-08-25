@@ -36,9 +36,9 @@ These are settings the author has tested out extensively and mostly stuck with.
 - **Temperature:** 0.7 - 1.0, depending on the results you get from the model
 - **Repetition penalty:** 1.1 - 1.2, depending on the results you get from the model
 - **top-p:** 0.85
-#### Chat / Roleplay / Storywriting #2 (Mirostat; tries to keep things fresh)
-- **Temperature:** 0.6 - 0.9. The author hasn't noticed temperature make much of an impact, but it seems other users have.
-- **Repetition penalty:** 1.1 - 1.2 (1.2 with Nous-Hermes, 1.1 with MythoMax)
-- **mirostat_mode:** 2
-- **mirostat_tau:** 3.0 - 5.0. The guide recommends 3.5, but the author is testing 5.0. Lower is more coherent and higher is more diverse.
-- **mirostat_eta:** 0.1 - 0.4. The guide recommends 0.2. It feels like a nice balance between 0.1 being too predictable and 0.3+ going off-topic/derailing stories, but 0.15 was used in [another guide](https://rentry.org/freellamas) and there are users okay with a higher eta value. Author is currently testing 0.4.
+#### Chat / Roleplay / Storywriting #2 (Mirostat; the guide author uses this for chatting and roleplaying)
+- **Temperature:** 0.7 - 1.0. Start at 1.0. The author hasn't noticed temperature make much of an impact, but it seems other users have.
+- **Repetition penalty:** 1.1 - 1.2. Start at 1.1 and change it depending on whether or not you deal with repetition.
+- **mirostat_mode:** 2.
+- **mirostat_tau:** 3.0 - 5.0. Author currently uses 4.0. Lower is more coherent and higher is more diverse.
+- **mirostat_eta:** 0.1 - 0.4. Author is currently testing 0.4, noticing it gives some pretty creative results. They have heard (and noticed) that 0.1 is too predictable and 0.3+ going off-topic/derailing stories, but 0.4 (previously 0.15) was used in [another guide](https://rentry.org/freellamas) and there are users okay with a higher eta value.
