@@ -26,7 +26,7 @@ There are advanced values that also influence which words the AI will generate n
 This guide suggests that you leave these alone and keep `top-p` to 0.85 or 0.9. Alternatively, you can use Mirostat, which will ignore the rest of the samplers and try to keep the model's generations fresh ([explained here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling)), but the guide author heard that, for some, it may slow down generation speed.
 * * *
 ### The guide's recommended settings
-These are settings the author has tested out extensively and mostly stuck with.
+These are settings the author has tested out extensively and mostly stuck with. These are subjective.
 #### Assistant ("LLaMA-Precise" via Oobabooga) - Good for precise assistant responses.
 - **Temperature:** 0.7
 - **Repetition penalty:** 1.176 (rounded to 1.18)
@@ -37,8 +37,8 @@ These are settings the author has tested out extensively and mostly stuck with.
 - **Repetition penalty:** 1.1 - 1.2, depending on the results you get from the model
 - **top-p:** 0.85
 #### Chat / Roleplay / Storywriting #2 (Mirostat) - Good for chat and roleplay.
-- **Temperature:** 0.7 - 1.0. Start at 1.0. The author hasn't noticed temperature make much of an impact, but it seems other users have.
+- **Temperature:** 0.7 - 1.0. Start at 0.7.
 - **Repetition penalty:** 1.1 - 1.2. Start at 1.1, but you can try raising it if you deal with repetition.
 - **mirostat_mode:** 2.
 - **mirostat_tau:** 3.0 - 5.0. According to llama.cop's description, lower is more coherent and higher is more diverse.
-- **mirostat_eta:** 0.1 - 0.4. Depends on what you need. 0.1 feels boring but doesn't require much hand-holding. 0.3+ feels more creative at the cost of inconsistencies occurring more often, which you'll need to regenerate or edit out.
+- **mirostat_eta:** 0.1 - 0.4. Depends on what you need. 0.1 feels boring but doesn't require much hand-holding. 0.3+ feels more creative at the cost of inconsistencies occurring more often, which you'll need to regenerate or edit out. If you don't mind that, 0.4 is a good value.
