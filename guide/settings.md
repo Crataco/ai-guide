@@ -5,40 +5,22 @@ This guide was created because the author feels there's not enough coverage on s
 
 ### What are settings?
 
-Settings (also known as "parameters", not to be confused with the same term used for model sizes) are the values you can tweak that can change the way your AI will generate. Presets come with their own values, are the easiest way to get your feet wet, and are available in the major frontends (KoboldAI, Oobabooga, SillyTavern, etc).
+Settings (also known as "parameters", not to be confused with the same term used for model sizes) are the values you can tweak that can change the way your AI will generate. Setting presets are the easiest way to get your feet wet.
 
-If you're just getting started, use the presets your frontend comes with. The default preset may even be fine enough for you.
+If you're just getting started, use the presets your frontend comes with. The default preset may even be fine enough for you. Currently, the guide author flips between the "TFS-with-Top-A", "Shortwave" and "Mirostat" presets for roleplay, and "LLaMA-Precise" for assistant models.
+
+* * *
 
 But if you want to tweak them yourself and make your own, some common values include:
 
 - **Temperature:** This influences how well the AI can stay on-topic. A low temperature means something boring and predictable, while a high temperature would mean something a little out of your control. The guide author finds 0.7 to be a good value, but some models do well with 1.0 or higher.
-- **Repetition penalty:** This changes how "repetitive" the AI can get. Just like temperature, you need to find a good balance. Too low and the AI may start to repeat itself or start to use the same word. Too high and the AI will go off the rails. The guide author finds 1.1-1.2 to be a good value.
-- **Context tokens:** In Oobabooga, this is known as `Truncate the prompt up to this length`. This represents how much text the model is able to remember. Most models support up to 2,048 tokens. LLaMA 2 models support up to 4,096 tokens. A token, as mentioned in the previous guide, is about 4 characters on average [(source)](https://novelai.net/tokenizer). However, if you find it using too much memory, you can decrease it.
+- **Repetition penalty:** This changes how "repetitive" the AI can get. Just like temperature, you need to find a good balance. Too low and the AI may start to repeat itself or start to use the same word. Too high and the AI will go off the rails. 1.1 to 1.2 are often good values.
+- **Context tokens:** In Oobabooga, this is known as `Truncate the prompt up to this length`. This represents how much text the model is able to remember. LLaMA 1 models can remember 2,048 tokens, and Llama 2 models can remember 4,096 tokens. A token is about 4 characters on average [(source)](https://novelai.net/tokenizer). However, if you find it using too much memory, you can decrease it.
 - **Output length:** In Oobabooga, this is known as `max_new_tokens`. This describes how long the AI's generation can be before it stops, either on its own or after hitting the limit.
 
-There are advanced values that also influence which words the AI will generate next. These are "samplers," such as
-- `top-p` (1 = disabled)
-- `top-k` (0 = disabled)
-- `top-a` (0 = disabled)
-- `typical_p` (1 = disabled)
-- `mirostat_mode` (0 = disabled) (and other related settings, like `mirostat_tau` and `mirostat_eta`)
-
-This guide suggests that you leave these alone and keep `top-p` to 0.85 or 0.9. Alternatively, you can use Mirostat, which will ignore the rest of the samplers and try to keep the model's generations fresh ([explained here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling)), but the guide author heard that, for some, it may slow down generation speed.
-* * *
-### The guide's recommended settings
-These are settings the author has tested out extensively and mostly stuck with. These are subjective.
-#### Assistant ("LLaMA-Precise" via Oobabooga) - Good for precise assistant responses.
-- **Temperature:** 0.7
-- **Repetition penalty:** 1.176 (rounded to 1.18)
-- **top-p:** 0.1
-- **top-k:** 40
-#### Chat / Roleplay / Storywriting #1 (based off of Oobabooga's "Naive" preset; works well for most models)
-- **Temperature:** 0.7 - 1.0, depending on the results you get from the model
-- **Repetition penalty:** 1.1 - 1.2, depending on the results you get from the model
-- **top-p:** 0.85
-#### Chat / Roleplay / Storywriting #2 (Mirostat) - Good for chat and roleplay.
-- **Temperature:** 0.7 - 1.0. Start at 0.7.
-- **Repetition penalty:** 1.1 - 1.2. Start at 1.1, but you can try raising it if you deal with repetition.
-- **mirostat_mode:** 2.
-- **mirostat_tau:** 3.0 - 5.0. According to llama.cop's description, lower is more coherent and higher is more diverse.
-- **mirostat_eta:** 0.1 - 0.4. Depends on what you need. 0.1 feels boring but doesn't require much hand-holding. 0.3+ feels more creative at the cost of inconsistencies occurring more often, which you'll need to regenerate or edit out. If you don't mind that, 0.4 is a good value.
+There are advanced values that also influence which words the AI will generate next. These are called "samplers," and include:
+- **`top-p`** (1 = disabled)
+- **`top-k`** (0 = disabled)
+- **`top-a`** (0 = disabled)
+- **`typical_p`** (1 = disabled)
+- **[`mirostat_mode`](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling)** (0 = disabled)
