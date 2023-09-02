@@ -55,8 +55,8 @@ The guide recommends these models for specific tasks, but they are likely to cha
 - **Holodeck (Llama 2)** - [13B](https://huggingface.co/KoboldAI/LLAMA2-13B-Holodeck-1-GGML) - Storywriting only. It's one of the few contemporary models trained _only_ on stories, succeeding earlier models such as [Nerys](https://huggingface.co/KoboldAI/OPT-13B-Nerys-v2), [Janeway](https://huggingface.co/KoboldAI/GPT-J-6B-Janeway), and [Picard](https://huggingface.co/KoboldAI/GPT-Neo-2.7B-Picard). If you're a KoboldAI/NovelAI user, the way you use this model will be very familiar to you. It's meant to be used with Oobabooga's notebook interface or KoboldAI/KoboldCpp's story mode. It was recently merged with MythoMax into a model called "HoloMax" intended for co-writing, which can be found [here](https://huggingface.co/KoboldAI/LLaMA2-13B-Holomax-GGML).
 
 ### Adventure (AI Dungeon)
-- **Spring Dragon (LLaMA 1)** - [13B](https://huggingface.co/TheBloke/Spring-Dragon-GGML) - If you're familiar with AI Dungeon, this is a model trained on top of the same dataset, intended to rival AI Dungeon's "Dragon" model from 2020, and works best with KoboldAI/KoboldCpp's "Adventure" mode. If you're feeling nostalgic or just curious, this is worth a try.
-- **AI Dungeon Classic (GPT-2)** - [1.5B](https://huggingface.co/Henk717/ai-dungeon2-classic-ggml) - Based on the original open-source AI Dungeon 2 model before it went online-only and was renamed to "AI Dungeon".
+- **Spring Dragon (LLaMA 1)** - [13B](https://huggingface.co/TheBloke/Spring-Dragon-GGML) - If you're familiar with AI Dungeon, this is a model trained on top of the same dataset, intended to replicate AI Dungeon's 2020 "Dragon" experience, and works best with KoboldAI/KoboldCpp's "Adventure" mode. If you're feeling nostalgic or just curious, this is worth a try.
+- **AI Dungeon Classic (GPT-2)** - [1.5B](https://huggingface.co/Henk717/ai-dungeon2-classic-ggml) - Based on the original open-source AI Dungeon 2 model before it went online-only and was renamed to "AI Dungeon". Works perfectly in KoboldCpp.
   
 
 *Continue into [settings](settings.md)...*
