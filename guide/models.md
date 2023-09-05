@@ -42,7 +42,7 @@ Also, Llama 2 models are often smarter than LLaMA 1's, but have their own repeti
 
 #### Assistant (ChatGPT)
 - **Nous-Hermes (Llama 2)** - [7B](https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGUF) / [13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF) / [70B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-70B-GGUF) - A pretty good "universal" model for both assistant tasks and SFW/NSFW storywriting/roleplay. It wasn't trained on multi-turn conversations, so you may need to hold its hand a bit at first. [Redmond-Puffin has been recommended by an employee over Nous-Hermes](https://old.reddit.com/r/LocalLLaMA/comments/155wwrj/noushermesllama2_13b_released_beats_previous/jt20234/), though Nous-Hermes is still preferred by many users. A discussion of the two can be found [here](https://old.reddit.com/r/LocalLLaMA/comments/158j9r9/nous_hermes_llama2_vs_redmond_puffin_13b/).
-- **Vicuna (Llama 2)** - A well-known model series that replicates the experience of ChatGPT down to its refusals. Unlike Nous-Hermes, it's censored.
+- **Vicuna (Llama 2)** - [7B](https://huggingface.co/TheBloke/vicuna-7B-v1.5-GGUF) / [13B](https://huggingface.co/TheBloke/vicuna-13B-v1.5-GGUF) / [33B (LLaMA 1)](https://huggingface.co/TheBloke/vicuna-33B-GGML) - A well-known model series that replicates the experience of ChatGPT down to its refusals, so unlike Nous-Hermes, it's censored.
 
 #### Roleplay (CharacterAI, Replika, etc) / Storywriting (NovelAI)
 *If you're using SillyTavern, you'll have good results with the Alpaca instruct preset, but if you prefer lengthier responses, the simple-proxy-for-tavern instruct preset is great.*
