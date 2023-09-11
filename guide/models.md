@@ -62,7 +62,8 @@ Also, Llama 2 models are often smarter than LLaMA 1's, but have their own issues
 #### Experimental (Roleplay)
 *These models are less popular and haven't been tested nearly as much, but are included in this guide to bring light to their potential.*
 - **Stheno (Llama 2)** - [13B](https://huggingface.co/TheBloke/Stheno-L2-13B-GGUF) - A model merge similar in functionality and quality to MythoMax.
-- **Mythalion (Llama 2)** - [13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF) - Merge of MythoMax and Pygmalion-2.
+- **Pygmalion-2 (Llama 2)** - [7B](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF) - [13B](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF) - The latest model in the Pygmalion series. It has more human data than MythoMax, giving it a more human-like writing style, at the cost of being less intelligent.
+- **Mythalion (Llama 2)** - [13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF) - Merge of MythoMax and Pygmalion-2, *"a versatile and powerful roleplay model combining MythoMax’s stability and intelligence with Pygmalion-2’s raw creative power."*
 - **Re:MythoMax (Llama 2)** - [13B](https://huggingface.co/Undi95/ReMM-v2-L2-13B-GGUF) - Also known as ReMM-SLERP. Recreation of MythoMax, but with updated versions of the same models used for the MythoMax recipe.
 - **Re:MythoMax-Lion (Llama 2)** - [13B](https://huggingface.co/Undi95/ReMM-Lion-13B-GGUF) - Recreation of Mythalion.
 - **MLewd (Llama 2)** - [13B](https://huggingface.co/Undi95/MLewd-L2-13B-v2-3-GGUF) - A model with a heavy NSFW bias, finetuned by the same one behind Re:MythoMax and ReMM-Lion.
