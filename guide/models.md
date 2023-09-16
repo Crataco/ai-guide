@@ -1,71 +1,79 @@
 ![image](https://user-images.githubusercontent.com/55674863/230696024-98ce9e16-f558-4402-ac43-0e7f960c118c.png)
 
 # Models
-
-### What are models?
+## What are models?
 
 **TL;DR:** A model is your AI's brain.
 
-To elaborate, a model, in this case, is an AI that knows what text to generate because it was given a ton of text to learn from, usually from websites and books. These are then released as base models (e.g. LLaMA) of specific sizes (e.g. 7B). They end up being jack-of-all-trades models that can generate almost anything, but requires a bit of work to steer it into the right direction.
+A model, in this case, is a text generating AI that predicts the next text based on the patterns it learned from its training data. These are then released as base models (e.g. LLaMA, Llama 2) of specific sizes (e.g. 7B, 13B, 33B, 65B). They end up being jack-of-all-trades models that can generate a variety of topics, but require a bit of work to steer it into the right direction.
 
-This is where finetunes come in, where people train the models on further data. This gives it special knowledge and makes it easier to use it a specific way. An example would be Vicuna 7B, trained on ChatGPT logs to learn from (and mimic) ChatGPT. Or Pygmalion 7B, trained on CharacterAI logs to mimic CharacterAI.
+This is where finetunes come in, where the models are trained on further data. This gives it special knowledge and makes it easier to use it a specific way. An example would be Vicuna 7B, trained on ChatGPT logs to learn from (and mimic) ChatGPT. Or Pygmalion 7B, trained on CharacterAI logs to mimic CharacterAI.
 
-But there are different ways to run them: enter backends.
+There are also different ways to run them: enter backends.
 
-* * *
+## What is a backend?
 
-### What is a backend?
+Backends are different ways to store and use the AI. The most notable ones are Transformers, GGUF, and Exllama. **If you are new, go for GGUF.**
 
-**TL;DR:** If you're new, just go for GGUF.
+- Transformers has been around ever since the dawn of text generation, but it is not ideal for the average user. Transformers models take a lot of storage and memory. For example, LLaMA 7B is estimated to be around ~13 GB, and would require a computer with approximately 32 GB of RAM, give or take.
 
-Backends are different ways to store and use the AI. 
+- GGUF (formerly GGML) versions use "quantization". For the sake of simplicity, you can consider quantization similar to lossy compression. The quantization levels you can choose range from "q2" (fastest, lightest, worst quality) to "q8" (slowest, heaviest, best quality), but a value of q5_K_M is recommended. [TheBloke](https://huggingface.co/TheBloke) quantizes many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF), telling you the size and maximum memory usage of each quantization. **This is the option recommended for most users.**
 
-For example, LLaMA 7B is available for the [Transformers](https://huggingface.co/decapoda-research/llama-7b-hf), [GGML](https://huggingface.co/TheBloke/LLaMa-7B-GGML), and [GPTQ/Exllama](https://huggingface.co/camelids/llama-7b-int4-gptq-groupsize128-safetensors/tree/main) backends.
+- GPTQ & Exllama are others that also support quantization, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU to hold the model you want to run, but this guide will not cover this option.
 
-### What does that mean?
+This guide will focus on GGUF versions of models whenever possible for maximum compatibility with existing systems.
 
-- Transformers has been around for a while, but it is not ideal for the average user. Transformers models take a lot of storage and memory. For example, LLaMA 7B is about ~13 GB and would approximately take about 32GB of RAM.
+## Model recommendations
 
-- GGUF (formerly GGML) versions, on the other hand, are quantized, making them ideal for the average user. This means that unlike Transformers, they take little storage and memory, at the cost of a small decrease in quality. There are different levels of quantization affecting how much of a quality decrease it'd be, but for LLaMA 7B, the most compatible quantization (q4_0) is available as a ~4 GB model which would take ~4-6 GB of RAM.
+These are the models the guide recommends, ranging from the smallest models to 13B. Larger models (such as LLaMA1 33B and Llama2 70B) exist, but are not covered due to the guide author's lack of extensive testing.
 
-- GPTQ & Exllama are others that also support quantization, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary.
-
-This guide will point you to the GGUF versions of models whenever possible for maximum compatibility with existing systems.
+One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list (except Holodeck, AI Dungeon Classic and Spring Dragon) will work best with the Alpaca format.
 
 * * *
 
-### Model recommendations
+### General-Purpose Assistant (like ChatGPT)
+- Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models) (via [languagemodels](https://github.com/jncraton/languagemodels))**
+- 3B (~5GB RAM) - **[Marx 3B V2](https://huggingface.co/NikolayKozloff/Marx-3B-V2-GGUF#provided-files)**
+- 7B (~8GB RAM) - **[Nous Hermes Llama 2 7B](https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGUF#provided-files)** (uncensored) or **[Vicuna 7B](https://huggingface.co/TheBloke/vicuna-7B-v1.5-GGUF)** (censored)
+- 13B (~12GB RAM) - **[Nous Hermes Llama 2 13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF#provided-files)** (uncensored) or **[Vicuna 13B](https://huggingface.co/TheBloke/vicuna-13B-v1.5-GGUF)** (censored)
 
-These are the models the guide recommends for specific tasks.
+#### Recommended settings:
+*The guide recommends the LLaMA-Precise settings.*
 
-Most models are work best when you follow a generation "format". Such as prefixing your response with `### INSTRUCTION` and the AI's with `### RESPONSE`. These are often called "instruct presets" or "prompt templates". Most frontends let you choose one and will do the work for you behind the scenes.
+* * *
 
-Also, Llama 2 models are often smarter than LLaMA 1's, but have their own issues with repeating the same predictable language, said to be more noticeable at smaller sizes. [[1]](https://old.reddit.com/r/LocalLLaMA/comments/155vy0k/llama_2_too_repetitive/)[[2]](https://old.reddit.com/r/LocalLLaMA/comments/15gp9fq/chronos13bv2_llama_2_roleplay_storywriting_and/junbr4x/)[[3]](https://old.reddit.com/r/LocalLLaMA/comments/15k07ba/anyone_else_is_getting_problems_with_repetition/)[[4]](https://old.reddit.com/r/LocalLLaMA/comments/15pa5zd/i_think_im_ready_to_call_llama2_almost_unusable/)
+### Roleplay (like CharacterAI, Replika, etc.) / Storywriting (like NovelAI)
+*You can also use general-purpose assistants for RP and storytelling, but these ones are made for the task.*
+- 7B (~8GB RAM) - **[Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF)**
+- 13B (~12GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Stheno 13B](https://huggingface.co/TheBloke/Stheno-L2-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
 
-#### Assistant (ChatGPT)
-- **Nous-Hermes (Llama 2)** - [7B](https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGUF) / [13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF) / [70B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-70B-GGUF) - A pretty good "universal" model for both assistant tasks and SFW/NSFW storywriting/roleplay. It wasn't trained on multi-turn conversations, so you may need to hold its hand a bit at first. [Redmond-Puffin has been recommended by an employee over Nous-Hermes](https://old.reddit.com/r/LocalLLaMA/comments/155wwrj/noushermesllama2_13b_released_beats_previous/jt20234/), though Nous-Hermes is still preferred by many users. A discussion of the two can be found [here](https://old.reddit.com/r/LocalLLaMA/comments/158j9r9/nous_hermes_llama2_vs_redmond_puffin_13b/).
-- **Vicuna (Llama 2)** - [7B](https://huggingface.co/TheBloke/vicuna-7B-v1.5-GGUF) / [13B](https://huggingface.co/TheBloke/vicuna-13B-v1.5-GGUF) / [33B (LLaMA 1)](https://huggingface.co/TheBloke/vicuna-33B-GGML) - A well-known model series that replicates the experience of ChatGPT down to its refusals, so unlike Nous-Hermes, it's censored.
-- **RWKV-4 Raven (RWKV-4)** - [1.5B / 3B / 7B / 14B](https://huggingface.co/latestissue/rwkv-4-raven-ggml-quantized/tree/main) - For low-end users. Can be used via [KoboldCpp](https://github.com/LostRuins/koboldcpp).
-- **[LaMini](https://github.com/mbzuai-nlp/lamini-lm#models)** - For low-end users. Can be used via [languagemodels](https://github.com/jncraton/languagemodels).
+#### Model descriptions:
+- ***MythoMax 13B** is a very popular model merge. One of the best offline models for creative tasks, doing a good job at SFW and NSFW roleplay. Probably the best balance of creativity and coherency that you can get on an average Joe's computer. However, if you like living on the edge, a user has remade MythoMax with upgraded "ingredients": [the ReMM series](https://huggingface.co/models?sort=trending&search=remm+gguf).*
 
-#### Roleplay (CharacterAI, Replika, etc) / Storywriting (NovelAI)
-*If you're using SillyTavern, you'll have good results with the Alpaca instruct preset, but if you prefer lengthier responses, the simple-proxy-for-tavern instruct preset is great.*
-- **MythoMax (Llama 2)** - [13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF) - A very popular model merge. One of the best offline CharacterAI-like models, doing a good job at SFW and NSFW roleplay. Probably the best balance of creativity and coherency that you can get on your computer.
-- **Zarablend (Llama 2)** - [7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF) - Added to this guide for low-end users who can't run MythoMax, or mid-end users who find MythoMax too slow. It is a similar model in spirit and is the best 7B roleplay model according to Ayumi's ERP Ranking.
-- **Airoboros (Llama 2)** - [7B](https://huggingface.co/TheBloke/Airoboros-L2-7B-2.1-GGUF) / [13B](https://huggingface.co/TheBloke/Airoboros-L2-13B-2.1-GGUF) / [33B (LLaMA 1)](https://huggingface.co/TheBloke/Airoboros-33B-2.1-GGUF) / [70B](https://huggingface.co/TheBloke/Airoboros-L2-70B-2.1-GGUF) - Better models exist for 7B and 13B, but it's one of the best options for 33B and 70B. For comfortable use, 33B requires about 32GB RAM and 70B requires about 64GB RAM. If you have a supported GPU, you can split the model between the RAM and GPU VRAM, and you can use smaller quantizations such as q2 and q3 to lessen the hardware requirements.
-- **Holodeck (Llama 2)** - [13B](https://huggingface.co/KoboldAI/LLAMA2-13B-Holodeck-1-GGML) - Storywriting only. It is one of the few contemporary models trained _only_ on stories. If you've used NovelAI before, the way you interact with this model will be very familiar. It is meant to be used with Oobabooga's notebook interface or Kobold's story mode. It was also merged with MythoMax into a model called "HoloMax" for co-writing, which can be found [here](https://huggingface.co/KoboldAI/LLaMA2-13B-Holomax-GGML).
+- ***Stheno 13B** is a newer model than MythoMax, and is debatable on whether or not it is an upgrade.*
 
-#### Adventure (AI Dungeon)
-- **Spring Dragon (LLaMA 1)** - [13B](https://huggingface.co/TheBloke/Spring-Dragon-GGUF) - If you're familiar with AI Dungeon, this is a model trained on top of the same dataset, intended to replicate AI Dungeon's 2020 "Dragon" experience, and works best with KoboldAI/KoboldCpp's "Adventure" mode. If you're feeling nostalgic or just curious, this is worth a try.
-- **AI Dungeon Classic (GPT-2)** - [1.5B](https://huggingface.co/Henk717/ai-dungeon2-classic-ggml) - Based on the original open-source AI Dungeon 2 model before it went online-only and was renamed to "AI Dungeon". Works perfectly in KoboldCpp.
+- *Other 13B models exist for roleplay that (in the guide author's opinion) have better prose than MythoMax, but feel noticeably dumber, such as **[Pygmalion 2](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF)**, **[Mythalion](https://huggingface.co/TheBloke/Mythalion-13B-GGUF)**, and the NSFW-oriented **[MLewdBoros](https://huggingface.co/TheBloke/MLewdBoros-L2-13B-GGUF)**.*
 
-#### Experimental (Roleplay)
-*These models are less popular and haven't been tested nearly as much, but are included in this guide to bring light to their potential.*
-- **Stheno (Llama 2)** - [13B](https://huggingface.co/TheBloke/Stheno-L2-13B-GGUF) - A model merge similar in functionality and quality to MythoMax.
-- **Pygmalion-2 (Llama 2)** - [7B](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF) - [13B](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF) - The latest model in the Pygmalion series. It has more human data than MythoMax, giving it a more human-like writing style, at the cost of being less intelligent.
-- **Mythalion (Llama 2)** - [13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF) - Merge of MythoMax and Pygmalion-2, *"a versatile and powerful roleplay model combining MythoMax’s stability and intelligence with Pygmalion-2’s raw creative power."*
-- **Re:MythoMax (Llama 2)** - [13B](https://huggingface.co/Undi95/ReMM-v2-L2-13B-GGUF) - Also known as ReMM-SLERP. Recreation of MythoMax, but with updated versions of the same models used for the MythoMax recipe.
-- **Re:MythoMax-Lion (Llama 2)** - [13B](https://huggingface.co/Undi95/ReMM-Lion-13B-GGUF) - Recreation of Mythalion.
-- **MLewd (Llama 2)** - [13B](https://huggingface.co/Undi95/MLewd-L2-13B-v2-3-GGUF) - A model with a heavy NSFW bias, finetuned by the same one behind Re:MythoMax and ReMM-Lion.
+- ***Holodeck** is one of the few contemporary models trained _only_ on human-written stories, continuing the tradition of earlier models like Picard, Janeway, and Nerys. If you have used NovelAI before, the way you co-write with this model should be very familiar to you. It is meant to be used with Oobabooga's notebook mode or Kobold's story mode. It was also merged with MythoMax into a model called "HoloMax" which can be found [here](https://huggingface.co/KoboldAI/LLaMA2-13B-Holomax-GGML).*
+
+#### Recommended settings:
+*These descriptions are subjective, so the only way to know how they influence the generations is to try them yourself.*
+- ***Space Alien** and **Titanic** are popular options for MythoMax, but regenerated responses may feel same-y. Start with these ones.*
+- ***Shortwave** keeps the responses eventful, for better or worse.*
+- ***NovelAI Storywriter** tries to keep the conversation "safe", never deviating as much as the others.*
+- ***Mirostat** is explained in-depth [here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling). For `tau`, a value between 4.0 and 8.0 is generally recommended. For `eta`, a value between 0.1 and 0.4 is generally recommended.*
+
+* * *
+
+### Adventure (like AI Dungeon)
+*These models are relatively poorer quality due to being trained on AI Dungeon's [infamous dataset](https://gitgud.io/AuroraPurgatio/aurorapurgatio) and/or earlier models than LLaMA. If you are not seeking nostalgia, the guide recommends using an assistant or roleplay model and asking it to start a text adventure.*
+- 1.5B (~2GB RAM) - **[AI Dungeon 2 Classic 1.5B](https://huggingface.co/Henk717/ai-dungeon2-classic-ggml)** (via [KoboldCpp](https://github.com/LostRuins/koboldcpp))
+- 13B (~12GB RAM) - **[Spring Dragon 13B](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
+
+#### Model descriptions:
+- ***AI Dungeon Classic** is based on the original open-source AI Dungeon 2 model before it went online-only and was renamed to "AI Dungeon". Since it is a non-LLaMA model (GPT-2), you will need to download `AI-Dungeon-2-Classic.bin` and load it in KoboldCpp.*
+- ***Spring Dragon** intends to mimic AI Dungeon's 2020 "Dragon" experience. It works best with a frontend that has an "Adventure" mode, such as the Kobold series. If you are feeling nostalgic or just curious, this is worth a try.*
+
+* * *
 
 *Continue into [settings](settings.md)...*
