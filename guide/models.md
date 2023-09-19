@@ -17,7 +17,7 @@ Backends are different ways to store and use the AI. The most notable ones are T
 
 - Transformers has been around ever since the dawn of text generation, but it is not ideal for the average user. Transformers models take a lot of storage and memory. For example, LLaMA 7B is estimated to be around ~13 GB, and would require a computer with approximately 32 GB of RAM, give or take.
 
-- GGUF (formerly GGML) versions use "quantization". For the sake of simplicity, you can consider quantization similar to lossy compression. The quantization levels you can choose range from "q2" (fastest, lightest, worst quality) to "q8" (slowest, heaviest, best quality), but a value of q5_K_M is recommended. [TheBloke](https://huggingface.co/TheBloke) quantizes many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF), telling you the size and maximum memory usage of each quantization. **This is the option recommended for most users.**
+- GGUF (formerly GGML) versions can run on most computers thanks to their use of "quantization". For the sake of simplicity, you can consider quantization similar to lossy compression. The quantization levels you can choose range from "q2" (fastest, lightest, worst quality) to "q8" (slowest, heaviest, best quality), but a value of q5_K_M is recommended. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF), telling you the size and maximum memory usage of each quantization. **This is the option recommended for most users.**
 
 - GPTQ & Exllama are others that also support quantization, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU to hold the model you want to run, but this guide will not cover this option.
 
@@ -25,7 +25,11 @@ This guide will focus on GGUF versions of models whenever possible for maximum c
 
 ## Model recommendations
 
-These are the models the guide recommends, ranging from the smallest models to 13B. Larger models (such as LLaMA1 33B and Llama2 70B) exist, but are not covered due to the guide author's lack of extensive testing.
+Alternative sources for recommendations
+- [WolframRavenwolf's New Model Comparison/Test](https://old.reddit.com/r/LocalLLaMA/comments/16kecsf/new_model_comparisontest_part_1_of_2_15_models/) (13B to 70B)
+- [Ayumi's LLM Role Play & ERP Ranking](https://rentry.co/ayumi_erp_rating) (7B to 33B) 
+
+The following are the models the guide recommends, ranging from the smallest models to 13B, and the amount of RAM recommended to run them. Larger models (such as LLaMA1 33B and Llama2 70B) exist, but are not covered due to the guide author's lack of extensive testing.
 
 One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list (except Holodeck, AI Dungeon Classic and Spring Dragon) will work best with the Alpaca format.
 
@@ -43,7 +47,7 @@ One important thing to keep in mind is that most models work best when you follo
 * * *
 
 ### Roleplay (like CharacterAI, Replika, etc.) / Storywriting (like NovelAI)
-*You can also use general-purpose assistants for RP and storytelling, but these ones are made for the task.*
+*You can also use general-purpose assistants for RP and storytelling, but these ones specialize in the tasks.*
 - 7B (~8GB RAM) - **[Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF)**
 - 13B (~12GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Stheno 13B](https://huggingface.co/TheBloke/Stheno-L2-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
 
@@ -76,4 +80,4 @@ One important thing to keep in mind is that most models work best when you follo
 
 * * *
 
-*Continue into [settings](settings.md)...*
+*Continue into [settings](settings.md) (outdated)...*
