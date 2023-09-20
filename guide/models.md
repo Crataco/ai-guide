@@ -49,16 +49,16 @@ One important thing to keep in mind is that most models work best when you follo
 ### Roleplay (like CharacterAI, Replika, etc.) / Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these ones specialize in the tasks.*
 - 7B (~8GB RAM) - **[Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF)**
-- 13B (~12GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Stheno 13B](https://huggingface.co/TheBloke/Stheno-L2-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
+- 13B (~12GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Mythalion 13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
 
 #### Model descriptions:
-- ***MythoMax 13B** is a very popular model merge. One of the best offline models for creative tasks, doing a good job at SFW and NSFW roleplay. Probably the best balance of creativity and coherency that you can get on an average Joe's computer. However, if you like living on the edge, a user has remade MythoMax with upgraded "ingredients": [the ReMM series](https://huggingface.co/models?sort=trending&search=remm+gguf).*
+- ***MythoMax 13B** is a very popular model merge. One of the best offline models for creative tasks, doing a good job at SFW and NSFW roleplay. Probably the best balance of creativity and coherency that you can get on an average Joe's computer. However, if you like living on the edge, a user has remade MythoMax with upgraded "ingredients": [the ReMM series](https://huggingface.co/models?sort=trending&search=remm+gguf). A popular alternative to MythoMax is **[Stheno](https://huggingface.co/TheBloke/Stheno-L2-13B-GGUF)**.*
 
-- ***Stheno 13B** is a newer model than MythoMax, and is debatable on whether or not it is an upgrade.*
-
-- *Other 13B models exist for roleplay that (in the guide author's opinion) have better prose than MythoMax, but feel noticeably dumber, such as **[Pygmalion 2](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF)**, **[Mythalion](https://huggingface.co/TheBloke/Mythalion-13B-GGUF)**, and the NSFW-oriented **[MLewdBoros](https://huggingface.co/TheBloke/MLewdBoros-L2-13B-GGUF)**.*
+- ***Mythalion 13B** is a merge that can best be described as "combining MythoMax’s stability and intelligence with Pygmalion-2’s raw creative power." The guide author finds MythoMax better at maintaining coherency but Mythalion better at prose.*
 
 - ***Holodeck** is one of the few contemporary models trained _only_ on human-written stories, continuing the tradition of earlier models like Picard, Janeway, and Nerys. If you have used NovelAI before, the way you co-write with this model should be very familiar to you. It is meant to be used with Oobabooga's notebook mode or Kobold's story mode. It was also merged with MythoMax into a model called "HoloMax" which can be found [here](https://huggingface.co/KoboldAI/LLaMA2-13B-Holomax-GGML).*
+
+- *Other models exist for 13B roleplay such as **[Pygmalion 2](https://huggingface.co/TheBloke/Pygmalion-2-13B-GGUF)** and the NSFW-oriented **[MLewdBoros](https://huggingface.co/TheBloke/MLewdBoros-L2-13B-GGUF)**.*
 
 #### Recommended settings:
 *These descriptions are subjective, so the only way to know how they influence the generations is to try them yourself.*
