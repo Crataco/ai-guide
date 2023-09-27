@@ -8,22 +8,20 @@
 
 A frontend is the interface you use to run and interact with your AI. To avoid confusion, this guide separates them into two categories: standalone and proxy.
 
-**Standalone** frontends work on their own, and are used to interact with the models.
+**Standalone** frontends work on their own, and are used to run and interact with the models.
 
-Good standalone frontends for beginners include:
+Recommended standalone frontends for beginners:
 - **[Faraday](https://faraday.dev/)** *(for friendly chat and roleplay) (closed-source, but offline)*
 - **[LM Studio](https://lmstudio.ai)** *(for assistant chat)*
 
-These standalone frontends are more popular and flexible, but have a bit of a learning curve:
+Recommended standalone frontends for power users:
 - **[KoboldCpp](https://github.com/LostRuins/koboldcpp)** *(for story co-writing, friendly chat and roleplay, assistant chat, and text adventure)*
 - **[Oobabooga's Text Generation Web UI](https://github.com/oobabooga/text-generation-webui)** *(for story co-writing, friendly chat and roleplay, and assistant chat)*
 
-*(Users of Stable Diffusion's AUTOMATIC1111 interface may feel right at home with Oobabooga's Text Generation Web UI.)*
+*(Users of AUTOMATIC1111's Stable Diffusion interface may feel right at home with Oobabooga's Text Generation Web UI.)*
 
-**Proxy** frontends require a standalone frontend running in the background to connect to. They may be able to connect to KoboldCpp, Text Generation Web UI, and online services like OpenAI and NovelAI. All of these proxy frontends target chat and roleplay:
-- **[SillyTavern](https://github.com/Cohee1207/SillyTavern)**
-- **[TavernAI](https://github.com/TavernAI/TavernAI)**
-- **[LiteVN](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai)**
-- **[miku.gg](https://github.com/miku-gg/miku)**
+**Proxy** frontends are often chat/roleplay-oriented. They can't run the models on their own, so they require a standalone frontend running in the background to connect to. So far, the two most widely-supported frontends they can connect to are Oobabooga's and Kobold's.
+
+The most popular and actively developed of these proxy frontends is **[SillyTavern](https://github.com/Cohee1207/SillyTavern)**, but if you like choice, there's also the original [Tavern](https://github.com/TavernAI/TavernAI) it branched off from, and more obscure proxy frontends such as [miku.gg](https://docs.miku.gg/), [Laika's LiteVN UI](https://laika-ch.itch.io/laikas-litevn-ui-for-koboldai), and [RisuAI](https://github.com/kwaroran/RisuAI).
 
 *Continue into [models](models.md)...*
