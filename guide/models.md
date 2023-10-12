@@ -13,32 +13,32 @@ There are also different ways to run them: enter backends.
 
 ## What is a backend?
 
-Backends are different ways to store and use the AI. The most notable ones are Transformers, GGUF, and Exllama. **If you are new, go for GGUF.**
+Backends are different ways to store and use the AI. The most notable ones are Transformers, GGUF, and Exllama. **The option recommended for most users is GGUF.**
 
 - Transformers has been around ever since the dawn of text generation, but it is not ideal for the average user. Transformers models take a lot of storage and memory. For example, LLaMA 7B is estimated to be around ~13 GB, and would require a computer with approximately 32 GB of RAM, give or take.
 
-- GGUF (formerly GGML) versions can run on most computers thanks to their use of "quantization". For the sake of simplicity, you can consider quantization similar to lossy compression. The quantization levels you can choose range from "q2" (fastest, lightest, worst quality) to "q8" (slowest, heaviest, best quality), but a value of q5_K_M is recommended. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF), telling you the size and maximum memory usage of each quantization. **This is the option recommended for most users.**
+- GGUF (formerly GGML) versions can run on most computers thanks to their use of "quantization". For the sake of simplicity, you can consider quantization similar to lossy compression. The quantization levels you can choose range from "q2" (fastest, lightest, worst quality) to "q8" (slowest, heaviest, best quality), but a value of q5_K_M is recommended. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and maximum memory usage of each quantization.
 
-- GPTQ & Exllama are others that also support quantization, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU to hold the model you want to run, but this guide will not cover this option.
+- GPTQ, Exllama, and etc. are others that support their own quantized models, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU to hold the model you want to run, but this guide will not cover this option.
 
 This guide will focus on GGUF versions of models whenever possible for maximum compatibility with existing systems.
 
 ## Model recommendations
 
-Alternative sources for recommendations
+Alternative sources for recommendations:
 - [WolframRavenwolf's New Model Comparison/Test](https://old.reddit.com/r/LocalLLaMA/comments/16kecsf/new_model_comparisontest_part_1_of_2_15_models/) (13B to 70B)
 - [Ayumi's LLM Role Play & ERP Ranking](https://rentry.co/ayumi_erp_rating) (7B to 33B) 
 
 The following are the models the guide recommends, ranging from the smallest models to 13B, and the amount of RAM recommended for your computer to run them.
 
-One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list (except Holodeck, AI Dungeon Classic and Spring Dragon) will work best with the Alpaca format.
+One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list (except Mistral 7B models, Holodeck, AI Dungeon Classic and Spring Dragon) will work best with the Alpaca format.
 
 * * *
 
 ### General-Purpose Assistant (like ChatGPT)
 - Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models) (via [languagemodels](https://github.com/jncraton/languagemodels))**
 - 3B (~5GB RAM) - **[Marx 3B V2](https://huggingface.co/NikolayKozloff/Marx-3B-V2-GGUF#provided-files)**
-- 7B (~8GB RAM) - **[Mistral 7B OpenOrca](https://huggingface.co/TheBloke/Mistral-7B-OpenOrca-GGUF)** (uses the "ChatML" instruct preset) or **[Nous Hermes Llama 2 7B]()**
+- 7B (~8GB RAM) - **[Mistral 7B OpenOrca](https://huggingface.co/TheBloke/Mistral-7B-OpenOrca-GGUF)** (uses the "ChatML" instruct preset)
 - 13B (~12GB RAM) - **[Nous Hermes Llama 2 13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF#provided-files)** (uncensored) or **[Vicuna 13B](https://huggingface.co/TheBloke/vicuna-13B-v1.5-GGUF)** (censored)
 
 #### Recommended settings:
@@ -68,14 +68,16 @@ One important thing to keep in mind is that most models work best when you follo
 
 * * *
 
-### Adventure (like AI Dungeon)
-*These models are relatively poorer quality due to being trained on AI Dungeon's [infamous dataset](https://gitgud.io/AuroraPurgatio/aurorapurgatio) and/or earlier models than LLaMA. If you are not seeking nostalgia, the guide recommends using an assistant or roleplay model and asking it to start a text adventure.*
+### Text Adventure (like AI Dungeon)
+*These models are trained on human-written text adventures, making it generate Choose Your Own Adventure stories. They work best in "Adventure" mode (Kobold) or with the "Adventure" preset (SillyTavern).*
 - 1.5B (~2GB RAM) - **[AI Dungeon 2 Classic 1.5B](https://huggingface.co/Crataco/AI-Dungeon-2-Classic-GGML)** (via [KoboldCpp](https://github.com/LostRuins/koboldcpp))
-- 13B (~12GB RAM) - **[Spring Dragon 13B](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
+- 7B (~8GB RAM) - **[Dans-AdventurousWinds-7b](https://huggingface.co/TheBloke/Dans-AdventurousWinds-7B-GGUF)**
+- 13B (~12GB RAM) - **[Dans-CreepingSenseOfDoom-13b](https://huggingface.co/PocketDoc/Dans-CreepingSenseOfDoom-13b-gguf)** (Metharme instruct preset) or **[Dans-RetroRodeo-13b](https://huggingface.co/PocketDoc/Dans-RetroRodeo-13b-gguf)** or **[Spring Dragon 13B](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
 
 #### Model descriptions:
-- ***AI Dungeon Classic** is based on the original open-source AI Dungeon 2 model before it became an online service and was subsequently renamed to "AI Dungeon". Since it is a non-LLaMA model (GPT-2), you will need to download your file of choice and load it in KoboldCpp.*
-- ***Spring Dragon** intends to mimic AI Dungeon's 2020 "Dragon" experience. It works best with a frontend that has an "Adventure" mode, such as the Kobold series. If you are feeling nostalgic or just curious, this is worth a try.*
+- ***AI Dungeon 2 Classic** is based on the original open-source AI Dungeon 2 model, trained on [the infamous `text_adventures.txt`](https://gitgud.io/AuroraPurgatio/aurorapurgatio), before it became an online service and was subsequently renamed to "AI Dungeon". Since it is a non-LLaMA model (GPT-2), you will need to download your file of choice and load it in KoboldCpp.*
+- ***Spring Dragon** is trained on the same dataset and intends to mimic AI Dungeon's 2020 "Dragon" experience. It works best with a frontend that has an "Adventure" mode, such as the Kobold series. If you are feeling nostalgic or just curious, this is worth a try.*
+- ***Dan's Models** are trained on top of other curated text adventure datasets, custom versions of those used for KoboldAI's early [Skein](https://huggingface.co/KoboldAI/GPT-J-6B-Skein) models.*
 
 * * *
 
