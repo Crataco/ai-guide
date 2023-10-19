@@ -13,21 +13,21 @@ There are also different ways to run them: enter backends.
 
 ## What is a backend?
 
-Backends are different ways to store and use the AI. The most notable ones are Transformers, GGUF, and Exllama. **The option recommended for most users is GGUF.**
+Backends are different ways to store and use the AI model. The most notable ones are Transformers, GGUF, and Exllama. **The option recommended for most users is GGUF.**
 
-- Transformers has been around ever since the dawn of text generation, but it is not ideal for the average user. Transformers models take a lot of storage and memory. For example, LLaMA 7B is estimated to be around ~13 GB, and would require a computer with approximately 32 GB of RAM, give or take.
+- GGUF (formerly GGML) versions can run on most computers thanks to their use of "quantization". For the sake of simplicity, you can consider quantization a way to cut down on size at the cost of slight quality loss. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality), but a value of q5_K_M is ideal for most situations. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and maximum memory usage of each level.
 
-- GGUF (formerly GGML) versions can run on most computers thanks to their use of "quantization". For the sake of simplicity, you can consider quantization similar to lossy compression. The quantization levels you can choose range from "q2" (fastest, lightest, worst quality) to "q8" (slowest, heaviest, best quality), but a value of q5_K_M is recommended. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and maximum memory usage of each quantization.
+- Transformers has been around for a while, but it is not ideal for the average user. Transformers models take a lot of storage and memory. For example, LLaMA 7B is estimated to be around ~13 GB, and would require a computer with approximately 32 GB of RAM, give or take.
 
-- GPTQ, Exllama, and etc. are others with their own quantized format, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU to hold the model you want to run, but this guide will not cover this option.
+- GPTQ, Exllama, and etc. are other backends with their own quantized format, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU to hold the model you want to run, but this guide will not cover this option.
 
-This guide will focus on GGUF versions of models whenever possible for maximum compatibility with existing systems.
+This guide will focus on GGUF versions of models, which most computers can run.
 
 ## Model recommendations
 
 Alternative sources for recommendations:
-- [WolframRavenwolf's New Model Comparison/Test](https://old.reddit.com/r/LocalLLaMA/comments/16kecsf/new_model_comparisontest_part_1_of_2_15_models/) (13B to 70B)
-- [Ayumi's LLM Role Play & ERP Ranking](https://rentry.co/ayumi_erp_rating) (7B to 33B) 
+- [WolframRavenwolf's posts](https://old.reddit.com/r/LocalLLaMA/comments/178nf6i/mistral_llm_comparisontest_instruct_openorca/) (7B to 70B)
+- [Ayumi's LLM Role Play & ERP Ranking](https://rentry.co/ayumi_erp_rating) (3B to 33B)
 
 The following are the models the guide recommends, ranging from the smallest models to 13B, and the amount of RAM recommended for your computer to run them.
 
@@ -42,13 +42,14 @@ One important thing to keep in mind is that most models work best when you follo
 - 13B (~12GB RAM) - **[Nous Hermes Llama 2 13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF#provided-files)** (uncensored) or **[Vicuna 13B](https://huggingface.co/TheBloke/vicuna-13B-v1.5-GGUF)** (censored)
 
 #### Recommended settings:
-*The guide recommends "Divine Intellect" or "LLaMA-Precise" settings.*
+*The guide recommends "Divine Intellect" or "LLaMA-Precise" settings. The guide author uses "Deterministic".*
 
 * * *
 
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) / Storywriting (like NovelAI)
-*You can also use general-purpose assistants for RP and storytelling, but these ones are well-known for their performance when it comes to those subjects.*
-- 7B (~8GB RAM) - **Same as above. [Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF)** is worth a mention, but it's a little dated.**
+*You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
+- 1.3B (~2GB RAM) - **[Metharme 1.4B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
+- 7B (~8GB RAM) - **Same as above. [Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF) is worth a mention, but it's a little dated.**
 - 13B (~16GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Mythalion 13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
 - 20B (~20GB RAM) - **[MLewd-ReMM-L2-Chat 20B](https://huggingface.co/TheBloke/MLewd-ReMM-L2-Chat-20B-GGUF)**
 - 70B (~64GB RAM) - **[Xwin 70B](TheBloke/Xwin-LM-70B-V0.1-GGUF)**
