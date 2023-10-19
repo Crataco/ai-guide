@@ -48,8 +48,8 @@ One important thing to keep in mind is that most models work best when you follo
 
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) / Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
-- 1.3B (~2GB RAM) - **[Metharme 1.4B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **Same as above. [Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF) is worth a mention, but it's a little dated.**
+- 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
+- 7B (~8GB RAM) - **Same as in the "General Purpose" section. [Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF) is worth a mention, but it's a little dated.**
 - 13B (~16GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Mythalion 13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
 - 20B (~20GB RAM) - **[MLewd-ReMM-L2-Chat 20B](https://huggingface.co/TheBloke/MLewd-ReMM-L2-Chat-20B-GGUF)**
 - 70B (~64GB RAM) - **[Xwin 70B](TheBloke/Xwin-LM-70B-V0.1-GGUF)**
