@@ -25,49 +25,45 @@ This guide will focus on GGUF versions of models, which most computers can run.
 
 ## Model recommendations
 
-Alternative sources for recommendations:
-- [WolframRavenwolf's posts](https://old.reddit.com/r/LocalLLaMA/comments/178nf6i/mistral_llm_comparisontest_instruct_openorca/) (7B to 70B)
-- [Ayumi's LLM Role Play & ERP Ranking](https://rentry.co/ayumi_erp_rating) (3B to 33B)
+Sources:
+- [WolframRavenwolf's 7B-70B General Test](https://old.reddit.com/r/LocalLLaMA/comments/17fhp9k/huge_llm_comparisontest_39_models_tested_7b70b/) (2023-10-24)
+- [WolframRavenwolf's 7B-20B Roleplay Test](https://old.reddit.com/r/LocalLLaMA/comments/17kpyd2/huge_llm_comparisontest_part_ii_7b20b_roleplay/) (2023-10-31)
 
-The following are the models the guide recommends, ranging from the smallest models to 13B, and the amount of RAM recommended for your computer to run them.
+The following are the models the guide recommends, and the amount of RAM recommended for your computer to run them. If you do not have enough system RAM, but some VRAM to spare, you can "offload" the model's "layers," splitting the model between your system RAM and video memory.
 
-One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list (except Mistral, Holodeck, AI Dungeon Classic and Spring Dragon models) will work best with the Alpaca format.
+One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list will use the Alpaca format unless specified otherwise.
 
 * * *
 
 ### General-Purpose (like ChatGPT)
-- Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models) (via [languagemodels](https://github.com/jncraton/languagemodels))**
+- Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models)** (via [languagemodels](https://github.com/jncraton/languagemodels))
+- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat v0.3](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)**
 - 3B (~5GB RAM) - **[Marx 3B V2](https://huggingface.co/NikolayKozloff/Marx-3B-V2-GGUF#provided-files)**
-- 7B (~8GB RAM) - **[Mistral 7B OpenOrca](https://huggingface.co/TheBloke/Mistral-7B-OpenOrca-GGUF)** or **[OpenHermes 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)** (both use the "ChatML" instruct preset)
-- 13B (~12GB RAM) - **[Nous Hermes Llama 2 13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF#provided-files)** (uncensored) or **[Vicuna 13B](https://huggingface.co/TheBloke/vicuna-13B-v1.5-GGUF)** (censored)
+- 7B (~8GB RAM) - **[OpenHermes 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)** (uses the "ChatML" instruct preset)
+- 13B (~12GB RAM) - **[Xwin-MLewd-13B-V0.2](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)** or **[Nous Hermes Llama 2 13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF#provided-files)**
+- 70B (~64GB RAM) - **[Xwin-LM 70B V0.1](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
 
 #### Recommended settings:
-*The guide recommends "Divine Intellect" or "LLaMA-Precise" settings. The guide author uses "Deterministic".*
+*The guide author uses "Deterministic". Some users may prefer "Divine Intellect" or "LLaMA-Precise" presets.*
 
 * * *
 
-### Chat and Roleplay (like CharacterAI, Replika, etc.) / Storywriting (like NovelAI)
+### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
 - 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **Same as in the "General Purpose" section. [Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF) is worth a mention, but it's a little dated.**
-- 13B (~16GB RAM) - **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** or **[Mythalion 13B](https://huggingface.co/TheBloke/Mythalion-13B-GGUF)** or **[Holodeck 13B](https://huggingface.co/shadowsword/LLAMA2-13B-Holodeck-1-GGML_K)** (storywriting only)
-- 20B (~20GB RAM) - **[MLewd-ReMM-L2-Chat 20B](https://huggingface.co/TheBloke/MLewd-ReMM-L2-Chat-20B-GGUF)**
-- 70B (~64GB RAM) - **[Xwin 70B](TheBloke/Xwin-LM-70B-V0.1-GGUF)**
+- 7B (~8GB RAM) - **[OpenHermes 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)** (newer, smarter) or **[Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF)** (older, well-known)
+- 13B (~16GB RAM) - **[Tiefighter 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Tiefighter-GGUF)** (newer, promising) or **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** (older, well-known)
+- 20B (~20GB RAM) - **[MXLewd-L2 20B](https://huggingface.co/TheBloke/MXLewd-L2-20B-GGUF)**\*
+- 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)**
 
-#### Model descriptions:
-- ***MythoMax 13B** (as of writing) remains the most popular model for roleplay, and rightfully so. It's one of the best offline models for creative tasks, doing a good job at SFW and NSFW RP. Probably the best balance of creativity, coherency, and resource usage that you can get on a 16GB computer.*
-- ***Zarablend 7B** is arguably the "MythoMax of 7B", which can run on devices that MythoMax can't.*
-- ***Mythalion 13B** is a merge that can best be described as "combining MythoMax’s stability and intelligence with Pygmalion-2’s raw creative power." The guide author finds MythoMax more reliable while Mythalion has more creativity. A discussion of MythoMax and Mythalion can be found [here](https://old.reddit.com/r/SillyTavernAI/comments/16mz6tw/mythomax_and_its_popular_merge/).*
-- ***MLewd-ReMM-L2-Chat 20B** is currently the guide author's favorite model. It sometimes feels less reliable than MythoMax, but has **very** colorful prose, and is heaven when compared with Mirostat settings.*
-- ***XWin 70B** is a very demanding model that, in the author's testing, is also very intelligent, but lacks the colorful vocabulary present in other creativity-focused models.*
-- ***Holodeck 13B** is one of the few contemporary models trained entirely on human-written stories, continuing the tradition of earlier models like Picard, Janeway, and Nerys. If you have used NovelAI before, the way you co-write with this model should be very familiar to you. It is meant to be used with Oobabooga's notebook mode or Kobold's story mode. It was also merged with MythoMax into a model called "HoloMax" [which can be found here](https://huggingface.co/KoboldAI/LLaMA2-13B-Holomax-GGUF).*
+\* *This model is an unofficial 20B, often referred to as a "Frankenstein" model. It may talk good, but its generations can be unreliable compared to the 7B and 13B models.*
 
 #### Recommended settings:
-*These descriptions are subjective, so the only way to know how they influence the generations is to try them yourself.*
-- ***Storywriter (NovelAI)** is the official recommendation for Pygmalion 2. The guide author considers this preset safe, but boring.*
-- ***Space Alien** and **Titanic** are popular options for MythoMax, but regenerated responses may feel same-y. Start with these ones.*
-- ***Shortwave** keeps the responses eventful, for better or worse.*
-- ***Mirostat** is explained in-depth [here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling). For `tau`, a value between 4.0 and 8.0 is generally recommended. For `eta`, a value between 0.1 and 0.4 is generally recommended. The guide author's choice is a `tau` of 5.0 and an `eta` of 1.0.*
+*The only way to know how they influence the generations is to try them yourself. These descriptions are subjective.*
+- **RecoveredRuins** is the guide author's preference for tweaking. It's the default selected by SillyTavern if it's powered on KoboldCpp.
+- **Storywriter (NovelAI)** feels safe, but boring. It is the official recommendation for Pygmalion 2.
+- **Space Alien** and **Titanic** were popular options for MythoMax, but regenerated responses may feel same-y.
+- **Mirostat** is explained in-depth [here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling). For `tau`, a value between 4.0 and 8.0 is generally recommended. For `eta`, a value between 0.1 and 0.4 is generally recommended, but some users set it up to 1.0.
 
 * * *
 
@@ -75,12 +71,7 @@ One important thing to keep in mind is that most models work best when you follo
 *These models are trained on human-written text adventures, making it generate Choose Your Own Adventure stories. They work best in "Adventure" mode (Kobold) or with the "Adventure" preset (SillyTavern).*
 - 1.5B (~2GB RAM) - **[AI Dungeon 2 Classic 1.5B](https://huggingface.co/Crataco/AI-Dungeon-2-Classic-GGML)** (via [KoboldCpp](https://github.com/LostRuins/koboldcpp))
 - 7B (~8GB RAM) - **[Dans-AdventurousWinds-7b](https://huggingface.co/TheBloke/Dans-AdventurousWinds-7B-GGUF)**
-- 13B (~12GB RAM) - **[Dans-CreepingSenseOfDoom-13b](https://huggingface.co/PocketDoc/Dans-CreepingSenseOfDoom-13b-gguf)** (Metharme instruct preset) or **[Dans-RetroRodeo-13b](https://huggingface.co/PocketDoc/Dans-RetroRodeo-13b-gguf)** or **[Spring Dragon 13B](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
-
-#### Model descriptions:
-- ***AI Dungeon 2 Classic** is based on the original open-source AI Dungeon 2 model, trained on [the infamous `text_adventures.txt`](https://gitgud.io/AuroraPurgatio/aurorapurgatio), before it became an online service and was subsequently renamed to "AI Dungeon". Since it is a non-LLaMA model (GPT-2), you will need to download your file of choice and load it in KoboldCpp.*
-- ***Spring Dragon** is trained on the same dataset and intends to mimic AI Dungeon's 2020 "Dragon" experience. It works best with a frontend that has an "Adventure" mode, such as the Kobold series. If you are feeling nostalgic or just curious, this is worth a try.*
-- ***Dan's Models** are trained on top of other curated text adventure datasets, modified from KoboldAI's early [Skein](https://huggingface.co/KoboldAI/GPT-J-6B-Skein) dataset.*
+- 13B (~12GB RAM) - **[Dans-CreepingSenseOfDoom-13b](https://huggingface.co/PocketDoc/Dans-CreepingSenseOfDoom-13b-gguf)** (uses the "Metharme" instruct preset) or **[Dans-RetroRodeo-13b](https://huggingface.co/PocketDoc/Dans-RetroRodeo-13b-gguf)** or **[Spring Dragon 13B](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
 
 * * *
 
