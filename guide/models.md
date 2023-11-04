@@ -51,7 +51,7 @@ One important thing to keep in mind is that most models work best when you follo
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
 - 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)**
+- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)**
 - 13B (~16GB RAM) - **[Tiefighter 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Tiefighter-GGUF)** (newer, promising) or **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** (older, well-known)
 - 20B (~20GB RAM) - **[MXLewd-L2 20B](https://huggingface.co/TheBloke/MXLewd-L2-20B-GGUF)**\*
 - 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)**
