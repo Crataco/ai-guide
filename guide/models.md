@@ -39,8 +39,8 @@ One important thing to keep in mind is that most models work best when you follo
 - Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models)** (via [languagemodels](https://github.com/jncraton/languagemodels))
 - 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat v0.3](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)**
 - 3B (~5GB RAM) - **[Marx 3B V2](https://huggingface.co/NikolayKozloff/Marx-3B-V2-GGUF#provided-files)**
-- 7B (~8GB RAM) - **[OpenHermes 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)** (uses the "ChatML" instruct preset)
-- 13B (~12GB RAM) - **[Xwin-MLewd-13B-V0.2](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)** or **[Nous Hermes Llama 2 13B](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF#provided-files)**
+- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (uses the "ChatML" instruct preset)
+- 13B (~12GB RAM) - **[Xwin-MLewd 13B V0.2](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
 - 70B (~64GB RAM) - **[Xwin-LM 70B V0.1](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
 
 #### Recommended settings:
@@ -51,19 +51,18 @@ One important thing to keep in mind is that most models work best when you follo
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
 - 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **[OpenHermes 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)** (newer, smarter) or **[Zarablend 7B](https://huggingface.co/TheBloke/Zarablend-L2-7B-GGUF)** (older, well-known)
+- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2-Mistral-7B-GGUF)**
 - 13B (~16GB RAM) - **[Tiefighter 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Tiefighter-GGUF)** (newer, promising) or **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)** (older, well-known)
 - 20B (~20GB RAM) - **[MXLewd-L2 20B](https://huggingface.co/TheBloke/MXLewd-L2-20B-GGUF)**\*
 - 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)**
 
-\* *This model is an unofficial 20B, often referred to as a "Frankenstein" model. It may talk good, but its generations can be unreliable compared to the 7B and 13B models.*
+\* *This model is an unofficial 20B, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations are unreliable compared to the 7B and 13B models, but some in the community prefer them for prose.*
 
 #### Recommended settings:
 *The only way to know how they influence the generations is to try them yourself. These descriptions are subjective.*
-- **RecoveredRuins** is the guide author's preference for tweaking. It's the default selected by SillyTavern if it's powered on KoboldCpp.
+- **RecoveredRuins** is the guide author's preference for tweaking. It's the default selected by SillyTavern if it's connected to Kobold.
 - **Storywriter (NovelAI)** feels safe, but boring. It is the official recommendation for Pygmalion 2.
 - **Space Alien** and **Titanic** were popular options for MythoMax, but regenerated responses may feel same-y.
-- **Mirostat** is explained in-depth [here](https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md#mirostat-sampling). For `tau`, a value between 4.0 and 8.0 is generally recommended. For `eta`, a value between 0.1 and 0.4 is generally recommended, but some users set it up to 1.0.
 
 * * *
 
