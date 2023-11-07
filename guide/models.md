@@ -5,9 +5,9 @@
 
 **TL;DR:** A model is your AI's brain.
 
-In this guide, a model is the AI that generates text. They are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple: given an input (e.g. "hello", they complete it with their own output (e.g. ", world!").
+In this guide, a model is the AI that generates text. They are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple: given an input (e.g. "hello"), they complete it with their own output (", world!"). They're often referred to as "glorified autocomplete" models.
 
-Finetunes are used to train the models are trained on further data, often making it easier for humans to use. Most finetunes these days are trained on ChatGPT logs, so the models work best when used like ChatGPT.
+Finetunes are used to train the models are trained on further data, making it easier to use them like an assistant or chatting partner.
 
 There are also different ways people run models: these are called backends.
 
