@@ -15,9 +15,9 @@ There are also different ways people run models: these are called backends.
 
 Backends are different ways to store and run the AI model. The most notable ones are Transformers, GGUF, and Exllama. **The option recommended for most users is GGUF.**
 
-- GGUF / GGML versions run on most computers thanks to quantization. For the sake of simplicity, you can consider "quantization" a way to cut down on size, often making the AI slightly dumber. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality), but a value of q5_K_M is ideal for most situations. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and how much RAM the model would use under a certain level.
+- GGUF / GGML versions run on most computers thanks to quantization. For the sake of simplicity, you can consider "quantization" a way to cut down on size, often making the AI slightly dumber. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality), but a value of q4_K_M is ideal for most situations. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and how much RAM the model would use under a certain level.
 
-- Transformers has been around for a while and is pretty much a universal standard for AI models. However, their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while a 7B model under GGUF would require 8GB of RAM, a 7B model under Transformers would require 32GB of RAM.
+- Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while a 7B model under GGUF would require 8GB of RAM, a 7B model under Transformers would require 24-32GB of RAM.
 
 - GPTQ, Exllama, and etc. are other backends with their own quantized format, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU for the model you want to run, but this guide will not cover this option.
 
@@ -38,7 +38,7 @@ One important thing to keep in mind is that most models work best when you follo
 ### General-Purpose (like ChatGPT)
 - Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models)** (via [languagemodels](https://github.com/jncraton/languagemodels))
 - 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)**
-- 3B (~5GB RAM) - **[Marx 3B](https://huggingface.co/RachidAR/Marx-3b-v3-gguf)**
+- 3B (~5GB RAM) - **[Marx 3B](https://huggingface.co/RachidAR/Marx-3b-v3-gguf)** (requires experimental backends)
 - 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (uses the "ChatML" instruct preset)
 - 13B (~12GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
 - 70B (~64GB RAM) - **[Xwin-LM 70B](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
@@ -52,10 +52,10 @@ One important thing to keep in mind is that most models work best when you follo
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
 - 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **[Dolphin 7B](https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF)** or **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (both use the "ChatML" instruct preset)
+- 7B (~8GB RAM) - **[Dolphin 2.2.1 7B](https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF)** or **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (both use the "ChatML" instruct preset)
 - 13B (~16GB RAM) - **[Tiefighter 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Tiefighter-GGUF)** or **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)**
 - 20B (~20GB RAM) - **[MXLewd-L2 20B](https://huggingface.co/TheBloke/MXLewd-L2-20B-GGUF)**\*
-- 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)**
+- 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)** or **[Euryale 1.3 70B](https://huggingface.co/TheBloke/Euryale-1.3-L2-70B-GGUF)**
 
 \* *This model is an unofficial 20B, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations are unreliable compared to the 7B and 13B models, but some in the community prefer their vocabulary.*
 
