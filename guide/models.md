@@ -5,7 +5,7 @@
 
 **TL;DR:** A model is your AI's brain.
 
-In this guide, a model is the AI that generates text. They are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple: given an input (e.g. "hello"), they complete it with their own output (", world!"). They're often referred to as "glorified autocomplete" models.
+In this guide, a model is the AI that generates text. They are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple: given an input (e.g. "hello"), they complete it with their own output (", world!"). They're often referred to as "glorified autocomplete" or "text completion" models.
 
 Finetunes are used to train the models are trained on further data, making it easier to use them like an assistant or chatting partner.
 
@@ -15,13 +15,13 @@ There are also different ways people run models: these are called backends.
 
 Backends are different ways to store and run the AI model. The most notable ones are Transformers, GGUF, and Exllama. **The option recommended for most users is GGUF.**
 
-- GGUF / GGML versions run on most computers thanks to quantization. For the sake of simplicity, you can consider "quantization" a way to cut down on size, often making the AI slightly dumber. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality), but a value of q4_K_M is ideal for most situations. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and how much RAM the model would use under a certain level.
+- GGUF / GGML versions run on most computers thanks to quantization. For the sake of simplicity, you can consider "quantization" a way to cut down on size, often making the AI slightly dumber. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality). A level of q5_K_M is ideal for most situations unless you have more or less RAM to spare. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and the most RAM the model would use under different quantization levels.
 
-- Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while a 7B model under GGUF would require 8GB of RAM, a 7B model under Transformers would require 24-32GB of RAM.
+- Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while the average 7B model under GGUF would require 8GB of RAM, a 7B model under Transformers would require 24-32GB of RAM.
 
 - GPTQ, Exllama, and etc. are other backends with their own quantized format, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU for the model you want to run, but this guide will not cover this option.
 
-This guide will assume users chose GGUF and a frontend that supports it (like KoboldCpp, Faraday or LM Studio).
+This guide will assume users chose GGUF and a frontend that supports it (like KoboldCpp, Oobabooga's Text Generation Web UI, Faraday, or LM Studio).
 
 ## Model recommendations
 
@@ -37,8 +37,8 @@ One important thing to keep in mind is that most models work best when you follo
 
 ### General-Purpose (like ChatGPT)
 - Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models)** (via [languagemodels](https://github.com/jncraton/languagemodels))
-- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)**
-- 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)** (experimental)
+- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)** (uses the "ChatML" instruct preset)
+- 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)** (experimental, uses the "ChatML" instruct preset)
 - 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (uses the "ChatML" instruct preset)
 - 13B (~16GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
 - 70B (~64GB RAM) - **[Xwin-LM 70B](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
@@ -51,7 +51,7 @@ One important thing to keep in mind is that most models work best when you follo
 
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
-- 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
+- 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)** (uses the "Metharme" instruct preset)
 - 7B (~8GB RAM) - **[Dolphin 2.2.1 7B](https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF)** or **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (both use the "ChatML" instruct preset)
 - 13B (~16GB RAM) - **[Tiefighter 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Tiefighter-GGUF)** or **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)**
 - 20B (~20GB RAM) - **[MXLewd-L2 20B](https://huggingface.co/TheBloke/MXLewd-L2-20B-GGUF)**\*
