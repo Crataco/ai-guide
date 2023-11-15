@@ -25,7 +25,7 @@ This guide will assume users chose GGUF and a frontend that supports it (like Ko
 
 ## Model recommendations
 
-Sources:
+Recommendations are based heavily on WolframRavenwolf's LLM tests:
 - [WolframRavenwolf's 7B-70B General Test](https://old.reddit.com/r/LocalLLaMA/comments/17fhp9k/huge_llm_comparisontest_39_models_tested_7b70b/) (2023-10-24)
 - [WolframRavenwolf's 7B-20B Roleplay Test](https://old.reddit.com/r/LocalLLaMA/comments/17kpyd2/huge_llm_comparisontest_part_ii_7b20b_roleplay/) (2023-10-31)
 
@@ -36,11 +36,12 @@ One important thing to keep in mind is that most models work best when you follo
 * * *
 
 ### General-Purpose (like ChatGPT)
-- Mini (~512MB RAM) - **[LaMini-LM](https://github.com/mbzuai-nlp/LaMini-LM#models)** (via [languagemodels](https://github.com/jncraton/languagemodels))
+- Mini (~512MB RAM) - **[RWKV-4 World](https://huggingface.co/Crataco/RWKV-4-World-Series-GGML)**
 - 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)** (uses the "ChatML" instruct preset)
-- 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)** (experimental, uses the "ChatML" instruct preset)
+- 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)** (uses the "ChatML" instruct preset)
 - 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** (uses the "ChatML" instruct preset)
 - 13B (~16GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
+- 34B (~32GB RAM) - **[Nous Capybara 34B](https://huggingface.co/TheBloke/Nous-Capybara-34B-GGUF)** (uses the "Vicuna" instruct preset)
 - 70B (~64GB RAM) - **[Xwin-LM 70B](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
 
 #### Recommended settings:
@@ -56,21 +57,23 @@ One important thing to keep in mind is that most models work best when you follo
 - 13B (~16GB RAM) - **[Tiefighter 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Tiefighter-GGUF)** or **[MythoMax 13B](https://huggingface.co/TheBloke/MythoMax-L2-13B-GGUF)**
 - 20B (~20GB RAM) - **[MXLewd-L2 20B](https://huggingface.co/TheBloke/MXLewd-L2-20B-GGUF)**\*
 - 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)** or **[Euryale 1.3 70B](https://huggingface.co/TheBloke/Euryale-1.3-L2-70B-GGUF)**
+- 120B (~80GB RAM) - **[Goliath 120B](https://huggingface.co/TheBloke/goliath-120b-GGUF)**\* (uses the "Vicuna" instruct preset)
 
-\* *This model is an unofficial 20B, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations are unreliable compared to the 7B and 13B models, but some in the community prefer their vocabulary.*
+\* *These models (MXLewd-L2 20B and Goliath 120B) are an unofficial size, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations are unreliable compared to the 7B and 13B models, but some in the community prefer their vocabulary.*
 
 #### Recommended settings:
 *The only way to know how they influence the generations is to try them yourself. These descriptions are subjective.*
-- **RecoveredRuins** is the guide author's preference for tweaking. It's the default selected by SillyTavern if it's connected to Kobold.
-- **Storywriter (NovelAI)** feels safe, but boring. It is the official recommendation for Pygmalion 2.
-- **Space Alien** and **Titanic** were popular options for MythoMax, but you don't get much variety in regenerated responses (especially with Titanic).
+- **"RecoveredRuins"** is the guide author's preference for tweaking. It's the default selected by SillyTavern if it's connected to Kobold.
+- **"Storywriter (NovelAI)"** feels safe, but boring. It is the official recommendation for Pygmalion 2.
+- **"Space Alien"** and **"Titanic"** were once popular options for MythoMax, but you don't get much variety in regenerated responses (especially with Titanic).
+- The guide author's experimental preference is a "temperature" value of 1.5-2.0, "Min P" value of 0.05, and everything else disabled (e.g. "Top P" value set to 1.0). These are good settings if you want a more creative vocabulary without switching models.
 
 * * *
 
 ### Text Adventure (like AI Dungeon)
 *These models are trained on human-written text adventures, making it generate Choose Your Own Adventure stories. They work best in "Adventure" mode (Kobold) or with the "Adventure" preset (SillyTavern).*
 - 1.5B (~2GB RAM) - **[AI Dungeon 2 Classic](https://huggingface.co/Crataco/AI-Dungeon-2-Classic-GGML)** (via [KoboldCpp](https://github.com/LostRuins/koboldcpp))
-- 7B (~8GB RAM) - **[Dans-AdventurousWinds-7B](https://huggingface.co/TheBloke/Dans-AdventurousWinds-7B-GGUF)**
+- 7B (~8GB RAM) - **[Dans-AdventurousWinds-Mk2-7B](https://huggingface.co/TheBloke/Dans-AdventurousWinds-Mk2-7B-GGUF)**
 - 13B (~16GB RAM) - **[Dans-CreepingSenseOfDoom-13B](https://huggingface.co/PocketDoc/Dans-CreepingSenseOfDoom-13b-gguf)** (uses the "Metharme" instruct preset) or **[Dans-RetroRodeo-13B](https://huggingface.co/PocketDoc/Dans-RetroRodeo-13b-gguf)** or **[Spring Dragon](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
 
 * * *
