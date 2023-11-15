@@ -5,7 +5,9 @@
 
 **TL;DR:** A model is your AI's brain.
 
-In this guide, a model is the AI that generates text. They are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple: given an input (e.g. "hello"), they complete it with their own output (", world!"). They're often referred to as "glorified autocomplete" or "text completion" models.
+A heavily dumbed-down explanation is that a model is the AI that generates text. This text is split up into the AI's own concept of syllables called "tokens," and every model has a max number of tokens it can remember from the conversation.
+
+The models are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simpple and often referred to as "glorified autocomplete" or "text completion" models, because they generate text after the user's input.
 
 Finetunes are used to train the models are trained on further data, making it easier to use them like an assistant or chatting partner.
 
@@ -15,7 +17,7 @@ There are also different ways people run models: these are called backends.
 
 Backends are different ways to store and run the AI model. The most notable ones are Transformers, GGUF, and Exllama. **The option recommended for most users is GGUF.**
 
-- GGUF / GGML versions run on most computers thanks to quantization. For the sake of simplicity, you can consider "quantization" a way to cut down on size, often making the AI slightly dumber. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality). A level of q5_K_M is ideal for most situations unless you have more or less RAM to spare. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and the most RAM the model would use under different quantization levels.
+- GGUF / GGML versions run on most computers, mostly thanks to quantization. You can consider *quantization* a way to cut down on model size and resource usage, often making the AI slightly dumber. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality). A level of q5_K_M is ideal for most situations unless you have more or less RAM to spare. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and the most RAM the model would use under different quantization levels.
 
 - Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while the average 7B model under GGUF would require 8GB of RAM, a 7B model under Transformers would require 24-32GB of RAM.
 
@@ -31,7 +33,9 @@ Recommendations are based heavily on WolframRavenwolf's LLM tests:
 
 The following are the models this guide recommends, and the amount of RAM recommended for your computer to run them. If you do not have enough system RAM, but some VRAM to spare, you can "offload" the model's "layers," splitting the model between your system RAM and video memory.
 
-One important thing to keep in mind is that most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates". If you do not know which one to use, most models on this list will use the de-facto standard "Alpaca" preset unless specified otherwise.
+There are two things to keep in mind:
+- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when the AI talks. If you do not know which one to use, most models on this list will use the de-facto standard "Alpaca" preset unless specified otherwise.
+- Settings influence the responses your models give you. This guide has a simple explanation [on the next page](settings.md). A more technical explanation [can be found on Reddit](https://old.reddit.com/r/LocalLLaMA/comments/17vonjo/your_settings_are_probably_hurting_your_model_why/).
 
 * * *
 
@@ -75,7 +79,3 @@ One important thing to keep in mind is that most models work best when you follo
 - 1.5B (~2GB RAM) - **[AI Dungeon 2 Classic](https://huggingface.co/Crataco/AI-Dungeon-2-Classic-GGML)** (via [KoboldCpp](https://github.com/LostRuins/koboldcpp))
 - 7B (~8GB RAM) - **[Dans-AdventurousWinds-Mk2-7B](https://huggingface.co/TheBloke/Dans-AdventurousWinds-Mk2-7B-GGUF)**
 - 13B (~16GB RAM) - **[Dans-CreepingSenseOfDoom-13B](https://huggingface.co/PocketDoc/Dans-CreepingSenseOfDoom-13b-gguf)** (uses the "Metharme" instruct preset) or **[Dans-RetroRodeo-13B](https://huggingface.co/PocketDoc/Dans-RetroRodeo-13b-gguf)** or **[Spring Dragon](https://huggingface.co/TheBloke/Spring-Dragon-GGUF)**
-
-* * *
-
-*Continue into [settings](settings.md) (outdated)...*
