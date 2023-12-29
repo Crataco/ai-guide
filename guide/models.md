@@ -5,9 +5,9 @@
 
 **TL;DR:** A model is your AI's brain.
 
-A heavily dumbed-down explanation is that a model is the AI that generates text. This text is split up into the AI's own concept of syllables called "tokens."
+A heavily dumbed-down explanation is that a model is the AI that generates text.
 
-The models are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simpple and often referred to as "glorified autocomplete" or "text completion" models, because they generate text after the user's input.
+The models are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) of specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple and often referred to as "glorified autocomplete" or "text completion" models, because they generate text after the user's input.
 
 Finetunes are used to train the models are trained on further data, making it easier to use them like an assistant or chatting partner.
 
@@ -34,7 +34,7 @@ Recommendations are based heavily on WolframRavenwolf's LLM tests:
 The following are the models this guide recommends, and the amount of RAM recommended for your computer to run them. If you do not have enough system RAM, but some VRAM to spare, you can "offload" the model's "layers," splitting the model between your system RAM and video memory.
 
 There are two things to keep in mind:
-- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when the AI talks. If you do not know which one to use, scroll down on the model's page and it will usually be under "prompt templates."
+- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when the AI talks. If you do not know which one to use, scroll down on the model's page and it will usually be under "prompt template."
 - Settings influence the responses your models give you. A good place to start is to set "Min P" to 0.1 and "Temperature" to 1.0. Lowering Min P will give the AI more tokens to choose from, and raising the temperature will make it more likely it'll choose one of the lesser likely tokens.
 
 * * *
@@ -46,6 +46,7 @@ There are two things to keep in mind:
 - 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)**
 - 13B (~16GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
 - 34B (~32GB RAM) - **[Nous-Hermes 2 Yi-34B](https://huggingface.co/TheBloke/Nous-Hermes-2-Yi-34B-GGUF)**
+- 8x7B (~32GB RAM) - **[Mixtral-8x7B Instruct](https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF)**
 - 70B (~64GB RAM) - **[Xwin-LM 70B](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
 
 * * *
