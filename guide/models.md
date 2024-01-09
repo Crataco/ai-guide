@@ -40,8 +40,8 @@ There are two things to keep in mind:
 * * *
 
 ### General Use (like ChatGPT)
-- Mini (~512MB RAM) - **[RWKV-4 World](https://huggingface.co/Crataco/RWKV-4-World-Series-GGML)**
-- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-GGUF)**
+- Mini (~512MB RAM) - **[RWKV-5 World](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)**
+- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF)**
 - 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)**
 - 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)**
 - 13B (~16GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
