@@ -27,15 +27,15 @@ This guide will assume users chose GGUF and a frontend that supports it (like Ko
 
 ## Model recommendations
 
-Recommendations are based heavily on online recommendations, personal experience, WolframRavenwolf's LLM tests, and the reported "HellaSwag" scores of models:
+Recommendations are based heavily on online recommendations, personal experience, WolframRavenwolf's LLM tests, and the reported "HellaSwag" (common sense reasoning) scores of models:
 - https://old.reddit.com/r/LocalLLaMA/comments/19d1fjp/llm_comparisontest_6_new_models_from_16b_to_120b/
 - https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
 
-The following are the models this guide recommends, and the amount of RAM recommended for your computer to run them if you go for the average (Q5_K_M) quant. If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory via "GPU offloading".
+The following are the models this guide recommends, and the amount of RAM recommended for your computer to run them if you go for the average (Q5_K_M) quant. If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory, which often goes by the term "GPU offloading".
 
 There are two things to keep in mind:
-- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. A frontend usually does this work for you. If you do not know which one to use, scroll down on the model's page and it will usually be under "prompt template."
-- Settings influence the responses your models give you. A good place to start is to set "Min P" to 0.1 and "Temperature" to 1.0. Lowering Min P could give it more choices to choose from, and raising the temperature will make it more likely it'll choose one of the less likely choices, which often translates to creativity.
+- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. Fortunately most frontends let you choose one and it does the work for you. If you do not know which one to use, scroll down on the model's page and it will usually be under "prompt template."
+- Settings influence the responses your models give you. A good place to start is to set "Min P" to 0.1 and "Temperature" to 1.0. Lowering Min P could give it more words to choose from, and raising the temperature will make it more likely it'll choose one of the less likely choices, which often translates to creative responses at the cost of some intelligence.
 
 * * *
 
@@ -44,7 +44,7 @@ There are two things to keep in mind:
 - 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF)**
 - 1.6B (~2GB RAM) - **[StableLM 2 Zephyr 1.6B](https://huggingface.co/second-state/stablelm-2-zephyr-1.6b-GGUF)**
 - 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)**
-- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)**
+- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** or **[Mistral-7B-Instruct-v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)**
 - 13B (~16GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
 - 34B (~32GB RAM) - **[Nous-Capybara 34B](https://huggingface.co/TheBloke/Nous-Capybara-34B-GGUF)**
 - 8x7B (~32GB RAM) - **[Mixtral-8x7B Instruct](https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF)**
@@ -55,14 +55,14 @@ There are two things to keep in mind:
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
 - 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **[Kunoichi-DPO-V2 7B](https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF)** (experimental smaller quantizations available **[here](https://huggingface.co/kalomaze/Kunoichi-DPO-v2-7B-GGUF)**)
+- 7B (~8GB RAM) - **[Kunoichi-DPO-V2 7B](https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF)** (tiny quantizations available **[here](https://huggingface.co/kalomaze/Kunoichi-DPO-v2-7B-GGUF)**)
 - 10.7B (~12GB RAM) - **[Fimbulvetr 10.7B](https://huggingface.co/Sao10K/Fimbulvetr-10.7B-v1-GGUF)**
 - 13B (~16GB RAM) - **[Noromaid 13B](https://huggingface.co/NeverSleep/Noromaid-13B-0.4-DPO-GGUF)** or **[Psyfighter](https://huggingface.co/KoboldAI/LLaMA2-13B-Psyfighter2-GGUF)**
 - 20B (~20GB RAM) - **[Noromaid 20B](https://huggingface.co/TheBloke/Noromaid-20B-v0.1.1-GGUF)**\*
 - 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)** or **[Euryale 1.3 70B](https://huggingface.co/TheBloke/Euryale-1.3-L2-70B-GGUF)**
 - 120B (~96GB RAM) - **[Goliath 120B](https://huggingface.co/TheBloke/goliath-120b-GGUF)**\*
 
-\* *These models (Noromaid 20B and Goliath 120B) are an unofficial size, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations are unreliable compared to the 7B and 13B models, but some in the community prefer their vocabulary.*
+\* *These models (Noromaid 20B and Goliath 120B) are an unofficial size, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations can be unreliable compared to the 7B and 13B models, but some in the community prefer them.*
 
 * * *
 
