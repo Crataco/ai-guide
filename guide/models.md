@@ -41,25 +41,23 @@ There are two things to keep in mind:
 
 ### General Use (like ChatGPT)
 - Mini (~512MB RAM) - **[RWKV-5 World](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)**
-- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF)**
+- 1.1B (~2GB RAM) - **[TinyLlama 1.1B Chat](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF)** or **[TinyDolphin](https://huggingface.co/dagbs/TinyDolphin-2.8-1.1b-GGUF)**
 - 1.6B (~2GB RAM) - **[StableLM 2 Zephyr 1.6B](https://huggingface.co/second-state/stablelm-2-zephyr-1.6b-GGUF)**
-- 3B (~4GB RAM) - **[Nous-Capybara-3B-V1.9](https://huggingface.co/afrideva/Nous-Capybara-3B-V1.9-GGUF)**
-- 7B (~8GB RAM) - **[OpenHermes 2.5 7B](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)** or **[Mistral-7B-Instruct-v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)**
-- 13B (~16GB RAM) - **[Xwin-MLewd 13B](https://huggingface.co/TheBloke/Xwin-MLewd-13B-v0.2-GGUF)**
+- 3B (~4GB RAM) - **[Dolphin-2.6 Phi-2](https://huggingface.co/TheBloke/dolphin-2_6-phi-2-GGUF)**
+- 7B (~8GB RAM) - **[Nous Hermes 2 Mistral 7B DPO](https://huggingface.co/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF)**
+- 10.7B (~10GB RAM) - **[Nous Hermes 2 SOLAR 10.7B](https://huggingface.co/TheBloke/Nous-Hermes-2-SOLAR-10.7B-GGUF)**
 - 34B (~32GB RAM) - **[Nous-Capybara 34B](https://huggingface.co/TheBloke/Nous-Capybara-34B-GGUF)**
 - 8x7B (~32GB RAM) - **[Mixtral-8x7B Instruct](https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF)**
-- 70B (~64GB RAM) - **[Xwin-LM 70B](https://huggingface.co/TheBloke/Xwin-LM-70B-V0.1-GGUF)**
 
 * * *
 
 ### Chat and Roleplay (like CharacterAI, Replika, etc.) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models are better known for their focus on them.*
-- 1.3B (~2GB RAM) - **[Metharme 1.3B](https://huggingface.co/Crataco/Metharme-1.3B-GGML)**
-- 7B (~8GB RAM) - **[Kunoichi-DPO-V2 7B](https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF)** (tiny quantizations available **[here](https://huggingface.co/kalomaze/Kunoichi-DPO-v2-7B-GGUF)**)
+- 7B (~8GB RAM) - **[Kunoichi-DPO-V2 7B](https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF)** (smaller versions available **[here](https://huggingface.co/kalomaze/Kunoichi-DPO-v2-7B-GGUF)**)
 - 10.7B (~12GB RAM) - **[Fimbulvetr 10.7B](https://huggingface.co/Sao10K/Fimbulvetr-10.7B-v1-GGUF)**
-- 13B (~16GB RAM) - **[Noromaid 13B](https://huggingface.co/NeverSleep/Noromaid-13B-0.4-DPO-GGUF)** or **[Psyfighter](https://huggingface.co/KoboldAI/LLaMA2-13B-Psyfighter2-GGUF)**
+- 13B (~16GB RAM) - **[Psyfighter](https://huggingface.co/KoboldAI/LLaMA2-13B-Psyfighter2-GGUF)**
 - 20B (~20GB RAM) - **[Noromaid 20B](https://huggingface.co/TheBloke/Noromaid-20B-v0.1.1-GGUF)**\*
-- 70B (~64GB RAM) - **[lzlv 70B](https://huggingface.co/TheBloke/lzlv_70B-GGUF)** or **[Euryale 1.3 70B](https://huggingface.co/TheBloke/Euryale-1.3-L2-70B-GGUF)**
+- 70B (~64GB RAM) - **[MiquMaid-v2-70B-DPO-GGUF](https://huggingface.co/NeverSleep/MiquMaid-v2-70B-DPO-GGUF)** (smaller versions available **[here](https://huggingface.co/Kooten/MiquMaid-v2-70B-DPO-Imatrix-GGUF)**)
 - 120B (~96GB RAM) - **[Goliath 120B](https://huggingface.co/TheBloke/goliath-120b-GGUF)**\*
 
 \* *These models (Noromaid 20B and Goliath 120B) are an unofficial size, often referred to as a "Frankenstein model" or "Frankenmerge". Its generations can be unreliable compared to the 7B and 13B models, but some in the community prefer them.*
