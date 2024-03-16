@@ -19,7 +19,7 @@ Backends are different ways to store and run the AI model. The most notable ones
 
 - GGUF / GGML versions run on most computers thanks to quantization. You can consider "quantization" a way to cut down on model size and resource usage with small quality loss. It has "levels" that range from "q2" (lightest, worst quality) to "q8" (heaviest, best quality). A level of q5_K_M is ideal for most situations unless you have more or less RAM to spare. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and the most RAM the model would use under different quantization levels.
 
-- Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while the average 7B model under GGUF would require 8GB of RAM, a 7B model under Transformers would require 24-32GB of RAM.
+- Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while the average 7B model under GGUF would require over 4GB of RAM, a 7B model under Transformers could require 16GB or more.
 
 - GPTQ, Exllama, and etc. are other backends with their own quantized format, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU for the model you want to run, but this guide will not cover this option.
 
@@ -28,24 +28,22 @@ This guide will assume users chose GGUF and a frontend that supports it (like Ko
 ## Model recommendations
 **Last updated:** March 11th, 2024
 
-Recommendations are based heavily on online recommendations, personal experience, WolframRavenwolf's LLM tests, and the reported "HellaSwag" (common sense reasoning) scores of models:
-- https://old.reddit.com/r/LocalLLaMA/comments/19d1fjp/llm_comparisontest_6_new_models_from_16b_to_120b/
-- https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
+The following recommendations are based on online anecdotes, personal experience, WolframRavenwolf's LLM tests, and the reported "HellaSwag" (common sense reasoning) scores of models. It also shares how much RAM your computer should have to comfortably run the models at an average quantization level like "Q4_K_M".
 
-The following are the models this guide recommends, and the amount of RAM recommended for your computer to run them if you go for the average (Q5_K_M) quant. If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory, which often goes by the term "GPU offloading".
+If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory, which often goes by the term "GPU offloading".
 
-There are two things to keep in mind:
-- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. Fortunately most frontends let you choose one and it does the work for you. If you do not know which one to use, scroll down on the model's page and it will usually be under "prompt template."
+Here are two more things to keep in mind:
+- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. Fortunately most frontends let you choose one, and they do the work for you behind the scenes. If you do not know which instruct preset to use, scroll down on the model's page and it will usually be under "prompt template" or similar.
 - Settings influence the responses your models give you. A good place to start is to set "Min P" to 0.1 and "Temperature" to 1.0. Lowering Min P could give it more words to choose from, and raising the temperature will make it more likely it'll choose one of the less likely choices, which often translates to creative responses at the cost of some intelligence.
 
 * * *
 
 ### General Use (like ChatGPT)
-- Mini (~512MB RAM) - **[RWKV-5 World](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)**
+- Mini (~512MB RAM) - **[RWKV-5 World](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)** or **[languagemodels](https://github.com/jncraton/languagemodels)**
 - 1.1B (~2GB RAM) - **[TinyDolphin 2.8 1.1B](https://huggingface.co/dagbs/TinyDolphin-2.8-1.1b-GGUF)**
 - 1.6B (~2GB RAM) - **[StableLM 2 Zephyr 1.6B](https://huggingface.co/second-state/stablelm-2-zephyr-1.6b-GGUF)**
 - 3B (~4GB RAM) - **[Dolphin-2.6 Phi-2](https://huggingface.co/TheBloke/dolphin-2_6-phi-2-GGUF)**
-- 7B (~8GB RAM) - **[Nous Hermes 2 Mistral 7B DPO](https://huggingface.co/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF)**
+- 7B (~8GB RAM) - **[Nous Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**
 - 10.7B (~10GB RAM) - **[Nous Hermes 2 SOLAR 10.7B](https://huggingface.co/TheBloke/Nous-Hermes-2-SOLAR-10.7B-GGUF)**
 - 8x7B (~32GB RAM) - **[Nous Hermes 2 Mixtral 8x7B DPO](https://huggingface.co/mradermacher/Nous-Hermes-2-Mixtral-8x7B-DPO-i1-GGUF)** or **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
 
