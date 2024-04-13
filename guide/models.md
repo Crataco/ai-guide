@@ -26,7 +26,7 @@ Backends are different ways to store and run the AI model. The most notable ones
 This guide will assume users chose GGUF and a frontend that supports it (like KoboldCpp, Oobabooga's Text Generation Web UI, Faraday, or LM Studio).
 
 ## List of models to start with
-**Last updated:** April 10th, 2024
+**Last updated:** April 13th, 2024
 
 Here are three things to keep in mind:
 - Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. Fortunately most frontends let you choose one, and they do the work for you behind the scenes. If you do not know which instruct preset to use, scroll down on the model's page and it will usually be under "prompt template" or similar. Common ones include ChatML, Alpaca and Mistral.
@@ -40,16 +40,15 @@ Here are three things to keep in mind:
 - 1.1B (~2GB RAM) - **[TinyDolphin 2.8 1.1B](https://huggingface.co/Crataco/TinyDolphin-2.8-1.1b-imatrix-GGUF)**
 - 1.6B (~2GB RAM) - **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
 - 3B (~4GB RAM) - **[Phi-2 Orange](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF)**
-- 7B (~8GB RAM) - **[Nous Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**
-- 8x7B (~32GB RAM) - **[Nous Hermes 2 Mixtral 8x7B DPO](https://huggingface.co/mradermacher/Nous-Hermes-2-Mixtral-8x7B-DPO-i1-GGUF)** or **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
+- 7B (~8GB RAM) - **[Mistral 7B Instruct v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)** or **[Nous Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**
+- 8x7B (~32GB RAM) - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)** or **[Nous Hermes 2 Mixtral 8x7B DPO](https://huggingface.co/mradermacher/Nous-Hermes-2-Mixtral-8x7B-DPO-i1-GGUF)**
 
 * * *
 
 ### Chat/Roleplay (like CharacterAI, Replika, etc) and Storywriting (like NovelAI)
 *You can also use general-purpose assistants for RP and storytelling, but these models balance creative prose with intelligence.*
-- 7B (~8GB RAM) - **[Erosumika 7B](https://huggingface.co/Lewdiculous/Erosumika-7B-v3-0.2-GGUF-IQ-Imatrix)**
+- 7B (~8GB RAM) - **[Kunoichi 7B](https://huggingface.co/Lewdiculous/Kunoichi-DPO-v2-7B-GGUF-Imatrix)** for a great all-round experience, or **[Erosumika 7B](https://huggingface.co/Lewdiculous/Erosumika-7B-v3-0.2-GGUF-IQ-Imatrix)** for human-like responses
 - 10.7B (~10GB RAM) - **[Fimbulvetr 11B v2](https://huggingface.co/mradermacher/Fimbulvetr-11B-v2-i1-GGUF)**
-- 13B (~16GB RAM) - **[Psyfighter 2 13B](https://huggingface.co/KoboldAI/LLaMA2-13B-Psyfighter2-GGUF)**
 - 8x7B (~32GB RAM) - **[BagelMIsteryTour-v2-8x7B](https://huggingface.co/ycros/BagelMIsteryTour-v2-8x7B-GGUF)**
 
 ## General suggestions for CPU users based on RAM
