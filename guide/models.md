@@ -26,12 +26,12 @@ Backends are different ways to store and run the AI model. The most notable ones
 This guide will assume users chose GGUF and a frontend that supports it (like KoboldCpp, Oobabooga's Text Generation Web UI, Faraday, or LM Studio).
 
 ## List of models to start with
-**Last updated:** April 13th, 2024
+**Last updated:** April 15th, 2024
 
 Here are three things to keep in mind:
 - Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. Fortunately most frontends let you choose one, and they do the work for you behind the scenes. If you do not know which instruct preset to use, scroll down on the model's page and it will usually be under "prompt template" or similar. Common ones include ChatML, Alpaca and Mistral.
 - Settings influence the responses your models give you. A good place to start is to set "Min P" to 0.1 and "Temperature" to 1.0. Lowering the value of Min P can give the model a wider vocabulary, and raising the temperature will make it more likely it'll choose one of the less likely choices, which often translates to creative responses at the cost of some intelligence.
-- If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory, which often goes by the term "GPU offloading".
+- If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory, which often goes by the term "GPU offloading". If you have a beefy GPU, it's possible you could fit the entire model into VRAM.
 
 * * *
 
@@ -41,7 +41,8 @@ Here are three things to keep in mind:
 - 1.6B (~2GB RAM) - **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
 - 3B (~4GB RAM) - **[Phi-2 Orange](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF)**
 - 7B (~8GB RAM) - **[Mistral 7B Instruct v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)** or **[Nous Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**
-- 8x7B (~32GB RAM) - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)** or **[Nous Hermes 2 Mixtral 8x7B DPO](https://huggingface.co/mradermacher/Nous-Hermes-2-Mixtral-8x7B-DPO-i1-GGUF)**
+- 4x7B (~20GB RAM) - **[Beyonder 4x7B v3](https://huggingface.co/mlabonne/Beyonder-4x7B-v3-GGUF)**
+- 8x7B (~32GB RAM) - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
 
 * * *
 
