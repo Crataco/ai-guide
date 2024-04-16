@@ -40,7 +40,7 @@ Here are three things to keep in mind:
 - 1.1B (~2GB RAM) - **[TinyDolphin 2.8 1.1B](https://huggingface.co/Crataco/TinyDolphin-2.8-1.1b-imatrix-GGUF)**
 - 1.6B (~2GB RAM) - **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
 - 3B (~4GB RAM) - **[Phi-2 Orange](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF)**
-- 7B (~8GB RAM) - **[Nous-Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**. Alternatively, **[Mistral 7B Instruct v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)** has a higher context length, and **[WizardLM 2 7B](https://huggingface.co/ABX-AI/WizardLM-2-7B-GGUF-IQ-Imatrix)** may be smarter, but your mileage may vary.
+- 7B (~8GB RAM) - **[Nous-Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**. Alternatives include **[Mistral 7B Instruct v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)** (official model with 32k context length), **[WizardLM 2 7B](https://huggingface.co/ABX-AI/WizardLM-2-7B-GGUF-IQ-Imatrix)** (possibly smarter but worse at being concise and having personality), and **[Hermes 2 Pro Mistral 7B](https://huggingface.co/qwp4w3hyb/Hermes-2-Pro-Mistral-7B-iMat-GGUF)** (successor to Hermes 2, but scores lower)
 - 4x7B (~20GB RAM) - **[Beyonder 4x7B v3](https://huggingface.co/mradermacher/Beyonder-4x7B-v3-i1-GGUF)**
 - 8x7B (~32GB RAM) - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
 
