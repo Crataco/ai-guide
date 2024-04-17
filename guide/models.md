@@ -2,67 +2,47 @@
 
 # Models
 ## What are models?
+A **model** (sometimes called a "weight") is the AI you run, or more specifically its brain.
 
-**TL;DR:** A model is your AI's brain.
+A variety of models exist, by different "brands" (Llama 2, Mistral, Yi), released under various sizes (7B, 13B, 33B, 70B).
 
-To be more specific, a model is the AI that generates text.
+They start off as a base, with no real task other than to predict the text that comes after what you write, like a smart autocomplete. But hobbyists and companies train these ripe models further on a corpus of conversational data. ChatGPT popularized this practice, but it has been around since the days of AI Dungeon.
 
-The models are trained on top of pre-existing text and then released, often as base models (e.g. LLaMA) in specific sizes (e.g. 7B, 13B, 33B, and 70B). These base models are simple and often referred to as "glorified autocomplete" or "text completion" models, because they generate text after the user's input.
+## How are models stored?
+**Model formats**. The most popular model format is **GGUF**, provided by the "llama.cpp" project. Support for it is included in most non-proxy frontends, making it a de-facto standard. If your frontend doesn't allow you to download models, they can be found on [Hugging Face](https://huggingface.co/models?search=gguf).
 
-Finetunes are used to train the models are trained on further data, making it easier to use them like an assistant or chatting partner.
+One of the things that make GGUF perfect for home computers is **quantization**. You can download models that are lossily compressed (think of it as a "lower resolution" model). It saves plenty of bandwidth, disk space, and memory use, compared to storing and running an untouched (PyTorch format) version of the model, but it comes at the cost of quality.
 
-There are also different ways people run models: these are called backends.
+Quantization is provided in **levels,** ranging from the smallest (Q1 or Q2) to the largest (Q6 or Q8). **Q4_K_M** is recommended for most cases, unless you have plenty of RAM to spare, which Q5 would be preferred.
 
-## What is a backend?
+Lastly, if you lack RAM and don't mind the loss in quality, keep an eye out on "**importance matrix**" models (usually "iMat", "i1" or "imatrix"). It uses a different method of quantization that squeezes the most out of its level. It also provides its own special "IQ" models, but they're slower on CPU than regular "K" models, and it's recommended not to go below IQ2.
 
-Backends are different ways to store and run the AI model. The most notable ones are Transformers, GGUF, and Exllama. **If you're just starting, I recommend GGUF.**
+## What else should I know before I begin?
+These are for the power users. You shouldn't have to touch any of these if using a more casual frontend.
 
-- GGUF models run on most computers thanks to quantization. You can consider "quantization" a way to cut down on model size and resource usage with variable quality loss. It has "levels" that range from "q2" (smallest, worst quality) to "q8" (biggest, best quality). A level of q4_K_M is ideal for most situations unless you have more or less RAM to spare. [TheBloke](https://huggingface.co/TheBloke) converts many Transformers models into the GGUF format, and scrolling down his pages would bring you to [this chart](https://huggingface.co/TheBloke/Llama-2-7B-GGUF#provided-files), telling you the size and the most RAM the model would use under different quantization levels.
+- Make sure you know the **prompt template** or **instruct preset** of your model. It tells your frontend when you speak and when the AI will speak. ChatML is a commonly-used template, but you should read the model's description to be sure.
 
-- Transformers has been around for a while and is pretty much a universal standard for AI models, but their models are unoptimized for running on consumer hardware and use *way* more resources than necessary. Approximately, while the average 7B model under GGUF would require over 4GB of RAM, a 7B model under Transformers could require 16GB or more.
+- **Settings**. If your frontend has settings (sometimes "generation parameters"), disable as much as you can. Afterwards, if it's available, change **Min-P** to 0.1 and **Temperature** to 1. It can work as sensible defaults and a foundation for tweaking. Min-P values will give the AI more words to choose from, while higher Min-P values means it'd have less. Lower temperature means it'll choose likely words more often, while higher temperature means it'll choose less likely words more often. It's great if you're trying a lesser-supported model, or just want to hit a sweet spot for creative writing or roleplaying.
 
-- GPTQ, Exllama, and etc. are other backends with their own quantized format, but they're only useful if you have a recent graphics card (GPU). You'd have the best luck with NVIDIA GPUs, but with AMD GPUs, your mileage may vary. This is the option recommended if you have a powerful enough GPU for the model you want to run, but this guide will not cover this option.
-
-This guide will assume users chose GGUF and a frontend that supports it (like KoboldCpp, Oobabooga's Text Generation Web UI, Faraday, or LM Studio).
-
-## List of models to start with
-**Last updated:** April 15th, 2024
-
-Here are three things to keep in mind:
-- Most models work best when you follow a generation format. These are often called "instruct presets" or "prompt templates" and make it clear to the model when the user talks and when it's the AI's turn. Fortunately most frontends let you choose one, and they do the work for you behind the scenes. If you do not know which instruct preset to use, scroll down on the model's page and it will usually be under "prompt template" or similar. Common ones include ChatML, Alpaca and Mistral.
-- Settings influence the responses your models give you. A good place to start is to set "Min P" to 0.1 and "Temperature" to 1.0. Lowering the value of Min P can give the model a wider vocabulary, and raising the temperature will make it more likely it'll choose one of the less likely choices, which often translates to creative responses at the cost of some intelligence.
-- If you do not have enough system RAM, but some VRAM to spare, you can split the model between your system RAM and video memory, which often goes by the term "GPU offloading". If you have a beefy GPU, it's possible you could fit the entire model into VRAM.
+- If you have a video card for gaming, it's not a bad idea to take advantage of **GPU offloading** to fit as much of the model as you can into your GPU. It'll save some RAM from your main system and be much faster. NVIDIA (or "CuBLAS" under KoboldCpp) are the best supported, but some frontends have support for any Vulkan-supported GPU.
 
 * * *
+
+## Model recommendations
+**Last updated:** April 16th, 2024
+
+This assumes you're running a Q4_K_M GGUF model. You may be able to squeeze some more out of your hardware if you explore Q3 or Q2.
 
 ### General Use (like ChatGPT)
-- Mini (~512MB RAM) - **[RWKV-5 World](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)** or **[languagemodels](https://github.com/jncraton/languagemodels)**
-- 1.1B (~2GB RAM) - **[TinyDolphin 2.8 1.1B](https://huggingface.co/Crataco/TinyDolphin-2.8-1.1b-imatrix-GGUF)**
-- 1.6B (~2GB RAM) - **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
-- 3B (~4GB RAM) - **[Phi-2 Orange](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF)**
-- 7B (~8GB RAM) - **[Nous-Hermes 2 Mistral 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**. Alternatives include **[Mistral 7B Instruct v0.2](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)** (official model with 32k context length), **[WizardLM 2 7B](https://huggingface.co/ABX-AI/WizardLM-2-7B-GGUF-IQ-Imatrix)** (possibly smarter but worse at being concise and having personality), and **[Hermes 2 Pro Mistral 7B](https://huggingface.co/qwp4w3hyb/Hermes-2-Pro-Mistral-7B-iMat-GGUF)** (successor to Hermes 2, but scores lower)
-- 4x7B (~20GB RAM) - **[Beyonder 4x7B v3](https://huggingface.co/mradermacher/Beyonder-4x7B-v3-i1-GGUF)**
-- 8x7B (~32GB RAM) - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
-
-* * *
-
+- Potato - **[RWKV-5 World 0.1B/0.4B](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)** or **[languagemodels](https://github.com/jncraton/languagemodels)**
+- 2 GB RAM - **[TinyDolphin 2.8 1.1B](https://huggingface.co/Crataco/TinyDolphin-2.8-1.1b-imatrix-GGUF)** or **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
+- 4 GB RAM - **[Phi-2 Orange](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF)**
+- 8 GB RAM - The **Nous-Hermes** series: **[Hermes 2 DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)** and **[Hermes 2 Pro](https://huggingface.co/qwp4w3hyb/Hermes-2-Pro-Mistral-7B-iMat-GGUF)**. Hermes 2 DPO has the best score, while Hermes 2 Pro is the latest as of writing.
+- 20 GB RAM - **[Beyonder 4x7B v3](https://huggingface.co/mradermacher/Beyonder-4x7B-v3-i1-GGUF)**
+- 32 GB RAM - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
+  
 ### Chat/Roleplay (like CharacterAI, Replika, etc) and Storywriting (like NovelAI)
-*You can also use general-purpose assistants for RP and storytelling, but these models balance creative prose with intelligence.*
-- 7B (~8GB RAM) - **[Kunoichi 7B](https://huggingface.co/Lewdiculous/Kunoichi-DPO-v2-7B-GGUF-Imatrix)** for a great all-round experience, or **[Erosumika 7B](https://huggingface.co/Lewdiculous/Erosumika-7B-v3-0.2-GGUF-IQ-Imatrix)** for human-like responses
-- 10.7B (~10GB RAM) - **[Fimbulvetr 11B v2](https://huggingface.co/mradermacher/Fimbulvetr-11B-v2-i1-GGUF)**
-- 8x7B (~32GB RAM) - **[BagelMIsteryTour-v2-8x7B](https://huggingface.co/ycros/BagelMIsteryTour-v2-8x7B-GGUF)**
-
-## General suggestions for CPU users based on RAM
-**Last updated:** April 10th, 2024
-
-To see how RAM influences which model + quant combination you can run. **Speed** means a small, fast and relatively dumb model that can run in the background. **Quality** means a relatively smart model that may use all of your available RAM and is slower. **Balanced** is somewhere in-between.
-### 2GB RAM
-- Balanced: [stablelm-2-1_6b-chat.Q4_K_M.imx.gguf](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF/blob/main/stablelm-2-1_6b-chat.Q4_K_M.imx.gguf)
-- Quality: [phi-2-orange-v2.IQ2_M.imx.gguf](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF/blob/main/phi-2-orange-v2.IQ2_M.imx.gguf)
-### 8GB RAM
-- Speed: [phi-2-orange-v2.Q4_K_M.imx.gguf](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF/blob/main/phi-2-orange-v2.Q4_K_M.imx.gguf)
-- Balanced: [nous-hermes-2-mistral-7b-dpo.Q5_K_M.imx.gguf](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF/blob/main/nous-hermes-2-mistral-7b-dpo.Q5_K_M.imx.gguf)
-### 16GB RAM
-- Speed: [phi-2-orange-v2.Q4_K_M.imx.gguf](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF/blob/main/phi-2-orange-v2.Q4_K_M.imx.gguf)
-- Balanced: [nous-hermes-2-mistral-7b-dpo.Q5_K_M.imx.gguf](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF/blob/main/nous-hermes-2-mistral-7b-dpo.Q5_K_M.imx.gguf)
-- Quality: [Beyonder-4x7B-v3.i1-IQ3_S.gguf](https://huggingface.co/mradermacher/Beyonder-4x7B-v3-i1-GGUF/blob/main/Beyonder-4x7B-v3.i1-IQ3_S.gguf)
+You can also use general-use models, but these are trained on data that balances creative prose with intelligence.
+- 8 GB RAM - **[Kunoichi 7B](https://huggingface.co/Lewdiculous/Kunoichi-DPO-v2-7B-GGUF-Imatrix)** for a great all-round experience, or **[Erosumika 7B](https://huggingface.co/Lewdiculous/Erosumika-7B-v3-0.2-GGUF-IQ-Imatrix)** for creative prose
+- 10 GB RAM - **[Fimbulvetr 11B v2](https://huggingface.co/mradermacher/Fimbulvetr-11B-v2-i1-GGUF)**
+- 32 GB RAM - **[BagelMIsteryTour-v2-8x7B](https://huggingface.co/ycros/BagelMIsteryTour-v2-8x7B-GGUF)**
