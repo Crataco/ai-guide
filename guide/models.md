@@ -6,7 +6,7 @@ A **model** (sometimes called a "weight") is the AI you run, or more specificall
 
 A variety of models exist, by different "brands" (Llama 2, Mistral, Yi), released under various sizes (7B, 13B, 33B, 70B).
 
-They start off as a base, with no real task other than to predict the text that comes after what you write, like a smart autocomplete. But hobbyists and companies train these ripe models further on a corpus of conversational data. ChatGPT popularized this practice, but it has been around since the days of AI Dungeon.
+They start off as a base, with no real task other than to predict the text that comes after what you write, like a smart autocomplete. But hobbyists and companies train these ripe models further on a corpus of conversational data so you can talk with it. ChatGPT popularized this practice, but it has been around since the days of AI Dungeon.
 
 ## How are models stored?
 **Model formats**. The most popular model format is **GGUF**, provided by the "llama.cpp" project. Support for it is included in most non-proxy frontends, making it a de-facto standard. If your frontend doesn't allow you to download models, they can be found on [Hugging Face](https://huggingface.co/models?search=gguf).
