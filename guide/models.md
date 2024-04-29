@@ -29,7 +29,7 @@ The following are recommended for power users. You shouldn't have to touch any o
 * * *
 
 ## Model recommendations
-**Last updated:** April 20th, 2024
+**Last updated:** April 29th, 2024
 
 This assumes you're running a Q4_K_M GGUF model. If you're low on memory, try exploring Q2 and Q3.
 
@@ -41,10 +41,9 @@ This assumes you're running a Q4_K_M GGUF model. If you're low on memory, try ex
   - **[TinyDolphin 2.8 1.1B](https://huggingface.co/Crataco/TinyDolphin-2.8-1.1b-imatrix-GGUF)**
   - **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
 - **4 GB RAM**
-  - **[Phi-2 Orange](https://huggingface.co/Crataco/phi-2-orange-v2-imatrix-GGUF)**
+  - **[Phi-3](https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF)**
 - **8 GB RAM**
-  - **Smart:** **[Llama 3 8B Instruct](https://huggingface.co/NousResearch/Meta-Llama-3-8B-Instruct-GGUF)**
-  - **Flexible:** **[Hermes 2 7B DPO](https://huggingface.co/Crataco/Nous-Hermes-2-Mistral-7B-DPO-imatrix-GGUF)**
+  - **[Llama 3 8B Instruct](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF)**
 - **20 GB RAM**
   - **[Beyonder 4x7B v3](https://huggingface.co/mradermacher/Beyonder-4x7B-v3-i1-GGUF)**
 - **32 GB RAM**
