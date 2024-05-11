@@ -2,59 +2,52 @@
 
 # Models
 ## What are models?
-A **model** (sometimes called a "weight") is the AI you'll run, or at least its brain.
+A **model**, sometimes called a "weight", is the core -- or brain -- of your AI.
 
-A variety of models exist, by different "brands" (Llama 2, Mistral, Yi), released under various sizes (7B, 13B, 33B, 70B).
-
-They start off as a base, with no real task other than to predict the text that comes after what you write, like a smart autocomplete. But hobbyists and companies train these ripe models further on a corpus of conversational data so you can talk with it. ChatGPT popularized this practice, but it has been around since the days of AI Dungeon.
+There are two main types of models. The first is a **base model**. Give it text and it'll predict what comes next. This was common for years until ChatGPT popularized the second type, **instruct models**, which are usually base models but further trained on conversational question-and-answer data.
 
 ## How are models stored?
-**Model formats**. The most popular model format is **GGUF**, provided by the "llama.cpp" project. Support for it is included in most non-proxy frontends, making it a de-facto standard. If your frontend doesn't allow you to download models, they can be found on [Hugging Face](https://huggingface.co/models?search=gguf).
+Models are stored in different **formats**.
 
-One of the things that make GGUF perfect for home computers is **quantization**. You can download models that are lossily compressed (think of it as a "lower resolution" model). It saves plenty of bandwidth, disk space, and memory use, compared to storing and running an untouched (PyTorch format) version of the model, but it comes at the cost of quality.
+The most popular format is **GGUF**. It is recommended by this guide because it works well with non-gaming computers. Other formats run on the GPU only, or aren't optimized for CPU use.
 
-Quantization is provided in **levels,** ranging from the smallest (Q1 or Q2) to the largest (Q6 or Q8). **Q4_K_M** is recommended for most cases, unless you have plenty of RAM to spare, which Q5 would be preferred.
+GGUF also supports **quantization**. Quantizing a model means shrinking it down, like a "lower resolution" version. Thus, it takes up less resources while sacrificing some of its quality. It comes in **levels**, which often range from **Q2** (the smallest but dumbest) to **Q8** (the largest and smartest).
 
-Lastly, if you lack RAM and don't mind the loss in quality, keep an eye out on "**importance matrix**" models (usually "iMat", "i1" or "imatrix"). It uses a different method of quantization that squeezes the most out of its level. It also provides its own special "IQ" models, but they're slower on CPU than regular "K" models, and it's recommended not to go below IQ2.
+Quantization is *mandatory* to run many models on computers with less RAM. You'll want to find a balance that works for you, but generally the "**Q4_K_M**" level is enough to get a good experience out of a model.
 
-## What else should I know before I begin?
-The following are recommended for power users. You shouldn't have to touch any of these if using a more casual frontend.
+## Where do I find models?
+
+- **Check [Hugging Face](https://huggingface.co/models)** and search for uploads containing "gguf" in their name.
+- When on the page of the model you want, **click on the "Files and versions" tab**. You should see a list of all the levels the model has been quantized to.
+- **Choose a level**. Q4_K_M is usually good enough, but if the file size of the model is almost as high as (or higher than) the amount of RAM in your PC, you should go for a smaller quantization. After picking one out, click on the file and go to "download".
+
+There are several sources recommended for finding the best or most popular models:
+- [**Trending models on Hugging Face**](https://huggingface.co/models)
+- [**Chatbot Arena Leaderboard**](https://leaderboard.lmsys.org/) 
+- [**r/LocalLLaMA**](https://old.reddit.com/r/LocalLLaMA/) (general LLM discussion) and [**r/SillyTavernAI**](https://old.reddit.com/r/SillyTavernAI/) (roleplaying LLM discussion)
+- LLM-focused Discord communities, like [**TheBloke's server**](https://discord.com/invite/Jq4vkcDakD), [**KoboldAI's server**](https://koboldai.org/discord), and [**SillyTavern's server**](https://discord.com/invite/SillyTavern)
+
+As of May 11th, 2024, the general-purpose models the author uses are:
+
+- [**Llama 3 8B**](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF) on computers with 8 GB RAM or more
+- [**Phi-3 Mini**](https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF) on computers with less than 8 GB RAM
+
+There are also chat/roleplay-oriented models with positive reviews, such as [**Kunoichi-DPO 7B**](https://huggingface.co/Lewdiculous/Kunoichi-DPO-v2-7B-GGUF-Imatrix) (recommended), [**Fimbulvetr 11B**](https://huggingface.co/mradermacher/Fimbulvetr-11B-v2-i1-GGUF) (popular), and [**Lumimaid 8B**](https://huggingface.co/Lewdiculous/Llama-3-Lumimaid-8B-v0.1-OAS-GGUF-IQ-Imatrix) (new and interesting).
+
+## *Optional - Tips for Power Users*
+
+- For low-end phones and budget hardware (like a Raspberry Pi), there are many tiny models, such as [**TinyLlama 1.1B**](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF), [**StableLM 2 Chat 1.6B**](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF), or those uploaded by [Felladrin](https://huggingface.co/Felladrin). They are fun to toy around and have basic conversations, but they are not yet useful for daily tasks.
+
+- When picking out a model, it's recommended to find uploads that mention "**importance matrix**" or "**imatrix**" in their name or description. An "importance matrix" reduces the quality loss that quantized models have. Some notable users that upload quantized models with "imatrix" are [mradermacher](https://huggingface.co/mradermacher) and [bartowski](https://huggingface.co/bartowski).
 
 - Make sure you know the **prompt template** or **instruct preset** of your model. It tells your frontend when you speak and when the AI will speak. ChatML is a commonly-used template, but you should read the model's description to be sure.
 
-- **Settings**. If your frontend has settings (sometimes "generation parameters"), disable as much as you can. Afterwards, if it's available, change **Min-P** to 0.1 and **Temperature** to 1. It can work as sensible defaults and a foundation for tweaking. Lower Min-P values will give the AI more words to choose from, while higher Min-P values means it'd have less. Lower temperature means it'll choose likely words more often, while higher temperature means it'll choose less likely words more often. It's great if you're trying a lesser-supported model, or just want to hit a sweet spot for creative writing or roleplaying.
+- **Settings**. If your frontend has settings (sometimes called "generation parameters"), change **Min-P** to 0.1, **Temperature** to 1, and disable everything else if possible. Those work as sensible defaults for tweaking.
+  - Lower Min-P values will give the AI more words to choose from, while higher Min-P values means it'd have less.
+  - Lower temperature means it'll choose likely, predictable words more often, while higher temperature means it'll choose less likely, more unpredictable words more often.
+  - It's great if the model you use isn't supported by the community, or you want to find a sweet spot for creative, less-repetitive responses from the AI.
 
-- If you have a video card for gaming, it's not a bad idea to take advantage of **GPU offloading** to fit as much of the model as you can into your GPU. It'll save some RAM from your main system and be much faster. NVIDIA (or "CuBLAS" under KoboldCpp) is the best supported, but some frontends have support for any Vulkan-supported GPU.
-
-* * *
-
-## Model recommendations
-**Last updated:** April 29th, 2024
-
-This assumes you're running a Q4_K_M GGUF model. If you're low on memory, try exploring Q2 and Q3.
-
-### General Use (like ChatGPT)
-- **Potato**
-  - **[RWKV-5 World 0.1B/0.4B](https://huggingface.co/latestissue/rwkv-5-world-ggml-quantized)**
-  - **[languagemodels](https://github.com/jncraton/languagemodels)**
-- **2 GB RAM**
-  - **[TinyDolphin 2.8 1.1B](https://huggingface.co/Crataco/TinyDolphin-2.8-1.1b-imatrix-GGUF)**
-  - **[StableLM 2 1.6B Chat](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF)**
-- **4 GB RAM**
-  - **[Phi-3](https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF)**
-- **8 GB RAM**
-  - **[Llama 3 8B Instruct](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF)**
-- **20 GB RAM**
-  - **[Beyonder 4x7B v3](https://huggingface.co/mradermacher/Beyonder-4x7B-v3-i1-GGUF)**
-- **32 GB RAM**
-  - **[Mixtral 8x7B Instruct v0.1](https://huggingface.co/mradermacher/Mixtral-8x7B-Instruct-v0.1-i1-GGUF)**
-  
-### Chat/Roleplay (like CharacterAI, Replika, etc) and Storywriting (like NovelAI)
-You can also use general-use models, but these are trained on data that balances creative prose with intelligence.
-- 8 GB RAM
-  - **All-rounder:** **[Kunoichi 7B](https://huggingface.co/Lewdiculous/Kunoichi-DPO-v2-7B-GGUF-Imatrix)**
-  - **Creative:** **[Erosumika 7B](https://huggingface.co/Lewdiculous/Erosumika-7B-v3-0.2-GGUF-IQ-Imatrix)**
-- 10 GB RAM
-  - **[Fimbulvetr 11B v2](https://huggingface.co/mradermacher/Fimbulvetr-11B-v2-i1-GGUF)**
-- 32 GB RAM
-  - **[BagelMIsteryTour-v2-8x7B](https://huggingface.co/ycros/BagelMIsteryTour-v2-8x7B-GGUF)**
+- If you have a video card for gaming, it's not a bad idea to **use your GPU**, which can speed up your AI.
+  - CUDA acceleration only works with NVIDIA cards, but is supported by most, if not all frontends.
+  - Vulkan acceleration should include most GPUs made within the last 10 years, but is currently only supported by [llama.cpp](https://github.com/ggerganov/llama.cpp?tab=readme-ov-file#vulkan) and [KoboldCpp](https://github.com/LostRuins/koboldcpp?tab=readme-ov-file#osx-and-linux-manual-compiling).
+  - OneAPI acceleration works with Intel GPUs (including integrated), but is currently only supported by [llama.cpp](https://github.com/ggerganov/llama.cpp/blob/master/README-sycl.md).
