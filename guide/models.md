@@ -27,12 +27,14 @@ There are several sources recommended for finding the best or most popular model
 - [**r/LocalLLaMA**](https://old.reddit.com/r/LocalLLaMA/) (general LLM discussion) and [**r/SillyTavernAI**](https://old.reddit.com/r/SillyTavernAI/) (roleplaying LLM discussion)
 - LLM-focused Discord communities, like [**TheBloke's server**](https://discord.com/invite/Jq4vkcDakD), [**KoboldAI's server**](https://koboldai.org/discord), and [**SillyTavern's server**](https://discord.com/invite/SillyTavern)
 
-As of May 11th, 2024, the general-purpose models the author uses are:
+As of May 21st, 2024, this guide recommends the following general-purpose models:
 
 - [**Llama 3 8B**](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF) on computers with 8 GB RAM or more
 - [**Phi-3 Mini**](https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF) on computers with less than 8 GB RAM
 
-There are also chat/roleplay-oriented models with positive reviews, such as [**Kunoichi-DPO 7B**](https://huggingface.co/Lewdiculous/Kunoichi-DPO-v2-7B-GGUF-Imatrix) (recommended), [**Fimbulvetr 11B**](https://huggingface.co/mradermacher/Fimbulvetr-11B-v2-i1-GGUF) (popular), and [**Lumimaid 8B**](https://huggingface.co/Lewdiculous/Llama-3-Lumimaid-8B-v0.1-OAS-GGUF-IQ-Imatrix) (new and interesting).
+For roleplay on computers with 8 GB RAM or more:
+
+- [**L3-8B-Stheno-v3.1**](https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.1-GGUF-IQ-Imatrix)
 
 ## *Optional - Tips for Power Users*
 
