@@ -4,16 +4,14 @@
 ## What are models?
 A **model**, sometimes called a "weight", is the core -- or brain -- of your AI.
 
-There are two main types of models. The first is a **base model**. Give it text and it'll predict what comes next. This was common for years until ChatGPT popularized the second type, **instruct models**, which are usually base models but further trained on conversational question-and-answer data.
+There are two main types of models. The first is a **base model**. Give it text and it'll predict what comes next. This was common for years until ChatGPT popularized the second type, **instruct models**, which start from base models, but are trained on question-and-answer and conversational data.
 
 ## How are models stored?
 Models are stored in different **formats**.
 
-The most popular format is **GGUF**. It is recommended by this guide because it works well with non-gaming computers. Other formats run on the GPU only, or aren't optimized for CPU use.
+The most popular format is **GGUF**. It is recommended because it can run on almost anything. Other formats expect you to already have an expensive GPU.
 
-GGUF also supports **quantization**. Quantizing a model means shrinking it down, like a "lower resolution" version. Thus, it takes up less resources while sacrificing some of its quality. It comes in **levels**, which often range from **Q2** (the smallest but dumbest) to **Q8** (the largest and smartest).
-
-Quantization is *mandatory* to run many models on computers with less RAM. You'll want to find a balance that works for you, but generally the "**Q4_K_M**" level is enough to get a good experience out of a model.
+GGUF also supports **quantization**. Quantizing a model means shrinking it down to a certain level, like "Q2_K" (small), "Q4_K_M" (medium), or "Q6_K" (large). Like playing games or storing images at lower resolutions, it takes up less space and resources while sacrificing some of its quality. Quantization is *mandatory* for PCs with less memory.
 
 ## Where do I find models?
 
@@ -21,35 +19,30 @@ Quantization is *mandatory* to run many models on computers with less RAM. You'l
 - When on the page of the model you want, **click on the "Files and versions" tab**. You should see a list of all the levels the model has been quantized to.
 - **Choose a level**. Q4_K_M is usually good enough, but if the file size of the model is almost as high as (or higher than) the amount of RAM in your PC, you should go for a smaller quantization. After picking one out, click on the file and go to "download".
 
-There are several sources recommended for finding the best or most popular models:
-- [**Trending models on Hugging Face**](https://huggingface.co/models)
-- [**Chatbot Arena Leaderboard**](https://leaderboard.lmsys.org/) 
-- [**r/LocalLLaMA**](https://old.reddit.com/r/LocalLLaMA/) (general LLM discussion) and [**r/SillyTavernAI**](https://old.reddit.com/r/SillyTavernAI/) (roleplaying LLM discussion)
-- LLM-focused Discord communities, like [**TheBloke's server**](https://discord.com/invite/Jq4vkcDakD), [**KoboldAI's server**](https://koboldai.org/discord), and [**SillyTavern's server**](https://discord.com/invite/SillyTavern)
+There are several sources recommended for being up-to-date on the latest releases:
+- [**Chatbot Arena Leaderboard**](https://leaderboard.lmsys.org/)
+- Communities, like [**r/SillyTavernAI**](https://old.reddit.com/r/SillyTavernAI/) on Reddit (roleplay-focused), and Discord servers for [**TheBloke**](https://discord.com/invite/Jq4vkcDakD), [**KoboldAI**](https://koboldai.org/discord), and [**SillyTavern**](https://discord.com/invite/SillyTavern)
+- In the case of roleplay models, [**Lewdiculous' personal favorites**](https://huggingface.co/collections/Lewdiculous/personal-favorites-65dcbe240e6ad245510519aa)
 
 As of May 21st, 2024, this guide recommends the following general-purpose models:
 
 - [**Llama 3 8B**](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF) on computers with 8 GB RAM or more
 - [**Phi-3 Mini**](https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF) on computers with less than 8 GB RAM
 
-For roleplay on computers with 8 GB RAM or more:
-
-- [**L3-8B-Stheno-v3.1**](https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.1-GGUF-IQ-Imatrix)
-
 ## *Optional - Tips for Power Users*
 
 - For low-end phones and budget hardware (like a Raspberry Pi), there are many tiny models, such as [**TinyLlama 1.1B**](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF), [**StableLM 2 Chat 1.6B**](https://huggingface.co/Crataco/stablelm-2-1_6b-chat-imatrix-GGUF), or those uploaded by [Felladrin](https://huggingface.co/Felladrin). They are fun to toy around and have basic conversations, but they are not yet useful for daily tasks.
 
-- When picking out a model, it's recommended to find uploads that mention "**importance matrix**" or "**imatrix**" in their name or description. An "importance matrix" reduces the quality loss that quantized models have. Some notable users that upload quantized models with "imatrix" are [mradermacher](https://huggingface.co/mradermacher) and [bartowski](https://huggingface.co/bartowski).
+- When picking out a model, it's recommended to find uploads that mention "**importance matrix**" or "**imatrix**" in their name or description. An "importance matrix" minimizes the quality loss that quantized models have. Some notable users that upload quantized models with "imatrix" are [mradermacher](https://huggingface.co/mradermacher) and [bartowski](https://huggingface.co/bartowski).
 
-- Make sure you know the **prompt template** or **instruct preset** of your model. It tells your frontend when you speak and when the AI will speak. ChatML is a commonly-used template, but you should read the model's description to be sure.
+- Make sure you know the **prompt template** or **instruct preset** of your model. It tells your frontend when you speak and when the AI will speak. For example, ChatML is a commonly-used template, but most Llama 3 models may work best with Llama 3's official template.
 
 - **Settings**. If your frontend has settings (sometimes called "generation parameters"), change **Min-P** to 0.1, **Temperature** to 1, and disable everything else if possible. Those work as sensible defaults for tweaking.
   - Lower Min-P values will give the AI more words to choose from, while higher Min-P values means it'd have less.
-  - Lower temperature means it'll choose likely, predictable words more often, while higher temperature means it'll choose less likely, more unpredictable words more often.
+  - Lower temperature means that of those words, it'll choose the more likely, predictable word, while higher temperature means it'll pick less likely, more unpredictable words.
   - It's great if the model you use isn't supported by the community, or you want to find a sweet spot for creative, less-repetitive responses from the AI.
 
-- If you have a video card for gaming, it's not a bad idea to **use your GPU**, which can speed up your AI.
+- If you have a video card for gaming, it's not a bad idea to **use your GPU**. If you don't have enough RAM, you can use your GPU's VRAM by partially "offloading" it, but generation will be slow. If your model can fit entirely in the GPU's VRAM, it can offer a *huge* speed increase.
   - CUDA acceleration only works with NVIDIA cards, but is supported by most, if not all frontends.
   - Vulkan acceleration should include most GPUs made within the last 10 years, but is currently only supported by [llama.cpp](https://github.com/ggerganov/llama.cpp?tab=readme-ov-file#vulkan) and [KoboldCpp](https://github.com/LostRuins/koboldcpp?tab=readme-ov-file#osx-and-linux-manual-compiling).
-  - OneAPI acceleration works with Intel GPUs (including integrated), but is currently only supported by [llama.cpp](https://github.com/ggerganov/llama.cpp/blob/master/README-sycl.md).
+  - If you want to get your hands dirty, OneAPI acceleration works with Intel GPUs (including integrated), but is currently only supported by [llama.cpp](https://github.com/ggerganov/llama.cpp/blob/master/README-sycl.md).
